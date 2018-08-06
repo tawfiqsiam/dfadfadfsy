@@ -1,0 +1,84 @@
+let comandos = new Map();
+module.exports = comandos;
+
+const Discord = require("discord.js");
+module.exports = {
+    description: `Calcule seu amor ou de outros usuários`,
+    categoria: `Entretenimento`,
+        task(client, message, suffix) {
+        
+let database = require("../database.js");  
+database.Bloqueio.findOne({
+                "_id": message.author.id
+            }, function (erro, documento) {
+                if(documento) {
+         if (!['244489368717230090','282504900552949760'].includes(message.author.id))
+                
+ if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
+        
+}
+            
+ suffix = suffix.split(' '); 
+ if(suffix[0] == "help"){
+      message.reply('**Use:** `sy!ship` +  `<@usuario1>` +  `<@usuario2>`');
+      return;
+    }
+            
+message.delete();
+let userm = message.mentions.users.first()
+  let userm2 = message.mentions.users.last()
+  
+        
+  let nome = message.mentions.users.first()
+  let nome2 = message.mentions.users.last()
+  if (!nome) 
+  return message.reply('Mencione dois usuários para calcular.');
+  if (!nome2) 
+  return message.reply('Mencione dois usuários para calcular.');
+     
+       
+       const random = Math.floor(Math.random() * 100);
+       
+       var Jimp = require("jimp");
+       var server = message.guild;
+         
+       let user =  message.mentions[0] || message.author;
+       let p1  = Jimp.read(userm.avatarURL);
+       let p2  = Jimp.read('imagens/love-random2.png');
+       let p3 =   Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+       let p4 =   Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+       let p5  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       let p6  =  Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png");
+       let p7  = Jimp.read(userm2.avatarURL);
+       Promise.all([p1, p2, p3, p4, p5, p6, p7]).then(function (images) {
+         
+       
+             let img = images[0];
+             let lv = images[1];
+             let fuente = images[2];
+             let fuente2 = images[3];
+             let mask = images[4];
+             let img2 = images[6];
+             let mask2 = images[5];
+         
+       
+             mask.resize(150, 150);
+             img.resize(150, 150);
+             img.mask(mask, 0, 0);
+             mask2.resize(150, 150);
+             img2.resize(150, 150);
+             img2.mask(mask2, 0, 0);
+             lv.print(fuente2, 190, 80, `${random}%`);
+       
+       
+       
+                             
+                       lv.composite(img, 33, 30).composite(img2, 331, 30).getBuffer(Jimp.MIME_PNG, (err, image) => {
+                      
+                             if (err) throw err;
+                              message.channel.send(`${message.author} :heart: ${message.mentions.users.first().username.substring(0,5) + message.mentions.users.last().username.substring(message.mentions.users.last().username.length - 4,message.mentions.users.last().username.length)}`,new Discord.Attachment(image, 'love-random2.png'));
+                       });
+       });
+    })
+        }
+};
