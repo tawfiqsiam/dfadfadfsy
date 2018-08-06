@@ -1,0 +1,24 @@
+    {
+    "prefix": "sy!",
+    "DBL": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMjU5Mzc4MzY5NjI2MTEyMSIsImJvdCI6dHJ1ZSwiaWF0IjoxNTIzNzI3MDcxfQ.Gj2Tjg1ZH2mirLa4DMX-q3AzKj3JTED83ywr4ZM89Bc",
+    "twitchClientID": "zhz0tmwlx69szi1lnwv8x8174mqj3y",
+    "twitchClientSecret": "nrwmym5ky6h6uqgm9xg3o1sbmwp6dv",
+    "YTKEY": "AIzaSyCGILQvY4YSH2VQXbfBVdcLBD7q9G_lDWE",
+    "TCONSUMERKEY": "m85B1HQ1CZ1CscMoL71ZPNCaM",
+    "TCONSUMERSECRET": "yVzIU1d8TyoNtRRfowlHxBIhhXtyWTNvmeVRKc3wWC1Y9icNTW",
+    "TACESSTOKEN": "952730859936894977-UQcp3v4LatwpRKWq2crbzbPes0boMnL",
+    "TACESSSECRET": "vpCD0WntKNGOFvo59142jHOyrYa9Qn5GsCQhriOHq0NKT",
+    "red": "#b70000",
+    "orange": "#ff6a00",
+    "green": "#00ff26",
+    "purple": "#d604cf",
+    "blue_sysop": "#0dbda2",
+    "purple_sysop": "0x7c248e",
+    "blue_twitter_sysop": "#538bd3",
+    "IdOwner": "244489368717230090",
+    "GOOGLE_SEARCH": "AIzaSyCGILQvY4YSH2VQXbfBVdcLBD7q9G_lDWE",
+    "passes": 1,
+    "api": "AIzaSyC9cGIsOBaV8mBC5oeZtKskwUZj5pbR9K0",
+
+    "logTimestamp": true
+}

@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "Expextre",
+      "script": "index.js",
+      "args": "--color"
+    }
+  ]
+}
