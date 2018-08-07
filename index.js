@@ -94,39 +94,42 @@ sysop.save();
 client.on('guildMemberAdd', member => { 
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!sysop) return;
-    if(!sysop.welcome) return;
     if(!sysop.welcomeChannel) return;
-    if(!sysop.logger) return;
+    if(!reth.welcome) return;
     if(!client.guilds.get(member.guild.id).channels.get(sysop.welcomeChannel)) return;
   if (sysop) {
     let mensagem = sysop.welcome.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
-   client.guilds.get(member.guild.id).channels.get(sysop.welcomeChannel).send(mensagem)
+
+    client.guilds.get(member.guild.id).channels.get(sysop.welcomeChannel).send(mensagem)
+
     }
   })
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!sysop) return;
     if(!sysop.dm) return;
-    if (sysop) {
+  if (sysop) {
     let mensagem = sysop.dm.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
     client.users.get(member.id).send(mensagem)
+
     }
   })
-});
 
+});
 client.on('guildMemberRemove', member => {
+
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!sysop) return;
     if(!sysop.byeChannel) return;
     if(!sysop.bye) return;
-    if(!sysop.logger);
     if(!client.guilds.get(member.guild.id).channels.get(sysop.byeChannel)) return;
   if (sysop) {
     let mensagem = sysop.bye.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
+
     client.guilds.get(member.guild.id).channels.get(sysop.byeChannel).send(mensagem)
+
     }
   })
 });
-
 
 client.on("message", message => {
 if (message.guild) {
