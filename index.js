@@ -90,6 +90,7 @@ sysop.save();
 });
 }
 });
+
 client.on('guildMemberAdd', member => { 
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!sysop) return;
@@ -100,15 +101,6 @@ client.on('guildMemberAdd', member => {
   if (sysop) {
     let mensagem = sysop.welcome.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
    client.guilds.get(member.guild.id).channels.get(sysop.welcomeChannel).send(mensagem)
-   //LOGGS
-let server = member.guild;
-var embed = new Discord.RichEmbed()
-.setThumbnail(`${member.user.displayAvatarURL}`)
-.setTitle(`**Novo usuário!**`)
-.setDescription(`<:newuser:469366822500564993> | ${member} entrou no servidor.\n**ID** ${member.id}`)
-.setFooter(server.name)
-.setColor('#36393E');
-client.guilds.get(member.guild.id).channels.get(sysop.logger).send(embed)
     }
   })
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
@@ -120,6 +112,7 @@ client.guilds.get(member.guild.id).channels.get(sysop.logger).send(embed)
     }
   })
 });
+
 client.on('guildMemberRemove', member => {
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!sysop) return;
@@ -130,15 +123,6 @@ client.on('guildMemberRemove', member => {
   if (sysop) {
     let mensagem = sysop.bye.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
     client.guilds.get(member.guild.id).channels.get(sysop.byeChannel).send(mensagem)
-//LOGGS    
-let server = member.guild;
-var embed = new Discord.RichEmbed()
-.setThumbnail(`${member.user.displayAvatarURL}`)
-.setTitle(`**Usuário Quitou!**`)
-.setDescription(`<:userleft:469366822487982080> | ${member} saiu do servidor.\n**ID** ${member.id}`)
-.setFooter(server.name)
-.setColor('#36393E');
-client.guilds.get(member.guild.id).channels.get(sysop.logger).send(embed)
     }
   })
 });
