@@ -55,17 +55,6 @@ var embed = new Discord.RichEmbed()
 
 client.on("ready", () => {
    logger.logWithHeader('Estamos online!', 'bgRed', 'black',  `Online! S:${client.guilds.size} | U:${client.users.size}`);
-    var statusIDO = ["idle", "dnd"]
- 
-    var jogando = [`Alegria`, `AMOOR`, `Comandos? sy!help`, `para ${client.guilds.size} servidores`]
-
-    
-    client.user.setGame(jogando[Math.round(Math.random() * jogando.length - 1)], "https://www.twitch.tv/adrianocruz1105")
-    client.user.setStatus(statusIDO[Math.round(Math.random() * statusIDO.length - 1)]);
-    client.guilds.get("441766085809799198").members.map(a =>
-    setInterval(() => {
-        client.user.setGame(jogando[Math.round(Math.random() * jogando.length - 1)], "https://www.twitch.tv/adrianocruz1105")
-        client.user.setStatus(statusIDO[Math.round(Math.random() * statusIDO.length - 1)])}, 1 * 1000 * 60));
 });
 
 
@@ -101,44 +90,71 @@ sysop.save();
 });
 }
 });
-
-client.on('guildMemberAdd', (member) => {
-if (member.guid) {
-database.Guilds.findOne({ "_id": member.guild.id}, function(erra ,sysop) {	
-if (sysop) {
-if (sysop.welcome) {
-let mensagem = sysop.welcome.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
-client.channels.get(sysop.welcomeChannel).send(mensagem);
-}}
-    });
+Guardian.on('guildMemberAdd', member => { 
+  database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+    if(!sysop) return;
+    if(!sysop.welcome) return;
+    if(!sysop.welcomeChannel) return;
+    if(!sysop.logger) return;
+    if(!Guardian.guilds.get(member.guild.id).channels.get(sysop.welcomeChannel)) return;
+  if (sysop) {
+    let mensagem = sysop.welcome.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
+    Guardian.guilds.get(member.guild.id).channels.get(sysop.welcomeChannel).send(mensagem)
+   //LOGGS
+let server = member.guild;
+var embed = new Discord.RichEmbed()
+.setThumbnail(`${member.user.displayAvatarURL}`)
+.setTitle(`**Novo usuário!**`)
+.setDescription(`<:newuser:469366822500564993> | ${member} entrou no servidor.\n**ID** ${member.id}`)
+.setFooter(server.name)
+.setColor('#36393E');
+client.guilds.get(member.guild.id).channels.get(sysop.logger).send(embed)
     }
+  })
+  database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+    if(!sysop) return;
+    if(!sysop.dm) return;
+    if (sysop) {
+    let mensagem = sysop.dm.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
+    client.users.get(member.id).send(mensagem)
+    }
+  })
+});
+client.on('guildMemberRemove', member => {
+  database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+    if(!sysop) return;
+    if(!sysop.byeChannel) return;
+    if(!sysop.bye) return;
+    if(!sysop.logger);
+    if(!client.guilds.get(member.guild.id).channels.get(sysop.byeChannel)) return;
+  if (sysop) {
+    let mensagem = sysop.bye.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
+    client.guilds.get(member.guild.id).channels.get(sysop.byeChannel).send(mensagem)
+//LOGGS    
+let server = member.guild;
+var embed = new Discord.RichEmbed()
+.setThumbnail(`${member.user.displayAvatarURL}`)
+.setTitle(`**Usuário Quitou!**`)
+.setDescription(`<:userleft:469366822487982080> | ${member} saiu do servidor.\n**ID** ${member.id}`)
+.setFooter(server.name)
+.setColor('#36393E');
+client.guilds.get(member.guild.id).channels.get(sysop.logger).send(embed)
+    }
+  })
 });
 
-client.on('guildMemberAdd', (member) => {
-if (member.guild) {
-database.Guilds.findOne({ "_id": member.guild.id}, function(erro, sysop) {	
+
+client.on("message", message => {
+if (message.guild) {
+database.Guilds.findOne({"_id": message.guild.id}, function(erra, sysop) {
 if (sysop) {
-if (sysop.dm) {
-let mensagem = sysop.dm.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
-member.send(mensagem);
+if (sysop && sysop.convites && message.content.search('discord.gg') > -1) {	
+message.delete();
+return message.channel.send(`<:xguardian:476061993368027148> | ${message.author} Você não pode enviar convites de outros servidores aqui!`).then(sentMsg => sentMsg.delete(60000));
 }}
 });
 }
 });
-
-
-client.on('guildMemberRemove', (member) => {	
-if (member.guild) {
-database.Guilds.findOne({ "_id": member.guild.id}, function(erra, sysop) {	
-if (sysop) {	
-if (sysop.bye) {
-let mensagem = sysop.bye.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
-client.channels.get(sysop.byeChannel).send(mensagem);
-        }}
-    });
-    }
-});
-
 client.on("message", message => {
 if (message.guild) {
 database.Guilds.findOne({"_id": message.guild.id}, function(erra, sysop) {
