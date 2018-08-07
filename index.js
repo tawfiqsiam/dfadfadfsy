@@ -110,6 +110,12 @@ client.on('guildMemberAdd', member => {
   if (sysop) {
     let mensagem = sysop.dm.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
     client.users.get(member.id).send(mensagem)
+  }
+  })
+	  database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+	let nw = `${client.guilds.get(member.guild.id).memberCount}`
+            let aus = nw.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:')
+            client.channels.get('475549208225775649').edit({ topic: `:SysopLogoEMOI: | ${aus}` })
 
     }
   })
@@ -126,9 +132,16 @@ client.on('guildMemberRemove', member => {
     let mensagem = sysop.bye.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
 
     client.guilds.get(member.guild.id).channels.get(sysop.byeChannel).send(mensagem)
+  }
+  })
+  database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+	let nw = `${client.guilds.get(member.guild.id).memberCount}`
+            let aus = nw.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:')
+            client.channels.get('475549208225775649').edit({ topic: `:SysopLogoEMOI: | ${aus}` })
 
     }
   })
+
 });
 
 client.on("message", message => {
