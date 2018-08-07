@@ -302,7 +302,7 @@ client.on('message', message => {
         .setFooter('SysopCorp ---- LOG COMANDOS ' + ' ---- ' + new Date())
         .setColor(0x0df7eb);
         
-        client.guilds.get('412169234492293130').channels.get('451470780602122251').send({ embed });
+        client.guilds.get('307956208042770433').channels.get('470328436540571662').send({ embed });
 	}
 });
 
