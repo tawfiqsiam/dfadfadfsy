@@ -18,13 +18,13 @@ database.Bloqueio.findOne({
 }
       
             let args = suffix.split(' '); 
-            let igor =  args.slice(1).join(' ') 
+            let sysop =  args.slice(1).join(' ') 
             ? args.slice(1).join(' ')
-            :  "Foi banido sem colocar o motivo.";
+            :  "Foi banido! Motivo não especificado.";
 
 
 
-if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply(':no_entry_sign: Desculpe, você não tem permissão de banir usuário neste servidor!');
+if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('<:xguardian:476061993368027148> Desculpe, você não tem permissão de banir usuário neste servidor!');
 let id = message.mentions.users.first()
 
     ? message.mentions.users.first().id 
@@ -32,49 +32,53 @@ let id = message.mentions.users.first()
     : args
     ? args[0]
     : null;
-if (!id) return message.reply('Mencione alguém ou especifique um ID.');
+if (!id) return message.reply('<:sysalerta:469789950938841088> Mencione alguém ou especifique um ID.');
 
 let banPerms = message.guild.member(client.user).hasPermission('BAN_MEMBERS')
 if (!banPerms)  return message.reply("Eu não tenho permissão para banir usuários nesse servidor.");
 
 let user = client.users.has(id) ? client.users.get(id) : null;
 
-if (!user) return message.reply("Não encontrei nenhum usuário.")
+if (!user) return message.reply("<:xguardian:476061993368027148> Não encontrei nenhum usuário.")
 let bannable = message.guild.member(id)
 if (bannable) {  
-    if (bannable.highestRole.position >= message.member.highestRole.position) return message.reply(" :x: Você não pode banir este usuário pois seu cargo é menor ou igual a o do usuário a ser banido!")
+    if (bannable.highestRole.position >= message.member.highestRole.position) return message.reply("<:xguardian:476061993368027148> Você não pode banir este usuário pois seu cargo é menor ou igual a o do usuário a ser banido!")
     
-    if (!message.guild.member(user).bannable) return message.reply('Eu não posso banir esse usuário.');
+    if (!message.guild.member(user).bannable) return message.reply('<:xguardian:476061993368027148> Eu não posso banir esse usuário.');
     
 } else {
 
-    message.guild.ban(user, igor);
-    
+    message.guild.ban(user, sysop);
+        let server = message.guild
     const embed1 = new Discord.RichEmbed()
-    .setTitle(`🚫 Member Banned`)
-    .addField(`**Usuário banido:**`, user)
-    .addField(`**Motivo:**`, igor)
-    
-    .setThumbnail('https://i.imgur.com/etOfjIY.png')
-    .setColor(0x26dfd6)
+    .setTitle(`<:banSysop:476264254606016515> Membro banido`)
+    .addField(`Usuário banido`, user)
+    .addField(`**Motivo:**`, sysop)
+    .addField(`Banido do servidor:`, server.name)
+    .addField(`**Executor**`, message.author)
+    .setThumbnail(user.avatarURL)
+    .setColor('#00fffa')
     message.channel.send({embed1});
+    user.send({embed1})
 }
 if (user) {
 
    
-    message.guild.ban(user, igor);
-    
+    message.guild.ban(user, sysop);
+        let server = message.guild
     const embed = new Discord.RichEmbed()
-    .setTitle(`🚫 Member Banned`)
-    .addField(`**Usuário banido:**`, user)
-    .addField(`**Motivo:**`, igor)
-    
-    .setThumbnail('https://i.imgur.com/etOfjIY.png')
-    .setColor(0x26dfd6)
+    .setTitle(`<:banSysop:476264254606016515> Membro Banido`)
+    .addField(`Usuário banido`, user)
+    .addField(`**Motivo:**`, sysop)
+    .addField(`Banido do servidor:`, server.name)
+    .addField(`**Executor**`, message.author)
+    .setThumbnail(user.avatarURL)
+    .setColor('#00fffa')
     message.channel.send({embed});
+    user.send({embed})
 
 } else {
-    message.reply('Não encontrei nenhum usuário');
+    message.reply('<:sysalerta:469789950938841088> Não encontrei nenhum usuário');
 
 }
     })
