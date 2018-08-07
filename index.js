@@ -95,7 +95,7 @@ client.on('guildMemberAdd', member => {
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!sysop) return;
     if(!sysop.welcomeChannel) return;
-    if(!reth.welcome) return;
+    if(!sysop.welcome) return;
     if(!client.guilds.get(member.guild.id).channels.get(sysop.welcomeChannel)) return;
   if (sysop) {
     let mensagem = sysop.welcome.replace(/\$\{USER\}/gi, member.user.username).replace(/\$\{SERVER\}/gi, member.guild.name).replace(/\$\{MENTION\}/gi, `${member.user}`).replace(/\$\{USER_ICONURL\}/gi, member.user.displayAvatarURL).replace(/\$\{USER_ID\}/gi, member.user.id);
