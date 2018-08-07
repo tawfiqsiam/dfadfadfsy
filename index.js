@@ -329,4 +329,4 @@ client.on('guildCreate', guild => {
 							  
 });
 
-client.login(process.env.A);
+client.login(process.env.QQ);
