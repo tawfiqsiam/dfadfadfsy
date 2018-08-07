@@ -312,7 +312,7 @@ client.on('guildCreate', guild => {
         .addField(":smiling_imp: __**Servidores atuais:**__", `\`\`\`js\n${client.guilds.size}\`\`\``)
  
         .setTimestamp()
-        client.guilds.get("441766085809799198").members.map(a =>
+        client.guilds.get("393818943246172161").members.map(a =>
         client.users.get(a.id).send({embed})) 
         
 							  
