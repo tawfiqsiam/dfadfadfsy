@@ -150,7 +150,7 @@ client.on('guildMemberRemove', member => {
 	
 	database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	let nww = `${client.guilds.get(member.guild.id).memberCount}`
-            let manu = nw.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:')
+            let manu = nww.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:')
             client.channels.get('475739770996129802').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${manu} Colá la  que é sucesso https://www.facebook.com/discordmoon/` })
 	})
 
