@@ -19,6 +19,16 @@ let reload    = require('require-reload')(require),
   client.on("debug", (e) => console.log(e));
 
 
+client.on("ready", () => {
+client.user.setPresence({
+        status: 'Online',
+        game: {
+            name: `sy!help`,
+            url: 'https://www.twitch.tv/expextreadriano'
+        }
+});
+});
+
 module.exports = {
 	task(client, message, name) {
 		if (name) {
