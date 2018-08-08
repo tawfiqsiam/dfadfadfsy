@@ -6,14 +6,14 @@ module.exports = {
       
 database.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
                 if(documento) {
-         if (!['244489368717230090','282504900552949760'].includes(message.author.id))
+         if (!['244489368717230090'].includes(message.author.id))
                 
  if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
 
 if (!message.member.hasPermission('ADMINISTRATOR', 'MANAGE_MESSAGES')) 
-return message.reply('<:FalseSysop3:462306755150479372> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador ou Gerenciamento de mensagens');
+return message.reply('<:xguardian:476061993368027148> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador ou Gerenciamento de mensagens');
       
 let args = suffix.split(' '); 
 let mensagem = suffix;
@@ -51,12 +51,12 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, documento) {
             documento.bye = mensagem;
             documento.byeChannel = message.channel.id;
             documento.save();
-            return message.channel.send(`GG ${message.author}! Você definiu a mensagem de saída. <:LikeSysop3:462306728508260352>`);
+            return message.channel.send(`GG ${message.author}! Você definiu a mensagem de saída. <:LikeSysop3:476062023629799424>`);
         } else {
             documento.byeChannel = '';
             documento.bye = '',
             documento.save();
-            return message.channel.send('Mensagem de saída desabilitada.');
+            return message.channel.send('<:trust:447056422346424320> Mensagem de saída desabilitada.');
         }
     
         
