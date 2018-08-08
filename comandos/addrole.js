@@ -33,5 +33,5 @@ database.Bloqueio.findOne({
     membro.addRole(role).catch(console.error);
     message.channel.send(`O cargo **${role}** foi adicionado ao **${membro.user}**.`);
 })
-    });
+  
   }};
