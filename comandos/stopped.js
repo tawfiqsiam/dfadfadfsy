@@ -2,7 +2,8 @@ let db = require("../database.js");
 const Discord = require("discord.js");
 
 module.exports = { task(client, message, suffix) {
-
+message.delete();
+  
 db.Bloqueio.findOne({
                 "_id": message.author.id
             }, function (erro, documento) {
