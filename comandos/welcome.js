@@ -8,12 +8,12 @@ database.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento)
                 if(documento) {
          if (!['244489368717230090'].includes(message.author.id))
                 
- if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
+ if ([documento.block].includes(message.author.id)) return message.reply("<:xguardian:476061993368027148> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
 
 if (!message.member.hasPermission('ADMINISTRATOR', 'MANAGE_MESSAGES')) 
-return message.reply('<:FalseSysop3:462306755150479372> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador ou Gerenciamento de mensagens');
+return message.reply('<:xguardian:476061993368027148> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador ou Gerenciamento de mensagens');
       
 let args = suffix.split(' '); 
 let mensagem = suffix;
@@ -42,7 +42,7 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, documento) {
         } else {
         if (!mensagem) {
     if (!documento.welcome)
-   return message.channel.send('<:sysalerta:469789950938841088> Este servidor não possui mensagens de saída ainda. Use `sy!bye help`');
+   return message.channel.send('<:sysalerta:469789950938841088> Este servidor não possui mensagens de boas vindas ainda. Use `sy!welcome help`');
    else 
    return message.channel.send('A mensagem de boas-vindas atual é\n\`\`\`Markdown\n# ' + documento.welcome+'\`\`\`\n\nUse: sy!welcome help para setar');
 
@@ -51,12 +51,12 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, documento) {
             documento.welcome = mensagem;
             documento.welcomeChannel = message.channel.id;
             documento.save();
-            return message.channel.send(`GG ${message.author}! Você definiu a mensagem de saída. <:LikeSysop3:462306728508260352>`);
+            return message.channel.send(`GG ${message.author}! Você definiu a mensagem de saída. <:LikeSysop3:476062023629799424>`);
         } else {
             documento.welcomeChannel = '';
             documento.welcome = '',
             documento.save();
-            return message.channel.send('Mensagem de boas-vindas desabilitada.');
+            return message.channel.send('<:trust:447056422346424320> Mensagem de boas-vindas desabilitada.');
         }
     
         
