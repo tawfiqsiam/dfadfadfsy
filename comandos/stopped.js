@@ -33,7 +33,7 @@ let cargo = message.guild.roles.find('name', '@everyone')
    });
     
 
-    message.channel.send(`<:sysalerta:469789950938841088> Chat Stopped!`);
+    message.channel.send(`<:sysalerta:469789950938841088> Server Stopped!`);
 });
      
 }};
