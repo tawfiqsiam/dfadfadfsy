@@ -45,7 +45,7 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, documento) {
     if (!documento.autorole)
    return message.channel.send('<:sysalerta:469789950938841088> Este servidor não possui autorole. Use `sy!autorole help`');
    else 
-   return message.channel.send(`A autole deste servidor atualmente é: ${documento.autorole}. Use: sy!autorole help para setar`);
+   return message.channel.send(`A autole deste servidor atualmente é: <@&${documento.autorole}>. Use: sy!autorole help para setar`);
 
     } else {
         
