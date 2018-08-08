@@ -157,11 +157,13 @@ client.on('guildMemberAdd', member => {
   let nw =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
    
 //contador  
-let aus = nw.replace("0", ':zero:').replace("1", ':one:').replace("2", ':two:').replace("3", ':three:').replace("4", ':four:').replace("5", ':five:').replace("6", ':six:').replace("7", ':seven:').replace("8", ':eight:').replace("9", ':nine:');
 
-	    client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aus} HUMILDE PO! <a:TutiTuti:474296005030969344>
- ` })
+		  
+let lol =  String(client.guilds.get(member.guild.id).memberCount.toString())
+    
+let aqui = lol.replace(/0/gi, '<:zeroo:476775722120380426>').replace(/1/gi, '<:um:476775722485022731> ').replace(/2/gi, '<:dois:476775695276834820> ').replace(/3/gi, '<:tres:476775721348497418>').replace(/4/gi, '<:quatro:476775696660692997>').replace(/5/gi, '<:cinco:476775693812891668>').replace(/6/gi, '<:seis:476775697172398089>').replace(/7/gi, '<:sete:476775698464374794>').replace(/8/gi, '<:oito:476775697407410184>').replace(/9/gi, '<:nove:476775695918563338>')
 
+client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aqui} HUMILDE PO! HUMILDE PO! <a:TutiTuti:474296005030969344>`})
 	  
   })
 
@@ -201,10 +203,14 @@ client.on('guildMemberRemove', member => {
   }
   })
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
-	let nw = `${client.guilds.get(member.guild.id).memberCount}`
-            let aus = nw.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:')
-            client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aus} HUMILDE PO! <a:TutiTuti:474296005030969344>` })
+	
+let lol =  String(client.guilds.get(member.guild.id).memberCount.toString())
+    
+let aqui = lol.replace(/0/gi, '<:zeroo:476775722120380426>').replace(/1/gi, '<:um:476775722485022731> ').replace(/2/gi, '<:dois:476775695276834820> ').replace(/3/gi, '<:tres:476775721348497418>').replace(/4/gi, '<:quatro:476775696660692997>').replace(/5/gi, '<:cinco:476775693812891668>').replace(/6/gi, '<:seis:476775697172398089>').replace(/7/gi, '<:sete:476775698464374794>').replace(/8/gi, '<:oito:476775697407410184>').replace(/9/gi, '<:nove:476775695918563338>')
 
+client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aqui} HUMILDE PO! HUMILDE PO! <a:TutiTuti:474296005030969344>`})
+	
+	  
     })
 	
 	database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
