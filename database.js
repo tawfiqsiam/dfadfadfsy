@@ -161,6 +161,10 @@ var User = new Schema({
         type: String,
         default: "3",
     },
+    verificado: {
+        type: String,
+        defaunt: "",
+    }
 });
 
 
