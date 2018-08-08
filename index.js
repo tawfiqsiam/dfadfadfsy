@@ -90,7 +90,6 @@ client.on ('ready', () => {
 
 var slowCol = new Set();
 client.on("message", message => {
-    console.log("mensagem")
     if (message.author.bot) return 
 
     database.Guilds.findOne({
