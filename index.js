@@ -78,6 +78,37 @@ client.on ('ready', () => {
   }, 18000);
 });
 
+var slowCol = new Set();
+client.on("message", message => {
+    console.log("mensagem")
+    if (message.author.bot) return 
+
+    database.Guilds.findOne({
+        "_id": message.guild.id
+    }, function(erro, sysop) {
+
+        if (!sysop) return 
+        if (!sysop.slow) return 
+
+        if (sysop) {
+            if (sysop.slow === 1) return 
+
+
+            if (!slowCol.has(message.author.id)) {
+                slowCol.add(message.author.id);
+                setTimeout(() => {
+                    slowCol.delete(message.author.id)
+                }, sysop.slow);
+            } else {
+                message.delete()
+            }
+        } else {
+            if (!sysop) return 
+            console.log("erro");
+        }
+    });
+});
+
 
 client.on('guildMemberAdd', (member) => {	
 if (member.guild) {
