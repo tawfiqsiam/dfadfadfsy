@@ -16,6 +16,14 @@ var User = new Schema({
         type: Number,
         default: 0
     },
+    rpup: {
+        type: Number,
+        default: 0
+    },
+    adv: {
+        type: Number,
+        default: 0
+    },
     xp: {
         type: Number,
         default: 0
