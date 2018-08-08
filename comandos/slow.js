@@ -70,5 +70,6 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, sysop) {
             
         }
 });
+});
   
 }};
