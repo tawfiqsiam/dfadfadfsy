@@ -307,7 +307,10 @@ var Guilds = new Schema({
     verificado: {
         type: String,
         defaunt: '',
-    }
+    },
+    slow: {
+        type: Number,
+        defaunt: 1,
 });
 
 
