@@ -20,7 +20,7 @@ let args = suffix.split(' ');
 let mensagem = suffix;
 let user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
  if(args[0] == "help"){
-message.channel.send(`${message.user}\nAutorole, como usar?\nUse \`sy!autorole\` <@role> para definir a autorole.\nUse \`sy!autorole off\` para desativar a autorole.\n\nA Autorole é uma auto atribuição de cargo sempre quando um novo usuário entrar. A role/cargo que você definir será o cargo que o usuário receberá ao entrar no servidor.`);
+message.channel.send(`${message.author}\nAutorole, como usar?\nUse \`sy!autorole\` <@role> para definir a autorole.\nUse \`sy!autorole off\` para desativar a autorole.\n\nA Autorole é uma auto atribuição de cargo sempre quando um novo usuário entrar. A role/cargo que você definir será o cargo que o usuário receberá ao entrar no servidor.`);
 return;
     }
       
