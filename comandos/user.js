@@ -38,9 +38,6 @@ module.exports = {
 };
     	let user = message.mentions.users.first() || message.author;
     	let member = message.guild.member(user);
-    	let verificador;
-    	if (!doc.verificado) verificador = 'Não Verificado';
-    	else verificador = `${doc.verificado} Usuário verificado!`;
     	
         let dentrar = message.author.createdAt;
         let millisJoined = new Date().getTime() - member.joinedAt.getTime();
@@ -52,8 +49,7 @@ module.exports = {
       const embed = new Discord.RichEmbed()
 			.setThumbnail(user.displayAvatarURL)
 			.setAuthor(user.tag, user.avatarURL)
-			.setDescription(`${verificador}`)
-			.addField('Status', '**'+estados[user.presence.status]+'**', true)
+                         .addField('Status', '**'+estados[user.presence.status]+'**', true)
 			.addField('Jogando',` \`\`\`Markdown\n# ${user.presence.game != null ? user.presence.game.name : "Nada"}\`\`\``, false)
 			.addField('Discord Name', `\`\`\`diff\n- ${user.username}-\`\`\``, true)
 			.addField('ID', `\`\`\`${user.id}\`\`\``, true)
