@@ -178,7 +178,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 let iddd  = "459794576627073024"
 let disney =  `${client.guilds.get(iddd).memberCount.toString()}`
 let land = disney.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
-client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${land} BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
+client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${land} BEM-VINDOS A DISNEY LAND! <a:pulo:458416272485646376>` })
 	})
 
 });
@@ -221,7 +221,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 let iddd  = "459794576627073024"
 let disney =  `${client.guilds.get(iddd).memberCount.toString()}`
 let land = disney.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
-client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${land} BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
+client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${land} BEM-VINDOS A DISNEY LAND! <a:pulo:458416272485646376>` })
 	})
 	
 });
