@@ -60,7 +60,7 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, sysop) {
             sysop.save();
             return message.channel.send(`Ok ${message.author}! Você definiu o slowmode com um tempo de ${sysop.slow} milisegundos.`);
         } else {
-            sysop.slow = 1;
+            sysop.slow = '';
             sysop.save();
             return message.channel.send('OK! Slowmode **Desativado!**');
         }
