@@ -24,7 +24,7 @@ let amount = isNaN(Number(sy[1])) ? Number(sy[2]) : Number(sy[1]);
 let mensagem = suffix;
 let user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
  if(args[0] == "help"){
-message.channel.send(`Olá ${message.author} slowmode, como usar?\n\nUse: \`sy!slowmode\` mais tempo para ativar o slowmode.\nUse: \`sy!slowmode\` disable para desativar o slowmode.\n\n**Exemplo:** sy!slowmode 1000`);
+message.channel.send(`Olá ${message.author} slowmode, como usar?\n\nUse: \`sy!slow\` mais tempo para ativar o slowmode.\nUse: \`sy!slowmode\` disable para desativar o slowmode.\n\n**Exemplo:** sy!slowmode 1000`);
 return;
     }
       
@@ -54,12 +54,11 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, sysop) {
 
     } else {
         
-        
-        if (mensagem !== 'disable') {
             sysop.slow = amount * 1000
             sysop.save();
             return message.channel.send(`Ok ${message.author}! Você definiu o slowmode com um tempo de ${sysop.slow} milisegundos.`);
         } else {
+            if (mensagem !== 'disable') {
             sysop.slow = 0;
             sysop.save();
             return message.channel.send('OK! Slowmode **Desativado!**');
