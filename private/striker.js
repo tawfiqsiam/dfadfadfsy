@@ -15,6 +15,9 @@ database.Bloqueio.findOne({
         
 }
    
+if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} | Woww! pedimos desculpas, mas este comando está em manutenção`);
+	
+	
    var server = message.guild;
 		const embed = new Discord.RichEmbed()
 		.setThumbnail(server.iconURL)
