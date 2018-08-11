@@ -15,10 +15,9 @@ database.Bloqueio.findOne({
         
 }
    
-if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} | Woww! pedimos desculpas, mas este comando está em manutenção`);
-	
-	
-   var server = message.guild;
+//if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} | Woww! pedimos desculpas, mas este comando está em manutenção`);
+
+   /*var server = message.guild;
 		const embed = new Discord.RichEmbed()
 		.setThumbnail(server.iconURL)
         .setAuthor(message.author.username, message.author.avatarURL)
@@ -29,20 +28,21 @@ if (!['244489368717230090'].includes(message.author.id)) return message.channel.
         .setFooter('SysopCorp ---- LOG COMANDOS ' + ' ---- ' + new Date())
         .setColor(0x4959e9);
         
-        client.guilds.get('412169234492293130').channels.get('451470780602122251').send({ embed });
+        client.guilds.get('307956208042770433').channels.get('470328436540571662').send({ embed });
+   */
+    if  (!message.member.hasPermissions(["BAN_MEMBERS"])) return message.channel.send(`<:xguardian:476061993368027148> ${message.author} | Woww Você não tem permissão para dar striker em alguém!`);
    
-    if  (!message.member.hasPermissions(["BAN_MEMBERS"])) return message.reply(":x: Você não tem permissão para dar striker em alguém!");
-   
-    if (message.mentions.users.size < 1) return message.reply("Mencione a um usuário");
+    if (message.mentions.users.size < 1) return message.reply("<:sysalerta:469789950938841088> Mencione um usuário");
       
-    if (message.mentions.users.first().bot) return message.reply("Você não pode dar striker em um bot.");
+    if (message.mentions.users.first().bot) return message.channel.send(`<:xguardian:476061993368027148> ${message.athor} | Woww Você não pode dar striker em um bot.`);
 
 
   let reason = args.slice(1).join(' ');
-  if (reason.length < 1) return message.reply('Defina um motivo para o striker.');
+  if (reason.length < 1) return message.reply('<:sysalerta:469789950938841088> Defina um motivo para o striker.');
   
  
-   if (!message.guild.member(message.mentions.users.first().id).bannable) return message.reply(":x: Não tenho permissão para dar Striker no usuário mencionado.");
+   if (!message.guild.member(message.mentions.users.first().id).bannable) 
+   return message.channel.send(`<:xguardian:476061993368027148> ${message.author} | Opa, Não tenho permissão para dar Striker no usuário mencionado.`);
 
     var oi = message.guild.roles.find("name", "😡 SysopRage 😡")        // variaveis
     if (oi == null ){
@@ -114,7 +114,7 @@ if (!['244489368717230090'].includes(message.author.id)) return message.channel.
         message.guild.members.get(message.mentions.users.first().id).removeRole(message.member.guild.roles.find("name", "advertência 2"))
          message.guild.members.get(message.mentions.users.first().id).addRole(message.member.guild.roles.find("name", "advertência 3"))
          message.mentions.users.first().send("Você foi banido por receber `3` Strikers (Advertências)")
-         let member = await = message.guild.member(message.mentions.users.first().id).ban(0)
+         let member = message.guild.member(message.mentions.users.first().id).ban(0)
          database.Users.findOne({
             "_id": message.mentions.users.first().id
         }, function (erro, documento) {
