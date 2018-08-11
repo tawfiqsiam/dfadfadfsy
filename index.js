@@ -153,26 +153,33 @@ client.on('guildMemberAdd', member => {
   }
   })
 	  
+//contador manu
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+		
+let id = "462705495573135361";
+let nww =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
+let manu = nww.replacereplace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get('475739770996129802').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${manu} Colá la  que é sucesso https://www.facebook.com/discordmoon/` })
+	})
 
-	database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
-	
-		//Quantidade de usuários
-  let nww =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
-   
-//contador  
-let manu = nww.replace("0", ':zero:').replace("1", ':one:').replace("2", ':two:').replace("3", ':three:').replace("4", ':four:').replace("5", ':five:').replace("6", ':six:').replace("7", ':seven:').replace("8", ':eight:').replace("9", ':nine:');
+//contador  god
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 
-	    client.channels.get('475739770996129802').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${manu} Colá la  que é sucesso https://www.facebook.com/discordmoon/` })
+let idd = "447440828214935565";
+let godzilla =  `${client.guilds.get(idd).memberCount.toString()}`
+let aquaman = godzilla.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get('473640254809702400').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aquaman} BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
 	})
 	
-	database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
-	//Quantidade de usuários
-  let godzilla =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
-   
-//contador  
-let aquaman = godzilla.replace("0", ':zero:').replace("1", ':one:').replace("2", ':two:').replace("3", ':three:').replace("4", ':four:').replace("5", ':five:').replace("6", ':six:').replace("7", ':seven:').replace("8", ':eight:').replace("9", ':nine:');
+});
 
-	    client.channels.get('473640254809702400').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aquaman} BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
+//contador  mickey
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+
+let iddd  = "459794576627073024"
+let disney =  `${client.guilds.get(iddd).memberCount.toString()}`
+let land = disney.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${land} BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
 	})
 	
 });
@@ -190,18 +197,35 @@ client.on('guildMemberRemove', member => {
   }
   })
 	
-	database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
-	let nww = `${client.guilds.get(member.guild.id).memberCount}`
-            let manu = nww.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:')
-            client.channels.get('475739770996129802').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${manu} Colá la  que é sucesso https://www.facebook.com/discordmoon/` })
-	})
-
+	//contador manu
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
-	let godzilla = `${client.guilds.get(member.guild.id).memberCount}`
-            let aquaman = godzilla.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:')
-            client.channels.get('473640254809702400').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aquaman}  BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
+		
+let id = "462705495573135361";
+let nww =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
+let manu = nww.replacereplace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get('475739770996129802').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${manu} Colá la  que é sucesso https://www.facebook.com/discordmoon/` })
 	})
 
+//contador  god
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+
+let idd = "447440828214935565";
+let godzilla =  `${client.guilds.get(idd).memberCount.toString()}`
+let aquaman = godzilla.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get('473640254809702400').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${aquaman} BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
+	})
+	
+});
+
+//contador  mickey
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+
+let iddd  = "459794576627073024"
+let disney =  `${client.guilds.get(iddd).memberCount.toString()}`
+let land = disney.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get('475549208225775649').edit({ topic: `<:SysopLogoEMOI:439565791357042700> | ${land} BEM-VINDOS A GODZILLA! <a:pulo:458416272485646376> https://discord.gg/QhhAzat` })
+	})
+	
 });
 
 client.on("message", message => {
