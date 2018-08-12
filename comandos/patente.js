@@ -10,7 +10,7 @@ let adv;
 
 //if (!user) return message.reply(`você deve mencionar um usuário.`)
 
-db.Users.findOne({ "_id": user.id }, function(erro, sysop) {
+db.Users.findOne({ "_id": message.author.id }, function(erro, sysop) {
 if (sysop) {
     
 if (!sysop.rpbio) bio = 'Nenhuma biografia ainda.';
@@ -32,9 +32,8 @@ message.channel.send({embed});
  
           } else {
               
-              let user = message.mentions.users.size > 0 ? message.mentions.users.first().id : message.author;
               var pessoa = new db.Users({
-                        _id: user.id,
+                        _id: message.author.id,
                         rpup: 0,
                         bio: '',
                         adv: 0,
