@@ -188,6 +188,10 @@ var Guilds = new Schema({
       type: String,
       default: '',
     },
+    contador: {
+    type: String,
+    default: '',  
+    },
      rremove: {
       type: String,
       default: '',
