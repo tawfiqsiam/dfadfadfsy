@@ -9,7 +9,7 @@ let patente;
 let adv;    
 
 
-db.Users.findOne({ "_id": message.mentions.users.first().id }, function(erro, sysop) {
+db.Users.findOne({ "_id": message.user.id }, function(erro, sysop) {
 if (sysop) {
     
 if (!sysop.rpbio) bio = 'Nenhuma biografia ainda.';
