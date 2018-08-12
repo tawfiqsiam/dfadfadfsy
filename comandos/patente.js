@@ -31,7 +31,7 @@ message.channel.send({embed});
  
           } else {
               var pessoa = new db.Users({
-                        _id: user,
+                        _id: message.author.id,
                         rpup: 0,
                         bio: '',
                         adv: 0,
