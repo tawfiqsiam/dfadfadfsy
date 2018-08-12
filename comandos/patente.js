@@ -6,6 +6,7 @@ let server = message.guild;
 let user = message.mentions.users.size > 0 ? message.mentions.users.first() : message.author;
 let bio;
 let patente;
+let adv;    
 
 
 db.Users.findOne({ "_id": message.mentions.users.first().id }, function(erro, sysop) {
@@ -16,18 +17,21 @@ else bio = `**${sysop.rpbio}**`;
 
 if (!sysop.rpup)  patente = '';
 else patente = `**${sysop.rpup}**`;
+    
+if (!sysop.adv)  adv = '0';
+else adv = `**${sysop.adv}**`;    
 
 const embed = new Discord.RichEmbed()
 .setThumbnail(user.avatarURL)
 .setAuthor(server.name)
 .setTitle(`Carreira de ${user.username}`)
-.setDescription(`\`🌟\` Patente: ${patente}\n\n\`🌟\` Biografia:\n${sysop.bio}\n\n\`🌟\` Advertências: ${sysop.adv}`)
+.setDescription(`\`🌟\` Patente: ${patente}\n\n\`🌟\` Biografia:\n${sysop.bio}\n\n\`🌟\` Advertências: ${adv}`)
 .setColor('#36393E');
 message.channel.send({embed});
  
           } else {
               var pessoa = new db.Users({
-                        _id: message.author.id,
+                        _id: message.mentions.users.first().id,
                         rpup: 0,
                         bio: '',
                         adv: 0,
