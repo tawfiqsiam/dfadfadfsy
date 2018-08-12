@@ -20,7 +20,7 @@ if (sysopa) {
 let hm = message.mentions.users.first() || message.author;
 
 switch (suffix.split(' ')[0]){
-case 'user': {
+case '+': {
 
 if (!hm) return message.reply(`Defina os valores e mencione um usuário!`);
 
@@ -28,6 +28,16 @@ if (!hm) return message.reply(`Defina os valores e mencione um usuário!`);
 sysopa.adv += 1;
 sysopa.save();
 return message.reply(`Você de uma advertência para  **${message.mentions.users.first().username}**! `);
+}
+
+case '-': {
+
+if (!hm) return message.reply(`Defina os valores e mencione um usuário!`);
+
+
+sysopa.adv -= 1;
+sysopa.save();
+return message.reply(`Você removeu uma advertência de **${message.mentions.users.first().username}**! `);
 }}}}
 });
 });  
