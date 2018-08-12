@@ -181,6 +181,18 @@ let land = disney.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi
 client.channels.get('475549208225775649').edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${land} BEM-VINDOS A DISNEY LAND! <a:pulo:458416272485646376>` })
 	})
 
+//contador + setador
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+
+if (!sysop.contador) return;
+if (sysop) {
+
+let serverID = member.guild.id
+let contador =  `${client.guilds.get(serverID).memberCount.toString()}`
+let number = contador.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${number}`})
+    }})
+	
 });
 
 client.on('guildMemberRemove', member => {
@@ -223,6 +235,19 @@ let disney =  `${client.guilds.get(iddd).memberCount.toString()}`
 let land = disney.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
 client.channels.get('475549208225775649').edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${land} BEM-VINDOS A DISNEY LAND! <a:pulo:458416272485646376>` })
 	})
+	
+//contador + setador
+
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+
+if (!sysop.contador) return;
+if (sysop) {
+
+let serverID = member.guild.id
+let contador =  `${client.guilds.get(serverID).memberCount.toString()}`
+let number = contador.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+client.channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${number}`})
+    }})	
 	
 });
 
