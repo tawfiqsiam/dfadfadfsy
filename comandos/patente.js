@@ -8,8 +8,9 @@ let bio;
 let patente;
 let adv;    
 
+if (!user) return message.reply(`você deve mencionar um usuário.`)
 
-db.Users.findOne({ "_id": message.user.id }, function(erro, sysop) {
+db.Users.findOne({ "_id": message.mentions.users.first().id }, function(erro, sysop) {
 if (sysop) {
     
 if (!sysop.rpbio) bio = 'Nenhuma biografia ainda.';
