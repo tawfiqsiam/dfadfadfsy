@@ -31,8 +31,10 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed});
  
           } else {
+              
+              let user = message.mentions.users.size > 0 ? message.mentions.users.first().id : message.author;
               var pessoa = new db.Users({
-                        _id: message.author.id,
+                        _id: user.id,
                         rpup: 0,
                         bio: '',
                         adv: 0,
