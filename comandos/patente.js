@@ -3,13 +3,13 @@ const db = require("../database.js");
 module.exports = { task(client, message, suffix) {
 
 let server = message.guild;
-let user = message.mentions.users.size > 0 ? message.mentions.users.first() : message.author;
+let user = message.mentions.users.size > 0 ? message.mentions.users.first().id : message.author;
 let bio;
 let patente;
 let adv;    
 
 
-db.Users.findOne({ "_id": message.mentions.users.first().id }, function(erro, sysop) {
+db.Users.findOne({ "_id": user }, function(erro, sysop) {
 if (sysop) {
     
 if (!sysop.rpbio) bio = 'Nenhuma biografia ainda.';
@@ -31,7 +31,7 @@ message.channel.send({embed});
  
           } else {
               var pessoa = new db.Users({
-                        _id: message.mentions.users.first().id,
+                        _id: user,
                         rpup: 0,
                         bio: '',
                         adv: 0,
