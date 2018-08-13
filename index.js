@@ -273,7 +273,7 @@ client.on("message", message => {
 if (message.guild) {
 database.Guilds.findOne({"_id": message.guild.id}, function(erra, sysop) {
 if (sysop) {
-if (message.member.hasPermission('ADMINISTRATOR')) return;
+//if (message.member.hasPermission('ADMINISTRATOR')) return;
 if (sysop && sysop.convites && message.content.search('discord.gg') > -1) {	
 message.delete();
 return message.channel.send(`<:xguardian:476061993368027148> | ${message.author} Você não pode enviar convites de outros servidores aqui!`).then(sentMsg => sentMsg.delete(60000));
@@ -286,7 +286,7 @@ client.on("messageUpdate", (newMessage, oldMessage) => {
 if (oldMessage.guild) {
 database.Guilds.findOne({"_id": oldMessage.guild.id}, function(erro, sysop) {
 if (sysop) {
-if (oldMessage.member.hasPermission('ADMINISTRATOR')) return;	
+//if (oldMessage.member.hasPermission('ADMINISTRATOR')) return;	
 if (sysop && sysop.convites && oldMessage.content.search('discord.gg') > -1) {
 oldMessage.delete();
 return newMessage.channel.send(`<:xguardian:476061993368027148> | ${newMessage.author} Você não pode enviar convites de outros servidores aqui!. **Nem mesmo editando**`).then(sentMsg => sentMsg.delete(60000)) 
