@@ -206,7 +206,7 @@ client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<
 
 });
 
-client.on('guildMemberAdd', (member) => {
+/*client.on('guildMemberAdd', (member) => {
 //contador animado + setador
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
@@ -222,7 +222,7 @@ client.guilds.get(member.guild.id).channels.get(sysop.contadora).edit({ topic: `
 	}}
 })	
 });
-
+*/
 
 client.on('guildMemberRemove', member => {
 
@@ -289,7 +289,7 @@ client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<
 	}})	
 });
 
-client.on('guildMemberRemove', (member) => {
+/*client.on('guildMemberRemove', (member) => {
 //contador animado + setador
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
@@ -304,7 +304,7 @@ let contadora = membross.replace(/0/gi,  '<a:0:478771135388057602>').replace(/1/
 client.guilds.get(member.guild.id).channels.get(sysop.contadora).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
 	}}
 })	
-});
+});*/
 
 client.on("message", message => {
 if (message.guild) {
