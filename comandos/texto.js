@@ -12,9 +12,13 @@ database.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento)
         
 }
   
-if (!message.member.hasPermission('ADMINISTRATOR', 'MANAGE_MESSAGES')) 
-return message.reply('<:FalseSysop3:462306755150479372> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador ou Gerenciamento de mensagens');
-      
+if (!message.member.hasPermission("MANAGE_GUILD")) 
+ return message.channel.send("<:xguardian:476061993368027148> Opa! Parece que você não tem permissão de utilizar este comando. Tente adicionar a permissão de Gerencisamento de Servidor a você.");
+ 
+ if (!message.guild.member(client.user).hasPermission('MANAGE_CHANNELS')) 
+ return message.reply('<:sysalerta:469789950938841088> Desculpe, não posso fazer isso. É necessario que eu tenha permissão `Gerenciar Canais` .')
+
+	
       
 let args = suffix.split(' '); 
 let mensagem = suffix;
