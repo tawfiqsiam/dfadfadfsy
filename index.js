@@ -190,7 +190,7 @@ let spirit = anime.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/g
 client.channels.get('472087921072013312').edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${spirit} Bem-vindo (a) ao AnimeSpirit seu Otaku! #3k <a:nomparty:448302844219621376>` })
 	})	
 
-//contador + setador
+	//contador + setador animado
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
@@ -198,11 +198,13 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if (!sysop.texto)
     if(!client.guilds.get(member.guild.id).channels.get(sysop.contador)) return;	
 if (sysop) {	
-let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
-let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
-client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
+let users =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
+let contadora = users.replace(/0/gi, '<a:0:478771135388057602>').replace(/1/gi, '<a:1:478771131030175746> ')
+.replace(/2/gi, '<a:2:478771135714951169>').replace(/3/gi, '<a:3:478771135865946130>').replace(/4/gi, '<a:4:478771135454904335>')
+.replace(/5/gi, '<a:5:478771136247627806>').replace(/6/gi, '<a:6:478771169441349632>')
+.replace(/7/gi, '<a:7:478771167382208524>').replace(/8/gi, '<a:8:478771170263564288>').replace(/9/gi, '<a:9:478771170557165578>');
+client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
 	}})	
-	
 	
 });
 
@@ -267,6 +269,22 @@ if (sysop) {
 let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
 let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
 client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
+	}})	
+	
+	//contador + setador animado
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
+	
+    if(!sysop) return;
+    if(!sysop.contador) return;
+    if (!sysop.texto)
+    if(!client.guilds.get(member.guild.id).channels.get(sysop.contador)) return;	
+if (sysop) {	
+let users =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
+let contadora = users.replace(/0/gi, '<a:0:478771135388057602>').replace(/1/gi, '<a:1:478771131030175746> ')
+.replace(/2/gi, '<a:2:478771135714951169>').replace(/3/gi, '<a:3:478771135865946130>').replace(/4/gi, '<a:4:478771135454904335>')
+.replace(/5/gi, '<a:5:478771136247627806>').replace(/6/gi, '<a:6:478771169441349632>')
+.replace(/7/gi, '<a:7:478771167382208524>').replace(/8/gi, '<a:8:478771170263564288>').replace(/9/gi, '<a:9:478771170557165578>');
+client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
 	}})	
 	
 });
