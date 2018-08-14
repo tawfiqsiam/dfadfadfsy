@@ -203,7 +203,9 @@ let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
 let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
 client.guilds.get(member.guild.id).channels.get(sysop.numero).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
 	}})	
+});
 
+client.on('guildMemberAdd', member = > {
 //contador animado + setador
 database.Guilds.findOne({"_id": member.guild.id}, function(erro, sysop) {
 	
@@ -217,8 +219,6 @@ let contadora = membross.replace(/0/gi, '<a:0:478771135388057602>').replace(/1/g
 client.guilds.get(member.guild.id).channels.get(sysop.animado).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
 }})
 });
-
-
 
 client.on('guildMemberRemove', member => {
 
@@ -283,7 +283,10 @@ let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
 let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
 client.guilds.get(member.guild.id).channels.get(sysop.numero).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
 	}})	
-	
+
+});
+
+client.on('guildMemberRemove', member = > {
 //contador animado + setador
 database.Guilds.findOne({"_id": member.guild.id}, function(erro, sysop) {
 	
@@ -297,8 +300,6 @@ let contadora = membross.replace(/0/gi, '<a:0:478771135388057602>').replace(/1/g
 client.guilds.get(member.guild.id).channels.get(sysop.animado).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
 }})
 });
-
-
 
 client.on("message", message => {
 if (message.guild) {
