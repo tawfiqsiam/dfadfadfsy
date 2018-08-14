@@ -28,6 +28,7 @@ db.Guilds.findOne({"_id": message.guild.id}, function(erra, sysop) {
         var server = new db.Guilds({
             _id: message.guild.id,
              contador: '',
+	     contadora: '',
              texto: 'Texto do contador não definido.' ,
         });
         server.save();
@@ -56,7 +57,7 @@ return message.reply(':no_entry_sign: Desculpe, este comando está disponível a
 if (!message.member.hasPermission('ADMINISTRATOR', 'MANAGE_MESSAGES')) 
 return message.reply(':no_entry_sign: Desculpe, este comando está disponível apenas para cargos administrativos do servidor.');
     
-sysop.contador = "nada";
+sysop.contador = " ";
 sysop.save();
 message.channel.send('Contador desativado.');
         
