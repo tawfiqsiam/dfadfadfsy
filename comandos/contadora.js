@@ -29,7 +29,7 @@ db.Guilds.findOne({"_id": message.guild.id}, function(erra, sysop) {
             _id: message.guild.id,
 	     animado: '',
              numero: '',
-             texto: 'Texto do contador não definido.' ,
+             texto: '' ,
         });
         server.save();
         message.reply("💥 Use o comando novamente");
@@ -49,7 +49,6 @@ return message.reply(':no_entry_sign: Desculpe, este comando está disponível a
             if (!sysop) 
                 sysop = {};
             sysop.animado = message.mentions.channels.first().id;
-	    sysop.texto = "Texto do contador não configurado."	 
             sysop.save();
             return message.channel.send('Ok! Canal do contador animado definido!');
         }}
@@ -63,8 +62,7 @@ return message.reply(':no_entry_sign: Desculpe, este comando está disponível a
 
 	
 
-sysop.animado = " ";
-sysop.texto = " ";		
+sysop.animado = " ";		
 sysop.save();
 message.channel.send('Contador Animado desativado.');
         
