@@ -203,7 +203,6 @@ let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/
 client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
 	}})	
 	
-});
 	
 });
 
