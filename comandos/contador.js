@@ -28,7 +28,7 @@ db.Guilds.findOne({"_id": message.guild.id}, function(erra, sysop) {
         var server = new db.Guilds({
             _id: message.guild.id,
              contador: '',
-             texto: '' ,
+             texto: 'Texto do contador não definido.' ,
         });
         server.save();
         message.reply("💥 Use o comando novamente");
