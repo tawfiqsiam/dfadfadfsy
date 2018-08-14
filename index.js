@@ -195,12 +195,15 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.contador) return;
+    if (!sysop.texto)
     if(!client.guilds.get(member.guild.id).channels.get(sysop.contador)) return;	
 if (sysop) {	
 let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
 let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
-client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} Bem-vindo (a) ao AnimeSpirit seu Otaku! #3k <a:nomparty:448302844219621376>` })
+client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
 	}})	
+	
+});
 	
 });
 
@@ -259,11 +262,12 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.contador) return;
+    if (!sysop.texto)
     if(!client.guilds.get(member.guild.id).channels.get(sysop.contador)) return;	
 if (sysop) {	
 let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
 let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
-client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} Bem-vindo (a) ao AnimeSpirit seu Otaku! #3k <a:nomparty:448302844219621376>` })
+client.guilds.get(member.guild.id).channels.get(sysop.contador).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
 	}})	
 	
 });
