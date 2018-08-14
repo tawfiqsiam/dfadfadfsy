@@ -192,6 +192,10 @@ var Guilds = new Schema({
     type: String,
     default: '',  
     },
+    contadora: {
+    type: String,
+    default: '',  
+    },
      rremove: {
       type: String,
       default: '',
