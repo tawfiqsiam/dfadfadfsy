@@ -335,6 +335,10 @@ var Guilds = new Schema({
     texto: {
         type: String,
         defaunt: 'Texto do contador não definido.',
+    },
+    numero: {
+        type: String,
+        defaunt: '',
     }
 });
 
