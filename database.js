@@ -327,6 +327,10 @@ var Guilds = new Schema({
     slow: {
         type: Number,
         defaunt: 1,
+    },
+    texto: {
+        type: String,
+        defaunt: 0,
     }
 });
 
