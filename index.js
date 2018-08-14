@@ -196,7 +196,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.numero) return;
-    if (!sysop.texto)
+    if (!sysop.texto) return;
     if(!client.guilds.get(member.guild.id).channels.get(sysop.numero)) return;	
 if (sysop) {	
 let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
@@ -211,7 +211,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erro, sysop) {
 	
     if(!sysop) return;
     if(!sysop.animado) return;
-    if (!sysop.texto) 
+    if (!sysop.texto) return;
     if(!client.guilds.get(member.guild.id).channels.get(sysop.animado)) return;	
 if (sysop && sysop.animado) {	
 let membross =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
@@ -276,7 +276,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.numero) return;
-    if (!sysop.texto)
+    if (!sysop.texto) return;
     if(!client.guilds.get(member.guild.id).channels.get(sysop.numero)) return;	
 if (sysop) {	
 let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
@@ -292,7 +292,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erro, sysop) {
 	
     if(!sysop) return;
     if(!sysop.animado) return;
-    if (!sysop.texto) 
+    if (!sysop.texto) return;
     if(!client.guilds.get(member.guild.id).channels.get(sysop.animado)) return;	
 if (sysop && sysop.animado) {	
 let membross =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
