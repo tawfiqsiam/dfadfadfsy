@@ -330,7 +330,7 @@ var Guilds = new Schema({
     },
     texto: {
         type: String,
-        defaunt: '',
+        defaunt: 'Texto do contador não definido.',
     }
 });
 
