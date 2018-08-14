@@ -152,7 +152,7 @@ client.on('guildMemberAdd', member => {
     client.users.get(member.id).send(mensagem)
   }
   })
-
+/*
 	
 //contador manu
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
@@ -189,7 +189,7 @@ let idddd  = "435957344782909440"
 let anime =  `${client.guilds.get(idddd).memberCount.toString()}`
 let spirit = anime.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
 client.channels.get('472087921072013312').edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${spirit} Bem-vindo (a) ao AnimeSpirit seu Otaku! #3k <a:nomparty:448302844219621376>` })
-	})	
+	})*/	
 
 	//contador + setador
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
@@ -212,7 +212,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.contadora) return;
-    if (!sysop.texto) return;
+    if (!sysop.texto) 
     if(!client.guilds.get(member.guild.id).channels.get(sysop.contadora)) return;	
 if (sysop) {	
 if (sysop.contadora) {	
@@ -237,7 +237,7 @@ client.on('guildMemberRemove', member => {
     client.guilds.get(member.guild.id).channels.get(sysop.byeChannel).send(mensagem)
   }
   })
-	
+/*	
 	//contador manu
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 		
@@ -272,7 +272,7 @@ let idddd  = "435957344782909440"
 let anime =  `${client.guilds.get(idddd).memberCount.toString()}`
 let spirit = anime.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
 client.channels.get('472087921072013312').edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${spirit} Bem-vindo (a) ao AnimeSpirit seu Otaku! #3k <a:nomparty:448302844219621376>` })
-	})
+	})*/
 
 //contador + setador
 database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
@@ -294,7 +294,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.contadora) return;
-    if (!sysop.texto) return;
+    if (!sysop.texto) 
     if(!client.guilds.get(member.guild.id).channels.get(sysop.contadora)) return;	
 if (sysop) {	
 if (sysop.contadora) {	
