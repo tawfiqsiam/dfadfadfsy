@@ -27,7 +27,7 @@ db.Guilds.findOne({"_id": message.guild.id}, function(erra, sysop) {
         
         var server = new db.Guilds({
             _id: message.guild.id,
-             contador: '',
+             numero: '',
 	     contadora: '',
              texto: 'Texto do contador não definido.' ,
         });
@@ -41,14 +41,14 @@ case 'on': {
     if (!message.member.hasPermission('ADMINISTRATOR', 'MANAGE_MESSAGES')) 
 return message.reply(':no_entry_sign: Desculpe, este comando está disponível apenas para cargos administrativos do servidor.');
   if (!message.mentions.channels.first()) {
-   if (sysop && sysop.contador)                 
-                return message.channel.send('GG! O contador foi ativado em: <#' + sysop.contador + '>');
+   if (sysop && sysop.numero)                 
+                return message.channel.send('GG! O contador foi ativado em: <#' + sysop.numero + '>');
             else
             return message.channel.send('Mencione um canal onde o contador deve ser ativado.');
         } else { 
             if (!sysop) 
                 sysop = {};
-            sysop.contador = message.mentions.channels.first().id;
+            sysop.numero = message.mentions.channels.first().id;
             sysop.save();
             return message.channel.send('Ok! Canal do contador definido!');
         }}
@@ -57,7 +57,7 @@ return message.reply(':no_entry_sign: Desculpe, este comando está disponível a
 if (!message.member.hasPermission('ADMINISTRATOR', 'MANAGE_MESSAGES')) 
 return message.reply(':no_entry_sign: Desculpe, este comando está disponível apenas para cargos administrativos do servidor.');
     
-sysop.contador = " ";
+sysop.numero = " ";
 sysop.save();
 message.channel.send('Contador desativado.');
         
