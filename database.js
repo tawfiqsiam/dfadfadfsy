@@ -339,6 +339,10 @@ var Guilds = new Schema({
     numero: {
         type: String,
         defaunt: '',
+    },
+    animado: {
+        type: String,
+        defaunt: '',
     }
 });
 
