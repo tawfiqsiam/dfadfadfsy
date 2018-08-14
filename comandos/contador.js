@@ -2,6 +2,15 @@ const db = require('../database.js');
 
 module.exports = { task(client, message, suffix) { message.delete(1000); 
 
+db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
+                if(documento) {
+         if (!['244489368717230090'].includes(message.author.id))
+                
+ if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
+        
+}						  
+						  
+						  
 if (!message.member.hasPermission('ADMINISTRATOR', 'MANAGE_MESSAGES')) 
 return message.reply(':no_entry_sign: Desculpe, este comando está disponível apenas para cargos administrativos do servidor.');
     
@@ -49,4 +58,5 @@ message.channel.send('Contador desativado.');
         
  }}
 }});
+});
 }};
