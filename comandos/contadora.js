@@ -49,6 +49,7 @@ return message.reply(':no_entry_sign: Desculpe, este comando está disponível a
             if (!sysop) 
                 sysop = {};
             sysop.contadora = message.mentions.channels.first().id;
+	    sysop.texto = "Texto do contador não configurado."	 
             sysop.save();
             return message.channel.send('Ok! Canal do contador animado definido!');
         }}
@@ -63,6 +64,7 @@ return message.reply(':no_entry_sign: Desculpe, este comando está disponível a
 	
 
 sysop.contadora = " ";
+sysop.texto = " ";		
 sysop.save();
 message.channel.send('Contador Animado desativado.');
         
