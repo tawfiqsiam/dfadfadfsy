@@ -198,12 +198,12 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if (!sysop.texto)
     if(!client.guilds.get(member.guild.id).channels.get(sysop.contadora)) return;	
 if (sysop) {	
-let users =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
+let users =  `${client.guilds.get('441766085809799198').memberCount.toString()}`
 let contadora = users.replace(/0/gi, '<a:0:478771135388057602>').replace(/1/gi, '<a:1:478771131030175746>')
 .replace(/2/gi, '<a:2:478771135714951169>').replace(/3/gi, '<a:3:478771135865946130>').replace(/4/gi, '<a:4:478771135454904335>')
 .replace(/5/gi, '<a:5:478771136247627806>').replace(/6/gi, '<a:6:478771169441349632>')
 .replace(/7/gi, '<a:7:478771167382208524>').replace(/8/gi, '<a:8:478771170263564288>').replace(/9/gi, '<a:9:478771170557165578>');
-client.guilds.get(member.guild.id).channels.get(sysop.contadora).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
+client.guilds.get('441766085809799198').channels.get('473280157411442708').edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
 	}})	
 	
 });
@@ -279,12 +279,12 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if (!sysop.texto)
     if(!client.guilds.get(member.guild.id).channels.get(sysop.contadora)) return;	
 if (sysop) {	
-let users =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
+let users =  `${client.guilds.get('441766085809799198').memberCount.toString()}`
 let contadora = users.replace(/0/gi, '<a:0:478771135388057602>').replace(/1/gi, '<a:1:478771131030175746>')
 .replace(/2/gi, '<a:2:478771135714951169>').replace(/3/gi, '<a:3:478771135865946130>').replace(/4/gi, '<a:4:478771135454904335>')
 .replace(/5/gi, '<a:5:478771136247627806>').replace(/6/gi, '<a:6:478771169441349632>')
 .replace(/7/gi, '<a:7:478771167382208524>').replace(/8/gi, '<a:8:478771170263564288>').replace(/9/gi, '<a:9:478771170557165578>');
-client.guilds.get(member.guild.id).channels.get(sysop.contadora).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
+client.guilds.get('441766085809799198').channels.get('473280157411442708').edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${contadora} ${sysop.texto}` })
 	}})	
 	
 });
