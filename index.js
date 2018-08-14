@@ -207,7 +207,7 @@ client.guilds.get(member.guild.id).channels.get(sysop.numero).edit({ topic: `<a:
 
 client.on('guildMemberAdd', member => {
 //contador animado + setador
-database.Guilds.findOne({"_id": member.guild.id}, function(erro, sysop) {
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.animado) return;
@@ -288,7 +288,7 @@ client.guilds.get(member.guild.id).channels.get(sysop.numero).edit({ topic: `<a:
 
 client.on('guildMemberRemove', member => {
 //contador animado + setador
-database.Guilds.findOne({"_id": member.guild.id}, function(erro, sysop) {
+database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
 	
     if(!sysop) return;
     if(!sysop.animado) return;
