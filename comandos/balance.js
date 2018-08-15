@@ -2,6 +2,9 @@ const Discord = require("discord.js");
 const db = require("../database.js");
 module.exports = { task(client, message, suffix) { 
     
+    if (!['244489368717230090'].includes(message.author.id)) return message.reply(`Opa, comando em fase \`BETA\` você ainda não pode usar ;(`)
+
+    
 let user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
 db.Users.findOne({"_id": user.id}, function(erro, sysop) {
 
