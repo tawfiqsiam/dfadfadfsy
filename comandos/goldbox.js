@@ -73,7 +73,7 @@ database.Bloqueio.findOne({
                                 setTimeout(function() {
                                     let embed = new Discord.RichEmbed()
                                         //.setThumbnail('https://i.imgur.com/z39bazM.png')
-                                        .addField(`**Goldbox**`,` ${aleatorio.user} pegou a caixa dourada contendo: ${wonCoins} ${premio}`, false)
+                                        .addField(`**Goldbox**`,` **${aleatorio.user.username}** pegou a caixa dourada contendo: **${wonCoins}** ${premio}`, false)
                                         .setColor(0xfccf1f);
        
                                     message.channel.send(embed);
