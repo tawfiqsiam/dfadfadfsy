@@ -43,7 +43,7 @@ database.Bloqueio.findOne({
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
                       Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/469798232004886538/CardSys.png").then(function(perfil) {
-                          Jimp.read(`./badges/${documento.badgep2}.png`).then(function(badgep2) {
+                     
                               Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
                                Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png").then(function(mascara) {
 
@@ -64,8 +64,7 @@ database.Bloqueio.findOne({
                             img.print(letra, 770, 15, `${Number(documento.coins).toLocaleString()}`);
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
                               message.channel.send(``, new Discord.Attachment(buffer, 'CardSys.png'));
-                      
-                       });
+                     
                     
                     });
                   });
