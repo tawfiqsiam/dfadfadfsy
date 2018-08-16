@@ -41,7 +41,7 @@ database.Bloqueio.findOne({
                Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letr) {
               Jimp.read("https://cdn.discordapp.com/attachments/413155538755649538/433097929234841602/InvisibleSysop.png", function(erre, img) {
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
-               //   Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
+                 Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
                    // Jimp.read(user.username).then(function(user) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
                       Jimp.read("https://cdn.discordapp.com/attachments/434166694999621644/438843435760222209/SysopNovoPerfil.png").then(function(perfil) {
@@ -55,9 +55,7 @@ database.Bloqueio.findOne({
                             avatar.mask(mascara, 0, 0);
                             background.resize(745, 500);
                             emblema.resize(50, 54);
-                            badge1.resize(35, 33);
-                            badge2.resize(35, 32);
-                            badge3.resize(35, 32);
+                        
                             status.resize(55, 55);
                         //  pau.resize(9,490)
 
@@ -86,7 +84,7 @@ database.Bloqueio.findOne({
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
                               message.channel.send(``, new Discord.Attachment(buffer, 'Profile.png'));
                            
-                  
+                            });
                       });
                     });
                   });
