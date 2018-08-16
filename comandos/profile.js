@@ -41,7 +41,7 @@ database.Bloqueio.findOne({
                Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letr) {
               Jimp.read("https://cdn.discordapp.com/attachments/413155538755649538/433097929234841602/InvisibleSysop.png", function(erre, img) {
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
-                  Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
+               //   Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
                    // Jimp.read(user.username).then(function(user) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
                       Jimp.read("https://cdn.discordapp.com/attachments/434166694999621644/438843435760222209/SysopNovoPerfil.png").then(function(perfil) {
@@ -85,10 +85,10 @@ database.Bloqueio.findOne({
                             img.print(letra2, 360, 523, `${Number(documento.rubys).toLocaleString()}`);
                             img.print(letra, 705, 307, `${Number(documento.rep).toLocaleString()}`);
                             img.print(letra2, 33, 417, `\`\`${documento.bio}\`\``, 725);
-                            img.print(letr, 200, 23, documento.xp + "/" +  Math.ceil(pudim * 400) + " (" + parseInt(documento.xp/(pudim *400 )*100) + "%)")  
+                            //img.print(letr, 200, 23, documento.xp + "/" +  Math.ceil(pudim * 400) + " (" + parseInt(documento.xp/(pudim *400 )*100) + "%)")  
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
                               message.channel.send(``, new Discord.Attachment(buffer, 'Profile.png'));
-                              });
+                           
                             });
                           });
                         });
