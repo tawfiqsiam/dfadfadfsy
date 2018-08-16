@@ -64,10 +64,7 @@ database.Bloqueio.findOne({
                             img.composite(avatar, 20, 140);
                             img.composite(marco, 20, 140);
                             img.composite(emblema, 510, 12);
-                            img.composite(badge1, 590, 15);
-                            img.composite(badge2, 625, 15);
-                            img.composite(badge3, 675, 15);
-                            img.composite(pau, 22, 10);
+                         
                             img.composite(status, 235, 297);
                          // img.print(user, 415, 303);
 
