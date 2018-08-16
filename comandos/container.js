@@ -4,6 +4,7 @@ let database = require("../database.js");
 module.exports = {
     categoria: 'Economia',
     description: 'Abra containers ganhos do bônus diário e se surpreeda com novidades!',
+   cooldown: 15,	
     task(client, message, suffix) {
 
 database.Bloqueio.findOne({
