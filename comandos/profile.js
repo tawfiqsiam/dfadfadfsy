@@ -46,12 +46,9 @@ database.Bloqueio.findOne({
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
                       Jimp.read("https://cdn.discordapp.com/attachments/434166694999621644/438843435760222209/SysopNovoPerfil.png").then(function(perfil) {
                         Jimp.read(`./border/${documento.borderp}.png`).then(function(marco) {
-                          Jimp.read(`./badges/${documento.badgep1}.png`).then(function(badge1) {
-                            Jimp.read(`./badges/${documento.badgep2}.png`).then(function(badge2) {
-                              Jimp.read(`./badges/${documento.badgep3}.png`).then(function(badge3) {
+                         
                               Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
                                Jimp.read("https://i.imgur.com/f55gYrh.png").then(function(mascara) {
-                                 Jimp.read("./Xp_Sysop/xp ("+ parseInt(documento.xp/(pudim *400 )*100) +").png").then(function(pau) {
 
                             avatar.resize(276, 265);
                             mascara.resize(276, 265);
@@ -89,10 +86,7 @@ database.Bloqueio.findOne({
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
                               message.channel.send(``, new Discord.Attachment(buffer, 'Profile.png'));
                            
-                            });
-                          });
-                        });
-                       });
+                  
                       });
                     });
                   });
