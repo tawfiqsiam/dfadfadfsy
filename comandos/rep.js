@@ -8,7 +8,7 @@ module.exports = {
     task(client, message, suffix) {
 
 
-db.Bloqueio.findOne({
+database.Bloqueio.findOne({
                 "_id": message.author.id
             }, function (erro, documento) {
                 if(documento) {
