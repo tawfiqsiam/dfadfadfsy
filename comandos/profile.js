@@ -11,15 +11,15 @@ database.Bloqueio.findOne({
                 "_id": message.author.id
             }, function (erro, documento) {
                 if(documento) {
-         if (!['244489368717230090','282504900552949760'].includes(message.author.id))
+         if (!['244489368717230090''].includes(message.author.id))
                 
- if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
+ if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate!");
         
 }
     
       if (message.author.bot) return 'Bots não podem usar esse comando :) ';
 
-
+    let server = message.guild;
     let user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
     database.Users.findOne({
       "_id": user.id
@@ -44,44 +44,52 @@ database.Bloqueio.findOne({
                  Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
                    // Jimp.read(user.username).then(function(user) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
-                      Jimp.read("https://cdn.discordapp.com/attachments/434166694999621644/438843435760222209/SysopNovoPerfil.png").then(function(perfil) {
+                      Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/479793471893536769/Perfil.png").then(function(perfil) {
                         Jimp.read(`./border/${documento.borderp}.png`).then(function(marco) {
                          
                               Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
                                Jimp.read("https://i.imgur.com/f55gYrh.png").then(function(mascara) {
+                    Jimp.read(`${server.iconURL}`).then(function(serverIcon) {
+                    Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png").then(function(mess) {
 
+                            serverIcon.resize(40, 40);
+                            mess.resize(40, 40);
+                            serverIcon.mask(mess, 0, 0);
                             avatar.resize(276, 265);
                             mascara.resize(276, 265);
                             avatar.mask(mascara, 0, 0);
-                            background.resize(745, 500);
+                            background.resize(770, 550);
                             emblema.resize(50, 54);
                         
                             status.resize(55, 55);
                         //  pau.resize(9,490)
 
-                            img.composite(background, 20, 12);
+                            img.composite(background, 16, 12);
                             img.composite(perfil, 0, 0);
-                            img.composite(avatar, 20, 140);
-                            img.composite(marco, 20, 140);
-                            img.composite(emblema, 510, 12);
-                         
-                            img.composite(status, 235, 297);
+                            img.composite(avatar, 1, 250);
+                            img.composite(marco, 1, 250);
+                            img.composite(emblema, 120, 53);
+                            img.composite(serverIcon, 29, 18);
+                            img.composite(status, 225, 410);
                          // img.print(user, 415, 303);
 
-                            img.print(letra, 300, 307, `${user.username}`);
-                            img.print(letra, 530, 360, `${documento.level}`);
-                            img.print(letra, 660, 360, `${Number(documento.xp).toLocaleString()}`);
-                            img.print(letra2, 600, 523, `${Number(documento.emerald).toLocaleString()}`);
+                            img.print(letra, 285, 392, `${user.username}`);
+                            img.print(letra2, 78, 29, `${server.name}`);
+                            img.print(letra, 690, 392, `${user.discriminator}`);
+                            img.print(letra, 690, 445, `${documento.level}`);
+                            img.print(letra2, 675, 485, `${Number(documento.xp).toLocaleString()}`);
+                        //    img.print(letra2, 600, 523, `${Number(documento.emerald).toLocaleString()}`);
                          // img.print(letra, 160, 415, `${Number(documento.containers).toLocaleString()}`);
-                            img.print(letra2, 90, 523, `${Number(documento.coins).toLocaleString()}`);
-                            img.print(letra2, 360, 523, `${Number(documento.rubys).toLocaleString()}`);
-                            img.print(letra, 705, 307, `${Number(documento.rep).toLocaleString()}`);
-                            img.print(letra2, 33, 417, `\`\`${documento.bio}\`\``, 725);
+                            //img.print(letra2, 90, 523, `${Number(documento.coins).toLocaleString()}`);
+                           // img.print(letra2, 360, 523, `${Number(documento.rubys).toLocaleString()}`);
+                            img.print(letra, 680, 20, `${Number(documento.rep).toLocaleString()}`);
+                            img.print(letra2, 22, 545, `\`\`${documento.bio}\`\``, 725);
                             //img.print(letr, 200, 23, documento.xp + "/" +  Math.ceil(pudim * 400) + " (" + parseInt(documento.xp/(pudim *400 )*100) + "%)")  
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
-                              message.channel.send(``, new Discord.Attachment(buffer, 'Profile.png'));
-                           
+                              message.channel.send(``, new Discord.Attachment(buffer, 'Perfil.png'));
                             });
+                          });
+                        });
                       });
                     });
                   });
