@@ -11,9 +11,9 @@ database.Bloqueio.findOne({
                 "_id": message.author.id
             }, function (erro, documento) {
                 if(documento) {
-         if (!['244489368717230090'].includes(message.author.id))
+         if (!['244489368717230090','282504900552949760'].includes(message.author.id))
                 
- if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate!");
+ if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
     
@@ -44,7 +44,7 @@ database.Bloqueio.findOne({
                  Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
                    // Jimp.read(user.username).then(function(user) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
-                      Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/479793471893536769/Perfil.png").then(function(perfil) {
+                      Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/479834104875974658/PerfilSys.png").then(function(perfil) {
                         Jimp.read(`./border/${documento.borderp}.png`).then(function(marco) {
                          
                               Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
@@ -78,15 +78,15 @@ database.Bloqueio.findOne({
                             img.print(letra, 690, 392, `${user.discriminator}`);
                             img.print(letra, 690, 445, `${documento.level}`);
                             img.print(letra2, 675, 485, `${Number(documento.xp).toLocaleString()}`);
-                        //    img.print(letra2, 600, 523, `${Number(documento.emerald).toLocaleString()}`);
+                        img.print(letra2, 470, 480, `${Number(documento.emerald).toLocaleString()}`);
                          // img.print(letra, 160, 415, `${Number(documento.containers).toLocaleString()}`);
-                            //img.print(letra2, 90, 523, `${Number(documento.coins).toLocaleString()}`);
-                           // img.print(letra2, 360, 523, `${Number(documento.rubys).toLocaleString()}`);
+                            img.print(letra, 406, 21, `${Number(documento.coins).toLocaleString()}`);
+                           img.print(letra2, 470, 446, `${Number(documento.rubys).toLocaleString()}`);
                             img.print(letra, 680, 20, `${Number(documento.rep).toLocaleString()}`);
                             img.print(letra2, 22, 545, `\`\`${documento.bio}\`\``, 725);
                             //img.print(letr, 200, 23, documento.xp + "/" +  Math.ceil(pudim * 400) + " (" + parseInt(documento.xp/(pudim *400 )*100) + "%)")  
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
-                              message.channel.send(``, new Discord.Attachment(buffer, 'Perfil.png'));
+                              message.channel.send(``, new Discord.Attachment(buffer, 'PerfilSys.png'));
                             });
                           });
                         });
