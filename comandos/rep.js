@@ -42,7 +42,7 @@ database.Bloqueio.findOne({
 
                         doc2.rep += 1
                         doc2.save();
-                        message.reply(`Você deu um ponto de reputação para ${message.mentions.users.first().user} <:likeheart:447056564965081088>`);
+                        message.reply(`Você deu um ponto de reputação para ${message.mentions.users.first()} <:likeheart:447056564965081088>`);
                         dayCol.add(message.author.id)
                         setTimeout(function() {
                             dayCol.delete(message.author.id)
