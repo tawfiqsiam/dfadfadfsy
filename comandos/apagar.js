@@ -23,8 +23,8 @@ database.Bloqueio.findOne({
             return message.reply('Especifique um número de mensagens a serem apagadas!');
         if (!amount && !user) 
             return message.reply('Você deve espeficificar um usuário mais a quantidade de mensagens a serem apagadas ou utilizar o comando apagar mais a quantidade de mensagens.');
-        if (amount < 2 || amount > 100) 
-            return message.reply(':x: Limite incorreto ');
+        if (amount < 2 || amount > 1000) 
+            return message.reply(':x: Limite incorreto. Tente entre 2 á 1000');
         
         if (!message.member.hasPermission('MANAGE_MESSAGES'))
         return message.reply(':no_entry_sign: Desculpe, este comando está disponível apenas para cargos de Gerenciamento de mensagens do servidor.');
