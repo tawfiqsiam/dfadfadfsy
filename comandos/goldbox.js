@@ -3,7 +3,8 @@ let database = require("../database.js");
 
 module.exports = {
     categoria: 'Economia',
-    description: 'Solte uma caixa dourada e alguém aleatóriamente do seu servidor irá pegar, contendo prêmios!',
+    description: 'Solte uma caixa dourada e alguém aleatóriamente do seu servidor irá pegar, contendo prêmios!',   
+    cooldown: 30,	
     task(client, message, suffix) {
         message.delete();
   
