@@ -35,13 +35,13 @@ database.Bloqueio.findOne({
                         message.channel.send('Você precisa de 20.000 rubys...')
                     }
                 } else if(razaou === 'bio') {
-                    if(Number(documento.emerald) >= 500) {
-                        documento.emerald = Number(documento.coins) - 500
+                    if(Number(documento.emerald) >= 200) {
+                        documento.emerald = Number(documento.coins) - 200
                         documento.bio_shoped = "yes"
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                     } else {
-                        message.channel.send('Você precisa de 200 esmeraldas <:esmeralda:436313141446443029>...')
+                        message.channel.send('Você precisa de 200 esmeraldas <a:esmeral:442718169585680387>')
                     }
                     
                 } else if(razaou === 'goldbox') {
