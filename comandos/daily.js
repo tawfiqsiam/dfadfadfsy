@@ -16,7 +16,7 @@ database.Bloqueio.findOne({
         
 }
    
-  /*if (!['244489368717230090'].includes(message.author.id)) return message.channel.send('Comando em manutenção!');*/
+  if (!['244489368717230090'].includes(message.author.id)) return message.reply('desculpe o transtorno, este comando encontra-se em manutenção, tenten novamente mais tarde.');
         
  database.Users.findOne({
             "_id": message.author.id
