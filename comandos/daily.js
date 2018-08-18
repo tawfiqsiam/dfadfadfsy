@@ -116,6 +116,7 @@ message.channel.send(`<a:pblob:442467218282774548> Opa ${message.author}! Colete
                     rubys: 0,
                     containers: 0,
                     nextDay: 0,
+                    temprep: 0,
                     })
 
                 pessoa.save()
