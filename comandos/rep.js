@@ -25,7 +25,7 @@ database.Bloqueio.findOne({
 
 
         let user = message.mentions.users.first();
-
+if (!user) return message.reply(`mencione alguém para dar rep!`)
         if (message.mentions.users.first().id == message.author.id) return message.reply("**Você não pode dar rep para você mesmo!**");
         if (message.mentions.users.first().bot) return message.reply("**Você não pode dar rep para um bot!**");
 
