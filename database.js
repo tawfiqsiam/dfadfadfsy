@@ -172,6 +172,14 @@ var User = new Schema({
     temprep: {
         type: String,
         defaunt: 0,
+    },
+    nv: {
+        type: Number,
+        defaunt: 0,
+    },
+    nvxp: {
+        type: Number,
+        defaunt: 0,
     }
 });
 
