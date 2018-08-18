@@ -72,6 +72,10 @@ var User = new Schema({
         type: String,
         default: "No hay una descripción"
     },
+    casou: {
+        type: String,
+        default: "Ninguém"
+    },
     rep: {
         type: Number,
         default: 0
