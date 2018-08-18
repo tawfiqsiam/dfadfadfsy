@@ -14,9 +14,14 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
         
 }
 })
+    let oficial;
+    
+    if (!sysop.badgep2) oficial = '';
+    else oficial = `${sysop.badgep2}`;
+    
     const embed = new Discord.RichEmbed()
     .setThumbnail(user.avatarURL)
-    embed.setDescription(`Saldo de **${user.username}** ${sysop.badgep2}\n\n
+    embed.setDescription(`Saldo de **${user.username}** ${oficial}\n\n
 \`Moedas:\`
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 <:Sycoins:469789351358889984>  ${Number(sysop.coins).toLocaleString()} sycoins  |  <a:rubine:442715023878651905> ${Number(sysop.rubys).toLocaleString()} rubys\n
