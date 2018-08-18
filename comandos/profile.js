@@ -123,6 +123,7 @@ database.Bloqueio.findOne({
                         containers: 0,
                         emerald: 0,
                         goldbox: 0,
+                        casou: 'Ninguém',
                         profile_background: 'https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png',
                       
                     })
