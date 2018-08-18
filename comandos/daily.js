@@ -16,7 +16,7 @@ database.Bloqueio.findOne({
         
 }
    
- // if (!['244489368717230090'].includes(message.author.id)) return message.reply('desculpe o transtorno, este comando encontra-se em manutenção, tente novamente mais tarde.');
+ if (!['244489368717230090'].includes(message.author.id)) return message.reply('desculpe o transtorno, este comando encontra-se em manutenção, tente novamente mais tarde.');
         
  database.Users.findOne({
             "_id": message.author.id
@@ -30,6 +30,7 @@ database.Bloqueio.findOne({
                         bio: "Sobre você",
                         marry: "None",
                         nexDay: 0,
+                        day: 0,
                         temprep: 0,                       
                       
                     })
@@ -52,9 +53,9 @@ const moment = require('moment');
 require("moment-duration-format");
 moment.locale('pt-BR');             
                  
- var tempo = moment.duration.format([moment.duration((parseInt(documento.nexDay) + 86400000) - Date.now())], "hh:mm:ss");
+ var tempo = moment.duration.format([moment.duration((parseInt(documento.day) + 86400000) - Date.now())], "hh:mm:ss");
                  
-       if ((parseInt(documento.nexDay) + 86400000) <= (Date.now())) {       
+       if ((parseInt(documento.day) + 86400000) <= (Date.now())) {       
                 var premio;
                 var quantidade;
                 
@@ -63,48 +64,48 @@ moment.locale('pt-BR');
                     quantidade = 5;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.containers += dayRDM
-                    documento.nexDay = Date.now();
+                    documento.day = Date.now();
                     documento.save()
                 } else  if (prc <= 40) {
                     premio = `rubys <:rubys:430493599633899532>`;
                     quantidade = 500 + 2000;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.rubys += dayRDM
-                    documento.nexDay = Date.now();
+                    documento.day = Date.now();
                     documento.save()
                 } else if (prc <= 80) {
                     premio = `Sycoins <:Sycoins:469789351358889984>`;
                     quantidade = 500 + 3000;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.coins += dayRDM
-                    documento.nexDay = Date.now();
+                    documento.day = Date.now();
                     documento.save()
             } else if (prc <= 40) {
                     premio = `goldboxs <:New_goldenbox_10:458877483182194698>`;
                     quantidade = 5 + 15;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.goldbox += dayRDM
-                    documento.nexDay = Date.now();
+                    documento.day = Date.now();
                     documento.save()
             } else if (prc <= 40) {
                     premio = `XP's <:New_goldenbox_10:458877483182194698>`;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.xp += dayRDM
-                    documento.nexDay = Date.now();
+                    documento.day = Date.now();
                     documento.save()
             } else if (prc <= 60) {
                     premio = `lootbox <:ContainerEmoji:436348542576230411>`;
                     quantidade = 1 + 3;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.lootbox += dayRDM
-                    documento.nexDay = Date.now();
+                    documento.day = Date.now();
                     documento.save()
             } else if (prc <= 40) {
                     premio = `esmeraldas <a:esmeral:442718169585680387>`;
                     quantidade = 30;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.emerald += dayRDM
-                    documento.nexDay = Date.now();
+                    documento.day = Date.now();
                     documento.save()
                 }
                 
