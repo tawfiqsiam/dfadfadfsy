@@ -113,7 +113,7 @@ moment.locale('pt-BR');
   
                        setTimeout(function() {
                        const embed = new Discord.RichEmbed()
-                       embed.setThumbnail(client.message.avatarURL)
+                       embed.setThumbnail('https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png')
                        embed.setAuthor(message.author.username, message.author.avatarURL)
                        embed.addField(`**Bônus Diário!**`,` <a:festa:461509706763206657> Você ganhou: **${dayRDM} ${premio}** .`, false)
                        .setColor(0x0df7eb);
