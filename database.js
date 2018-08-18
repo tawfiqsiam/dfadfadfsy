@@ -187,11 +187,11 @@ var User = new Schema({
     },
     day: {
         type: String,
-        defaunt: 0,
+        defaunt: '0',
     },
     hora: {
         type: String,
-        defaunt: 0,
+        defaunt: '0',
     }
 });
 
