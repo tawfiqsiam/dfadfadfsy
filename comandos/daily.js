@@ -18,6 +18,26 @@ database.Bloqueio.findOne({
    
   /*if (!['244489368717230090'].includes(message.author.id)) return message.channel.send('Comando em manutenção!');*/
         
+ database.Users.findOne({
+            "_id": message.author.id
+        }, function(erro, documento) {
+            
+            if (!documento) {
+                var pessoa = new database.Users({
+                        _id: message.author.id,
+                        name: message.author.username, 
+                        discrim: "#" + message.author.discriminator,
+                        bio: "Sobre você",
+                        marry: "None",
+                        newDay: 0,
+                        temprep: 0,                       
+                      
+                    })
+                    pessoa.save()
+                     message.reply("Registro realizado com sucesso! Utilize o comando novamente!")
+                
+            } else {
+ 
 
        if(!dayCol.includes(message.author.id)) {
             
@@ -125,11 +145,13 @@ message.channel.send(`<a:pblob:442467218282774548> Opa ${message.author}! Colete
 
             
         }).catch(e => console.log(e));
-        
-   } else {
-       message.reply("<a:xgif:454341607651672095> Bônus diário já coletado!");
-    }
+   
+                }
+            }
+   
+})
 })
         }
         
 };
+
