@@ -164,6 +164,10 @@ var User = new Schema({
     verificado: {
         type: String,
         defaunt: "",
+    },
+    nexDay: {
+        type: Number,
+        defaunt: 0,
     }
 });
 
