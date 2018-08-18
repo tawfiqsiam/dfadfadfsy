@@ -18,7 +18,7 @@ database.Bloqueio.findOne({
     if (documento) {
         if(documento.bio_shoped === "no") return message.channel.send('Você não comprou o comando')
         if (!suffix) return message.reply('Escreva sua biografia...');
-        if (!suffix.lenght > 160) 
+        if (!suffix.lenght || suffix.lenght > 160) 
         return message.reply('O limite máximo de caracteres é: `160`');
         documento.bio = `${message.content.replace("sy!bio","")}`;
         message.delete();
