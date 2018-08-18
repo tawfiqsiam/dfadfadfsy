@@ -107,7 +107,7 @@ client.on("message", message => {
                 slowCol.add(message.author.id);
                 setTimeout(() => {
                     slowCol.delete(message.author.id)
-                }, sysop.slow);
+                }, sysop.slow * 1000);
             } else {
                 message.delete()
             }
