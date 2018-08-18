@@ -22,8 +22,10 @@ database.Bloqueio.findOne({
                         _id: message.author.id,
                         name: message.author.username, 
                         discrim: "#" + message.author.discriminator,
-                        bio: "sy!bio su bio",
+                        bio: "Sobre você",
                         marry: "None",
+                        newDay: 0,
+                        temprep: 0,                       
                       
                     })
                     pessoa.save()
