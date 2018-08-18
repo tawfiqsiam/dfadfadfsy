@@ -29,7 +29,7 @@ database.Bloqueio.findOne({
                         discrim: "#" + message.author.discriminator,
                         bio: "Sobre você",
                         marry: "None",
-                        newDay: 0,
+                        nexDay: 0,
                         temprep: 0,                       
                       
                     })
