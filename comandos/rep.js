@@ -22,7 +22,25 @@ database.Bloqueio.findOne({
 
 //let cooldown = 3600000;
 
-
+database.Users.findOne({
+            "_id": message.author.id
+        }, function(erro, documento) {
+            
+            if (!documento) {
+                var pessoa = new database.Users({
+                        _id: message.author.id,
+                        name: message.author.username, 
+                        discrim: "#" + message.author.discriminator,
+                        bio: "Sobre você",
+                        marry: "None",
+                        nexDay: 0,
+                        temprep: 0,                       
+                      
+                    })
+                    pessoa.save()
+                     message.reply("Registro realizado com sucesso! Utilize o comando novamente!")
+                
+            } else {
 
         let user = message.mentions.users.first();
 if (!user) return message.reply(`mencione alguém para dar rep!`)
@@ -91,16 +109,20 @@ if (!user) return message.reply(`mencione alguém para dar rep!`)
                         invitecode: "Nenhum",
                         invitou: 0,
                         warn: 0,
-                        rep: 0
+                        rep: 0,
+                        nexDay: 0,
+                        temprep: 0,
+                        
                     })
 
                     pessoa.save()
 
-                }
+              }
 
             })
 
         })
-    
+            }
+});
 });
 }};
