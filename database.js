@@ -184,6 +184,14 @@ var User = new Schema({
     nvxp: {
         type: Number,
         defaunt: 0,
+    },
+    day: {
+        type: String,
+        defaunt: 0,
+    },
+    hora: {
+        type: String,
+        defaunt: 0,
     }
 });
 
