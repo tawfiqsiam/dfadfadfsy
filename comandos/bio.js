@@ -18,12 +18,32 @@ database.Bloqueio.findOne({
     if (documento) {
         if(documento.bio_shoped === "no") return message.channel.send('Você não comprou o comando')
         if (!suffix) return message.reply('Escreva sua biografia...');
+        if (suffix.lenght > 160) 
+        return message.reply('O limite máximo de caracteres é: `160`');
         documento.bio = `${message.content.replace("sy!bio","")}`;
         message.delete();
         message.reply(`Biografia Alterada para: \`\`${documento.bio}\`\` `);
         documento.save();
     } else {
-            message.reply("⚠ Você não possui um perfi \n`INSTRUÇÕES` Para criar seu perfil, utilize  `sy!register ` ⚠");
+      var pessoa = new database.Users({
+                        _id: message.author.id,
+                        name: message.author.username, 
+                        discrim: "#" + message.author.discriminator,
+                        bio: "Sobre você",
+                        rpup: 0,
+                        adv: 0,
+                        coins: 0,
+                        rubys: 0,
+                        containers: 0,
+                        emerald: 0,
+                        goldbox: 0,
+                        nv: 0,
+                        nvxp: 0,
+                        profile_background: 'https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png',
+                      
+                    })
+                    pessoa.save()
+                    message.reply("<:LikeSysop3:476062023629799424> **Histórico criado e salvo!** Use novamente este comando!");
     }
 
 });
