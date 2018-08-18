@@ -12,19 +12,19 @@ database.Bloqueio.findOne({
         
 }
 
-      suffix = suffix.split(' '); 
+    
+   suffix = suffix.split(' '); 
     database.Users.findOne({"_id":message.author.id},function(erro,documento){
 
-    if (documento) {
+if (documento) {
         if(documento.bio_shoped === "no") return message.channel.send('Você não comprou o comando')
-        if (!suffix) return message.reply('Escreva sua biografia...');
-        let amount = parseInt(suffix[0], 10)
-        if (!amount || amount < 2 || amount > 160) 
-        return message.reply('O limite máximo de caracteres é: `160`');
-        documento.bio = amount;
-        message.delete();
-        message.reply(`Biografia Alterada para: \`\`${documento.bio}\`\` `);
+
+         if (!suffix[0]) return message.reply('Escreva sobre você. O limite máximo de caracteres é: `160`');
+    if (suffix.join(' ').length > 160) return message.reply('<:sysalerta:469789950938841088> Você ultrapassou o limite de caracteres.');
+
+        documento.bio = suffix.join(' ')
         documento.save();
+        message.reply(`Biografia Alterada para: \`\`${documento.bio}\`\` `);
     } else {
       var pessoa = new database.Users({
                         _id: message.author.id,
