@@ -166,7 +166,11 @@ var User = new Schema({
         defaunt: "",
     },
     nexDay: {
-        type: Number,
+        type: String,
+        defaunt: 0,
+    },
+    temprep: {
+        type: String,
         defaunt: 0,
     }
 });
