@@ -1,6 +1,8 @@
 var database = require("../database.js")
 var dayCol = new Set()
-
+const moment = require('moment');
+require("moment-duration-format");
+moment.locale('pt-BR');   
 
 module.exports = {
     categoria: 'Entretenimento',
@@ -18,13 +20,12 @@ database.Bloqueio.findOne({
         
 }
 
-   let user = message.mentions.users.first();
+//let cooldown = 3600000;
 
-    if (dayCol.has(message.author.id)) return message.reply("**Você já deu rep hoje. Volte em um dia! :confused:**");
 
-    if (message.mentions.users.size < 1) {
-        message.reply("**Você já pode dar rep. :smile:**");
-    } else {
+
+        let user = message.mentions.users.first();
+
         if (message.mentions.users.first().id == message.author.id) return message.reply("**Você não pode dar rep para você mesmo!**");
         if (message.mentions.users.first().bot) return message.reply("**Você não pode dar rep para um bot!**");
 
@@ -39,14 +40,20 @@ database.Bloqueio.findOne({
                 if (documento) {
 
                     if (doc2) {
+          
+ var tempo = moment.duration.format([moment.duration((parseInt(doc2.temprep) + 3600000) - Date.now())], "hh:mm:ss");
+                 
+ if ((parseInt(doc2.temprep) + 3600000) <= (Date.now())) {   
 
                         doc2.rep += 1
+                        doc2.temprep = Date.now();
                         doc2.save();
-                        message.reply(`Você deu um ponto de reputação para ${message.mentions.users.first()} <:likeheart:447056564965081088>`);
-                        dayCol.add(message.author.id)
-                        setTimeout(function() {
-                            dayCol.delete(message.author.id)
-                        }, 24 * 1000 * 60 * 60)
+                        message.reply(`<:trust:447056422346424320> Você deu um ponto de reputação para ${message.mentions.users.first()} <:likeheart:447056564965081088>`);
+ } else {
+     
+     message.channel.send(`<:sysalerta:469789950938841088> Woww ${message.author}, você só pode dar rep novamente em: \`${tempo}\``)
+     
+ }
 
                     } else {
 
@@ -54,6 +61,7 @@ database.Bloqueio.findOne({
                             _id: message.mentions.users.first().id,
                             level: 0,
                             xp: 0,
+                            temprep: 0,
                             coins: 0,
                             conquistas: 0,
                             mensagens: 0,
@@ -93,8 +101,6 @@ database.Bloqueio.findOne({
             })
 
         })
-
-
-    }
+    
 });
 }};
