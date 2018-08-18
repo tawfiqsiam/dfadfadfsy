@@ -37,7 +37,7 @@ database.Bloqueio.findOne({
         try {
           Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function(letra) {
             Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function(letra2) {
-             Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function(letra3) {
+             Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letra3) {
                Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letr) {
               Jimp.read("https://cdn.discordapp.com/attachments/413155538755649538/433097929234841602/InvisibleSysop.png", function(erre, img) {
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
@@ -77,6 +77,7 @@ database.Bloqueio.findOne({
                             img.print(letra2, 78, 29, `${server.name}`);
                             img.print(letra, 690, 392, `${user.discriminator}`);
                             img.print(letra2, 690, 227, `${documento.rpup}`);
+                            img.print(letra3, 630, 295, `${documento.casou}`);
                             img.print(letra2, 660, 360, `Total de: ${documento.adv}`);
                             img.print(letra, 690, 445, `${documento.level}`);
                             img.print(letra2, 675, 485, `${Number(documento.xp).toLocaleString()}`);
@@ -122,8 +123,6 @@ database.Bloqueio.findOne({
                         containers: 0,
                         emerald: 0,
                         goldbox: 0,
-                        nv: 0,
-                        nvxp: 0,
                         profile_background: 'https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png',
                       
                     })
