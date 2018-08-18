@@ -16,8 +16,8 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
 })
     let oficial;
     
-    if (!sysop.badgep2) oficial = '';
-    else oficial = `${sysop.badgep2}`;
+    if (!sysop.me) oficial = '';
+    else oficial = `${sysop.me}`;
     
     const embed = new Discord.RichEmbed()
     .setThumbnail(user.avatarURL)
