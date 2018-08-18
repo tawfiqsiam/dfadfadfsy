@@ -21,7 +21,7 @@ database.Bloqueio.findOne({
         let amount = parseInt(suffix[0], 10)
         if (!amount || amount < 2 || amount > 160) 
         return message.reply('O limite máximo de caracteres é: `160`');
-        documento.bio = `${message.content.replace("sy!bio","")}`;
+        documento.bio = amount;
         message.delete();
         message.reply(`Biografia Alterada para: \`\`${documento.bio}\`\` `);
         documento.save();
