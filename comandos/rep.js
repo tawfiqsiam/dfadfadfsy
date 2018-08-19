@@ -1,8 +1,6 @@
 var database = require("../database.js")
 var dayCol = new Set()
-const moment = require('moment');
-require("moment-duration-format");
-moment.locale('pt-BR');   
+
 
 module.exports = {
     categoria: 'Entretenimento',
@@ -14,38 +12,21 @@ database.Bloqueio.findOne({
                 "_id": message.author.id
             }, function (erro, documento) {
                 if(documento) {
-         if (!['244489368717230090'].includes(message.author.id))
+         if (!['244489368717230090','282504900552949760'].includes(message.author.id))
                 
- if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate!`");
+ if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
+        
+   let user = message.mentions.users.first();
 
-//let cooldown = 3600000;
+    if (dayCol.has(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, Você já deu rep! Volte novamente em 1 hora.`)
 
-database.Users.findOne({
-            "_id": message.author.id
-        }, function(erro, documento) {
-            
-            if (!documento) {
-                var pessoa = new database.Users({
-                        _id: message.author.id,
-                        name: message.author.username, 
-                        discrim: "#" + message.author.discriminator,
-                        bio: "Sobre você",
-                        marry: "None",
-                        nexDay: 0,
-                        temprep: 0,                       
-                      
-                    })
-                    pessoa.save()
-                     message.reply("Registro realizado com sucesso! Utilize o comando novamente!")
-                
-            } else {
-
-        let user = message.mentions.users.first();
-if (!user) return message.reply(`mencione alguém para dar rep!`)
-        if (message.mentions.users.first().id == message.author.id) return message.reply("**Você não pode dar rep para você mesmo!**");
-        if (message.mentions.users.first().bot) return message.reply("**Você não pode dar rep para um bot!**");
+    if (message.mentions.users.size < 1) {
+        message.reply("você já pode dar rep ;)");
+    } else {
+        if (message.mentions.users.first().id == message.author.id) return message.channel.send(`<:xguardian:476061993368027148> | Epa ${message.author}, Você não pode dar rep para você mesmo!`);
+        if (message.mentions.users.first().bot) return message.channel.send(`<:xguardian:476061993368027148> | ${message.author} Bem, isto é confuso. Você não pode dar rep para um bot!**`);
 
         database.Users.findOne({
             "_id": message.author.id
@@ -58,20 +39,14 @@ if (!user) return message.reply(`mencione alguém para dar rep!`)
                 if (documento) {
 
                     if (doc2) {
-          
- var tempo = moment.duration.format([moment.duration((parseInt(doc2.temprep) + 3600000) - Date.now())], "hh:mm:ss");
-                 
- if ((parseInt(doc2.temprep) + 3600000) <= (Date.now())) {   
 
                         doc2.rep += 1
-                        doc2.temprep = Date.now();
                         doc2.save();
-                        message.reply(`<:trust:447056422346424320> Você deu um ponto de reputação para ${message.mentions.users.first()} <:likeheart:447056564965081088>`);
- } else {
-     
-     message.channel.send(`<:sysalerta:469789950938841088> Woww ${message.author}, você só pode dar rep novamente em: \`${tempo}\``)
-     
- }
+                        message.reply(`deu um ponto de reputação para ${message.mentions.users.first()} <:likeheart:447056564965081088>`);
+                        dayCol.add(message.author.id)
+                        setTimeout(function() {
+                            dayCol.delete(message.author.id)
+                        }, 1 * 1000 * 60 * 60)
 
                     } else {
 
@@ -79,7 +54,6 @@ if (!user) return message.reply(`mencione alguém para dar rep!`)
                             _id: message.mentions.users.first().id,
                             level: 0,
                             xp: 0,
-                            temprep: 0,
                             coins: 0,
                             conquistas: 0,
                             mensagens: 0,
@@ -109,20 +83,18 @@ if (!user) return message.reply(`mencione alguém para dar rep!`)
                         invitecode: "Nenhum",
                         invitou: 0,
                         warn: 0,
-                        rep: 0,
-                        nexDay: 0,
-                        temprep: 0,
-                        
+                        rep: 0
                     })
 
                     pessoa.save()
 
-              }
+                }
 
             })
 
         })
-            }
-});
-});
+
+
+    }
+})
 }};
