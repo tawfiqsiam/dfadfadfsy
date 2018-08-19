@@ -129,7 +129,7 @@ Defina até 5 roles para auto atribuição de cargos no servidor.
 [ join-role | join-role 1/2/3/4/5 ]
 Pega cargos liberados no selfrole.\`\`\``)
 embed.setFooter(`Pagina 2 de 9`);
-value.edit(embed)
+value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
 });
 
 
@@ -155,8 +155,10 @@ Crie um Webhook através de comando em um canal.
 Procure por usuários com o mesmo descriminator (tag) que o seu ou de outras pessoas no servidor. 
  
 [ emojis ]
+
 Tenha visualização de todos os emojis personalizados do seu servidor em excessão animados.
 [ google ]
+
 Pesquise no GOOGLE.
 [ gwords ]
 Pesquise por uma palavra chave no google.
@@ -201,10 +203,17 @@ Verifique se você tem um cargo do servidor.
  
 [ welcome  <welcome help> ]
 Define ou mostra a mensagem de boas vindas do servidor.
+
+[ dm  <dm help> ]
+Define ou mostra a mensagem de boas vindas do servidor.
+
+[ slow  <slow 5> ]
+Modo lento no chat para evitar spamm. Defina em segundos o tempo de envio de mensagens no chat.
+
 [ infos ]
 Informações do bot.\`\`\``)
 embed.setFooter(`Pagina 3 de 9`);
-value.edit(embed)
+value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
   
 })
 
@@ -218,8 +227,10 @@ Divirta-se com os amigos com este comando. Faça o bot escolher uma opção de t
  
 [ giphy ]
 Pesquise GIF no site GIPHY online de qualquer coisa.
+
 [ marvel ]
 Adicione um filtro sua foto de perfil com o tema da MARVEL.
+
 [ profile ]
 Tenha um perfil personalizado com seu nível, xp, emblemas, moedas e muito mais!
  
@@ -231,10 +242,13 @@ Gere um número aleatório.
  
 [ reverse ]
 Ulitize esse comando para eu modificar suas palavras e frases ao contrário.
+
 [ rank ]
 Confira seu level e pontuações.
+
 [ ranking (MANUTENÇÃO) ]  
 Confira o top 10 usuários e seus respectivos números no rank global do bot!
+
 [ roleta ]
 Jogue Roleta Russa.
  
@@ -249,10 +263,10 @@ Calcule seu amor ou de outros usuários.
 [ igdb - sy!igdb <Game Name> | sy!igdb League Of Legends ]  
 Pesquise por jogos no site IGDB pelo bot Sysop.
  
-[ upvote ]
+[ rep ]
 Adicione Upvotes para seus amigos assim será ainda mais conhecido no perfil do bot!\`\`\``)
   embed.setFooter(`Pagina 4 de 9`);
-  value.edit(embed)
+  value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
   
 })
 
@@ -263,6 +277,9 @@ h4.on('collect', r => {
   embed.setDescription(`\`\`\`css\nPrefixo sy!\n\n
 [ assaunt ]
 Assalte seu amigo e roube algumas coisinhas!
+
+[ balance ]
+Para visualizar seu saldo!
  
 [ container <open> ]
 Abra containers ganhos do bônus diário e se surpreeda com novidades!
@@ -272,8 +289,10 @@ Receba seu bônus diário!
  
 [ gcontainers - sy!gcontainers @user <amount> ]
 Doe containers ou de de presente para algum amigo :)
+
 [ ggoldbox - sy!ggoldbox @user <amoun> ]
 Doe Caixas Douradas para os amigos ou de de presente!
+
 [ goldbox - sy!goldbox drop ]
 Solte uma caixa dourada e alguém aleatóriamente do seu servidor irá pegar, contendo prêmios!
  
@@ -283,7 +302,7 @@ Doe rubys para os necessitados :) Faça a festa em nossa loja!
 [ shop - sy!shop | sy!shop item ]
 Loja Global do Bot, onde você compra alguns comandos premiums e divertidos!\`\`\``) 
   embed.setFooter(`Pagina 5 de 9`);
-  value.edit(embed)
+  value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
   
 })
 
@@ -309,7 +328,7 @@ Pule a música para a próxima na playlist.
 [ conectar ]
 Conecte o bot ao seu canal de voz.\`\`\``);
   embed.setFooter(`Pagina 6 de 9`);
-  value.edit(embed)
+  value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
   
 })
 
@@ -331,7 +350,7 @@ Aposte suas fichas.
 >> vermelhas
 >> pretas\`\`\``) 
     embed.setFooter(`Pagina 7 de 9`);
-    value.edit(embed)
+    value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
     
   })
   h7.on('collect', r => {
@@ -348,7 +367,7 @@ Aposte suas fichas.
  [ 4k ]
  Alguns NSFW aleatórios.\`\`\``) 
     embed.setFooter(`Pagina 8 de 9`);
-    value.edit(embed)
+    value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
     
   });
    h8.on('collect', r => {
@@ -367,7 +386,7 @@ Use disable para desativar alguns comandos, os parâmetros serão visíveis uma 
  
  # INFOS | sy!partners #\`\`\``) 
     embed.setFooter(`Pagina 9 de 9`);
-    value.edit(embed)
+    value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
     
   })
 
@@ -377,7 +396,7 @@ h9.on('collect', r => {
   embed.setTitle("MENU");
   embed.setDescription(`<a:mod:461510313947430943> | Moderação\n<:wumpmugshot:461492631042523136> | Sociais\n<a:festa:461509706763206657> | Entretenimento\n<:adsales:461493157465423883> | Economia\n<a:music3:461493558512451584> | Música\n<:cassino:461494047253725219> | Casino\n<:nsfw:461495244480053248> | NSFW\n<:DiscordPartner:434417598801641481> | Parceiros\n<:btnvoltar:461495764443725844> | Menu inicial.\n\n[DBL Discord](https://discordbots.org/bot/412593783696261121) | [Vote DBL](https://discordbots.org/bot/412593783696261121/vote) | [Servidor de Suport](https://discord.gg/6HwTNBT)`);
   embed.setFooter(`Pagina 1 de 9`);
-  value.edit(embed)
+  value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
   
 });
 }).catch(e => console.log(e));
