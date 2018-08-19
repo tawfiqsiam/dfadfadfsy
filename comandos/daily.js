@@ -47,13 +47,13 @@ database.Bloqueio.findOne({
                     documento.rubys += dayRDM
                     documento.save()
                 } else if (prc <= 80) {
-                    premio = `coins <:Sycoins:469789351358889984>`;
+                    premio = `sycoins <:Sycoins:469789351358889984>`;
                     quantidade = 500 + 3000;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.coins += dayRDM
                     documento.save()
             } else if (prc <= 40) {
-                    premio = `goldboxs <:New_goldenbox_10:458877483182194698>;
+                    premio = `goldboxs <:New_goldenbox_10:458877483182194698>`;
                     quantidade = 5 + 15;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.goldbox += dayRDM
