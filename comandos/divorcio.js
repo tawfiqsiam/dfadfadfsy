@@ -14,7 +14,7 @@ database.Bloqueio.findOne({
 
 
 let mention = message.mentions.users.first();
-if (!mention) return message.reply(`mencione alguém para casar.`);
+if (!mention) return message.reply(`mencione alguém para se divorciar.`);
 
 database.Users.findOne({"_id": message.author.id}, function(erra, documento) {
       if (documento) {
