@@ -19,7 +19,7 @@ database.Bloqueio.findOne({
         
 }
    
-  //if (!['244489368717230090'].includes(message.author.id)) return message.channel.send('<:sysalerta:469789950938841088> Opa, técnicos estão realizando uma manutenção atualmente. Tente novamente este comando dentro de 1 hora.');
+  if (!['244489368717230090'].includes(message.author.id)) return message.channel.send('<:sysalerta:469789950938841088> Opa, técnicos estão realizando uma manutenção atualmente. Tente novamente este comando dentro de 1 hora.');
         
        if(!dayCol.includes(message.author.id)) {
             
