@@ -16,7 +16,7 @@ database.Bloqueio.findOne({
         
 }
    
-//if (!['244489368717230090'].includes(message.author.id)) return;
+if (!['244489368717230090'].includes(message.author.id)) return;
         
  database.Users.findOne({
             "_id": message.author.id
