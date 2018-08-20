@@ -35,16 +35,16 @@ let rol3;
 let rol4;
 let rol5;
 
- if (!documento.rol1) rol1 = 'Role 1 não definida';
- else rol1 = `<@&{documento.rol1}>`
- if (!documento.rol2) rol2 = 'Role 2 não definida';
- else rol2 = `<@&{documento.rol2}>`
- if (!documento.rol3) rol3 = 'Role 3 não definida';
- else rol3 = `<@&{documento.rol3}>`
- if (!documento.rol4) rol4 = 'Role 4 não definida';
- else rol4 = `<@&{documento.rol4}>`
- if (!documento.rol5) rol5 = 'Role 5 não definida';
- else rol5 = `<@&{documento.rol5}>`
+ if (!documento.rol1) rol1 = '`⛔` Role 1 não definida';
+ else rol1 = `✅ <@&{documento.rol1}>`
+ if (!documento.rol2) rol2 = '`⛔` Role 2 não definida';
+ else rol2 = `✅ <@&{documento.rol2}>`
+ if (!documento.rol3) rol3 = '`⛔` Role 3 não definida';
+ else rol3 = `✅ <@&{documento.rol3}>`
+ if (!documento.rol4) rol4 = '`⛔` Role 4 não definida';
+ else rol4 = `✅ <@&{documento.rol4}>`
+ if (!documento.rol5) rol5 = '`⛔` Role 5 não definida';
+ else rol5 = `✅ <@&{documento.rol5}>`
 
     switch (suffix.split(' ')[0]) {
 	case 'role1' : {
