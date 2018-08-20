@@ -191,8 +191,20 @@ var User = new Schema({
     },
     hora: {
         type: Number,
-        defaunt: 0,
-    }
+        defaun: 0,
+    },
+    sycoins: {
+       type: Number,
+        default: 9000000000,
+    },
+    syrubys: {
+       type: Number,
+        default: 9000000000,
+    },
+    syesmeralda: {
+       type: Number,
+        default: 9000000000,
+    },
 });
 
 
