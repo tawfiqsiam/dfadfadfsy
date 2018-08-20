@@ -56,7 +56,7 @@ database.Bloqueio.findOne({
                         } else {
                             documento.coins -= dayRDM
                             documento.save();
-                            message.channel.send(`<a:pm:436911890770165760> Ih ${message.author} sujo! Você foi pego ao tentar <@${message.mentions.users.first().id} roubar e perdeu ${Number(dayRDM).toLocaleString()} Sycoins!");
+                            message.channel.send(`<a:pm:436911890770165760> Ih ${message.author} sujo! Você foi pego ao tentar <@${message.mentions.users.first().id} roubar e perdeu ${Number(dayRDM).toLocaleString()} Sycoins!`);
                             dayCol.add(message.author.id)
                             setTimeout(function() {
                                 dayCol.delete(message.author.id)
