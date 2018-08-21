@@ -383,7 +383,19 @@ var Guilds = new Schema({
     animado: {
         type: String,
         defaunt: '',
-    }
+    }, 
+    girl: {
+        type: String,
+        default: "",
+    },
+    man: {
+        type: String,
+        default: "",
+    },
+    staffer: {
+        type: String,
+        default: "",
+    },
 });
 
 
@@ -482,7 +494,8 @@ var Cla = new Schema({
     logger: {
     type: String,
     defaunt: '',
-    }
+    },
+    
 });
 
 
@@ -520,12 +533,32 @@ var Bloqueio = new Schema({
     },
 })
 
+
+var Registrador = new Schema({
+    _id: {
+        type: String
+    },
+    mh: {
+        type: Number,
+        default: 0,
+    },
+    hm: {
+        type: Number,
+        default: 0,
+    },
+    executor: {
+        type: String,
+        default: '',
+    },
+});
+
 var Guilds = mongoose.model("Guilds", Guilds);
 var Clas = mongoose.model("Clas", Cla);
 var Users = mongoose.model("Users", User);
 var Ships = mongoose.model("Ships", Ship);
 var Lista = mongoose.model("List", Lista);
 var Bloqueio = mongoose.model("Bloqueio", Bloqueio);
+var Registrador = mongoose.model("Registrador", Registrador);
 
 
 exports.Users = Users;
@@ -534,3 +567,5 @@ exports.Ships = Ship;
 exports.Guilds = Guilds;
 exports.Lista = Lista;
 exports.Bloqueio = Bloqueio;
+exports.Registrador = Registrador;
+
