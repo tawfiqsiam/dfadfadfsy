@@ -36,7 +36,7 @@ database.Bloqueio.findOne({
                     }
                 } else if(razaou === 'bio') {
                     if(Number(documento.emerald) >= 200) {
-                        documento.emerald = Number(documento.coins) - 200
+                        documento.emerald = Number(documento.emerald) - 200
                         documento.bio_shoped = "yes"
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
