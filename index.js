@@ -336,7 +336,7 @@ client.on("message", message => {
                                 documento.eexp += xpRDM
                                 documento.coins += coinsRDM
                                 documento.lvll += 1
-                                message.channel.sendMessage(`GG ${message.author}! Você  subiu para o nível **${documento.lvl}**.`);
+                                message.channel.sendMessage(`GG ${message.author}! Você  subiu para o nível **${documento.lvll}**. :dizzy: `);
                                 documento.eexp = 0
                                 documento.save()
                                 xpCol.add(message.author.id)
