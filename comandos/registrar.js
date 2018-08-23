@@ -77,6 +77,21 @@ if (message.mentions.users.first().id == message.author.id)
 return message.channel.send(`<:xguardian:476061993368027148> | NEGADO ${message.author}! Você não pode se auto registrar.`);
 
 
+} else {
+    var pessoa = new db.Registrador({
+                        _id: pp1,
+                        mh: 0,
+                        hm: 0,
+                        executor: '',
+                        data: '',
+                     
+                    });
+                    pessoa.save();
+                    message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
+
+
+}
+
 if(message.guild.members.get(user1.id).roles.find("id", doc.man)) {     
 
 
@@ -206,7 +221,6 @@ doc3.save();
             }
                    
                });
-   }
 
 } else {
             var pessoa = new db.Guilds({
@@ -228,23 +242,8 @@ doc3.save();
             pessoa.save();
             message.channel.send(`<:xguardian:476061993368027148> ${message.author}, Servidor não registrado, use o comando novamente.`);
 
-    }
-
-});
-} else {
-    var pessoa = new db.Registrador({
-                        _id: pp1,
-                        mh: 0,
-                        hm: 0,
-                        executor: '',
-                        data: '',
-                     
-                    });
-                    pessoa.save();
-                     message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
-        
-
 }
 });
+}});
 });
 }};
