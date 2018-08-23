@@ -331,7 +331,7 @@ client.on("message", message => {
                 }, function (erro, documento) {
                     if(documento) {
                         if(documento.ban) {} else {
-                            var unbug = 450 * documento.lvll + 1
+                            var unbug = 700 * documento.lvll + 1
                             if(documento.eexp > unbug) {
                                 documento.eexp += xpRDM
                                 documento.coins += coinsRDM
