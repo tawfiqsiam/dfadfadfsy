@@ -205,6 +205,16 @@ var User = new Schema({
        type: Number,
         default: 9000000000,
     },
+    lvll: {
+        type: Number,
+        default: 0,
+        
+    },
+    eexp: {
+        type: Number,
+        default: 0,
+        
+    },
 });
 
 
@@ -395,6 +405,10 @@ var Guilds = new Schema({
     staffer: {
         type: String,
         default: "",
+    },
+    upar: {
+        type: Boolean,
+        default: true,
     },
 });
 
