@@ -79,8 +79,8 @@ database.Bloqueio.findOne({
                             img.print(letra2, 690, 227, `${documento.rpup}`);
                             img.print(letra3, 630, 295, `${documento.casou}`);
                             img.print(letra2, 660, 360, `Total de: ${documento.adv}`);
-                            img.print(letra, 690, 445, `${documento.level}`);
-                            img.print(letra2, 675, 485, `${Number(documento.xp).toLocaleString()}`);
+                            img.print(letra, 690, 445, `${documento.lvll}`);
+                            img.print(letra2, 675, 485, `${Number(documento.eexp).toLocaleString()}`);
                         img.print(letra2, 470, 480, `${Number(documento.emerald).toLocaleString()}`);
                          // img.print(letra, 160, 415, `${Number(documento.containers).toLocaleString()}`);
                             img.print(letra, 406, 21, `${Number(documento.coins).toLocaleString()}`);
@@ -123,7 +123,6 @@ database.Bloqueio.findOne({
                         containers: 0,
                         emerald: 0,
                         goldbox: 0,
-                        casou: 'Ninguém',
                         profile_background: 'https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png',
                       
                     })
