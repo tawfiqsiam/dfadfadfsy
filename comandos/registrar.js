@@ -131,6 +131,26 @@ message.guild.members.get(pp1).removeRole(message.member.guild.roles.find("id", 
    if(message.guild.members.get(user1.id).roles.find("id", doc.girl)) {        
    if(message.guild.members.get(user1.id).roles.find("id", doc.man)) return;
    
+   db.Registrador.findOne({ "_id": message.guild.id+message.mentions.users.first().id}, function (erro, doc3) {
+if(doc3) {  
+
+
+doc3.executor = message.author.id ;
+doc3.save();
+} else {
+    var pessoa = new db.Registrador({
+                        _id: pp1,
+                        mh: 0,
+                        hm: 0,
+                        executor: '',
+                     
+                    });
+                    pessoa.save();
+                    return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
+        
+}
+});    
+       
    db.Registrador.findOne({ "_id": message.guild.id+message.author.id }, function (erro, documento) {
    if(documento) {   
    let server = message.guild;
