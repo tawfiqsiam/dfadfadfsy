@@ -61,6 +61,10 @@ return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} E
 if(!message.guild.members.get(user1.id).roles.some(r=>[doc.man , doc.girl].includes(r.id))) 
 return message.channel.send(`<:sysalerta:469789950938841088> ${message.author}, **Registro Incompleto** Verifique se o usuário a ser registrado possui a tag \`menino\` ou \`menina\` em seu registro.`);
 
+if (message.mentions.users.first().id == message.author.id)
+return message.channel.send(`<:xguardian:476061993368027148> | NEGADO ${message.author}, Você não pode se auto registrar.`);
+    
+    
 if(message.guild.members.get(user1.id).roles.find("id", doc.man)) {     
 
 db.Registrador.findOne({ "_id": message.guild.id+message.author.id }, function (erro, doc2) {
