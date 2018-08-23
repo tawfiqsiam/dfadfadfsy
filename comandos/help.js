@@ -139,6 +139,9 @@ h2.on('collect', r => {
   page++;
   embed.setTitle("<:wumpmugshot:461492631042523136> | Comandos Sociais");
   embed.setDescription(`\`\`\`css\nPrefixo sy!\n\n
+[ level <on/off> ]
+Ativa e Desativa o sistema de Levels no servidor.
+
 [ avatar ]
 Mostro o avatar de usários usando menção ou ID.
  
