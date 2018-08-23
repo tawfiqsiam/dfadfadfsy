@@ -314,6 +314,84 @@ return message.channel.send(`<:xguardian:476061993368027148> | ${message.author}
 }
 });
 
+var xpCol = new Set()
+let xpRDM = Math.round(Math.random() * 35)
+let coinsRDM = Math.round(Math.random() * 45)
+
+
+client.on("message", message => {
+    if(message.author.bot) return;
+    if(message.channel.type == "dm") return
+    database.Guilds.findOne({ "_id": message.guild.id }, function (serverro, sysop) {
+        if(sysop) {
+            if(sysop.upar) {
+                if(xpCol.has(message.author.id)) return;
+                database.Users.findOne({
+                    "_id": message.author.id
+                }, function (erro, documento) {
+                    if(documento) {
+                        if(documento.ban) {} else {
+                            var unbug = 450 * documento.lvll + 1
+                            if(documento.eexp > unbug) {
+                                documento.eexp += xpRDM
+                                documento.coins += coinsRDM
+                                documento.lvll += 1
+                                message.channel.sendMessage(`GG ${message.author}! Você  subiu para o nível **${documento.lvl}**.`);
+                                documento.eexp = 0
+                                documento.save()
+                                xpCol.add(message.author.id)
+                                setTimeout(function () {
+                                    xpCol.delete(message.author.id)
+                                }, 30 * 1000)
+                            } else {
+                                documento.eexp += xpRDM
+                                documento.coins += coinsRDM
+                                documento.save()
+                                xpCol.add(message.author.id)
+                                setTimeout(function () {
+                                    xpCol.delete(message.author.id)
+                                }, 30 * 1000)
+                            }
+                        }
+                    } else {
+                        var pessoa = new database.Users({
+                            _id: message.author.id,
+                            level: 0,
+                    xp: 0,
+                    lvll: 0,
+                    eexp: 0,
+                    coins: 0,
+                    rubys: 0,
+                    containers: 0,
+                    goldbox: 0,
+                    emerald: 0,
+                    profile_background: 'https://cdn.discordapp.com/attachments/413155538755649538/433355322208419840/New_Logo_Sysop.png',
+                    bio: "Sobre você...",
+                        })
+
+                        pessoa.save()
+                    }
+                });
+            } else {}
+        } else {
+            var servidor = new database.Guilds({
+                _id: message.guild.id,
+                welcome: "",
+                welcomeChannel: "",
+                bye: "",
+                byechannel: "",
+                dm: "",
+                autorole: "",
+                sugest: '',
+                nvlll: true,
+                
+                
+            })
+            servidor.save()
+        }
+    });
+});
+
 client.on("messageUpdate", (newMessage, oldMessage) => {	
 if (oldMessage.guild) {
 database.Guilds.findOne({"_id": oldMessage.guild.id}, function(erro, sysop) {
