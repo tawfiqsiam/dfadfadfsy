@@ -34,22 +34,8 @@ let p1 =   message.guild.id+message.author.id;
     let user1 = message.guild.members.has(pp1) ? message.guild.members.get(pp1) : null;
     if (!user1) return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}, não encontrei nenhum usuário.`);
 
-
 db.Guilds.findOne({"_id":message.guild.id},function(erro,doc){
 if (doc) {   
-
-
-db.Registrador.findOne({"_id": pp1},function(erro,dbs){
-if (dbs) { 
-
-let alguem;
-let data;
-    
-if (!dbs.executor) alguem = `**Ninguém**`;
-else alguem = `<@${dbs.executor}>`;    
-
-if (!dbs.data) data = 'nenhuma hora.';
-else data = `**(${dbs.data})**`;  
 
 var mas = message.guild.roles.find("id", doc.man);
 if (mas == null) return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O cargo \`masculino\` não foi definido neste servidor. **Use:** sy!setregistro`);
@@ -62,60 +48,42 @@ if (no == null)return message.reply(`<:sysalerta:469789950938841088> ${message.a
        
 var noo = message.guild.roles.find("id", doc.staffer);
 if (noo == null)return message.reply(`<:sysalerta:469789950938841088> ${message.author} O cargo \`staff\` não foi definido neste servidor. **Use:** sy!setregistro`);
-   
+        
+         
+         
+         
 if(!message.guild.members.get(message.author.id).roles.find("id", doc.staffer)) 
 return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}, que situação complicada! Você não é um usuário Staff por tanto não tem acesso ao comando.`);
-           
          
 if(!message.guild.members.get(user1.id).roles.find("id", doc.autorole)) 
-return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} Este usuário já foi registrado por ${alguem} em ${data}`);
+return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} Este usuário já foi registrado ou não tem a tag Novatos para ser registrado.`);
 
 if(!message.guild.members.get(user1.id).roles.some(r=>[doc.man , doc.girl].includes(r.id))) 
 return message.channel.send(`<:sysalerta:469789950938841088> ${message.author}, **Registro Incompleto** Verifique se o usuário a ser registrado possui a tag \`menino\` ou \`menina\` em seu registro.`);
 
 if (message.mentions.users.first().id == message.author.id)
 return message.channel.send(`<:xguardian:476061993368027148> | NEGADO ${message.author}! Você não pode se auto registrar.`);
-
-
-} else {
-    var pessoa = new db.Registrador({
-                        _id: pp1,
-                        mh: 0,
-                        hm: 0,
-                        executor: '',
-                        data: '',
-                     
-                    });
-                    pessoa.save();
-                    message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
-
-
-}
+    
 
 if(message.guild.members.get(user1.id).roles.find("id", doc.man)) {     
 
 
-db.Registrador.findOne({ "_id": message.mentions.users.first().id}, function (erro, doc3) {
+db.Registrador.findOne({ "_id": message.guild.id+message.mentions.users.first().id}, function (erro, doc3) {
 if(doc3) {  
 
 
-var time = new Date (message.createdTimestamp);
-
 doc3.executor = message.author.id ;
-doc3.data = moment(time).format('L');
 doc3.save();
-
 } else {
     var pessoa = new db.Registrador({
                         _id: pp1,
                         mh: 0,
                         hm: 0,
                         executor: '',
-                        data: '',
                      
                     });
                     pessoa.save();
-                     message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
+                    return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
         
 }
 });
@@ -163,30 +131,6 @@ message.guild.members.get(pp1).removeRole(message.member.guild.roles.find("id", 
    if(message.guild.members.get(user1.id).roles.find("id", doc.girl)) {        
    if(message.guild.members.get(user1.id).roles.find("id", doc.man)) return;
    
-   db.Registrador.findOne({ "_id": message.mentions.users.first().id}, function (erro, doc3) {
-if(doc3) {  
-
-var time = new Date (message.createdTimestamp);
-
-
-doc3.executor = message.author.id ;
-doc3.data = moment(time).format('L');
-doc3.save();
-} else {
-    var pessoa = new db.Registrador({
-                        _id: pp1,
-                        mh: 0,
-                        hm: 0,
-                        executor: '',
-                        data: '',
-                     
-                    });
-                    pessoa.save();
-                     message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
-        
-}
-});
-   
    db.Registrador.findOne({ "_id": message.guild.id+message.author.id }, function (erro, documento) {
    if(documento) {   
    let server = message.guild;
@@ -221,6 +165,7 @@ doc3.save();
             }
                    
                });
+   }
 
 } else {
             var pessoa = new db.Guilds({
@@ -242,8 +187,8 @@ doc3.save();
             pessoa.save();
             message.channel.send(`<:xguardian:476061993368027148> ${message.author}, Servidor não registrado, use o comando novamente.`);
 
-}
+    }
+    
 });
-}});
 });
 }};
