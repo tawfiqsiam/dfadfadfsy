@@ -50,17 +50,17 @@ if (blacklist[message.author.id]) {
 var cargoid = achar.id
 let reason1 = args.slice(1).join(' ');
 if(message.member.roles.find("name", "🔇 Reth Mute")) return message.channel.send(real)
-if (message.mentions.users.size < 1) return message.reply('Mencione a um usuário para silenciar')
+if (message.mentions.users.size < 1) return message.reply('Mencione a um usuário para Mutar')
 if (reason1.length < 1) return message.reply('Defina um tempo!')
 var tempo = args.slice(1).join(" ")
 var achartudo = tempo.indexOf("h")
 if (achartudo < 0) {
 var achartudo2 = tempo.indexOf("d")
 if (achartudo2 < 0) {
-    var achartudo3 = tempo.indexOf("s")
-    if (achartudo3 < 0) {
-        var achartudo4 = tempo.indexOf("m")
-        if (achartudo4 < 0) return message.reply("Você esquece de colocar a unidade do tempo")      
+var achartudo3 = tempo.indexOf("s")
+if (achartudo3 < 0) {
+var achartudo4 = tempo.indexOf("m")
+if (achartudo4 < 0) return message.reply("Você esquece de colocar o tempo...")      
 }
 }}
 var acharo = tempo.indexOf("h")
@@ -85,9 +85,10 @@ var temporeal = 1000*60*60*24*parseInt(tempo2)
 };
 if (user2.highestRole.position >= message.member.highestRole.position) return message.reply("Não foi possível mutar este usuário :neutral_face: ")
 
-         var achar2 = user2.roles.find("name", "🔇 Sysop Mute")
+var achar2 = user2.roles.find("name", "🔇 Sysop Mute")
 client.guilds.get(message.guild.id).members.get(user.id).addRole(cargoid)
 var trocar = args.slice(1).join(" ")
+
 var a1 = trocar.indexOf("h")
 if ( 0 < a1)
 {
@@ -108,12 +109,13 @@ if ( 0 < a4)
 {
   var real = trocar.replace(/s/g," Segundos" )
 }
+
 if (achar2 !== null)return message.reply("Esse usuário já foi mutado por: " +real);
 
-message.channel.send(`O usuário ${user} foi mutado no servidor por ${real}`)
+message.channel.send(`\`🔕\` O usuário ${user} foi mutado no servidor por ${real}`)
     setTimeout(() => {
     client.guilds.get(message.guild.id).members.get(user.id).removeRole(cargoid)
-    message.channel.send("O " + user + " Foi Desmutado!" )
+    message.channel.send("O " + user + " foi Desmutado! **Motiv:** Tempo Expirado." )
 }, temporeal)
 	})
 }
