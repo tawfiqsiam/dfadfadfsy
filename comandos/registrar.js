@@ -1,9 +1,5 @@
 const Discord = require("discord.js");
 const db = require("../database.js"); 
-var moment = require('moment');
-    	moment.locale('pt-BR'); 
-
-    	
 module.exports = { task(client, message, suffix) { message.delete(1000);
 
  
@@ -22,7 +18,7 @@ db.Bloqueio.findOne({
 let args = suffix;
 let p1 =   message.guild.id+message.author.id;
 
-    let pp1 = message.mentions.users.first().id
+    let pp1 = message.mentions.users.first()
 
     ? message.mentions.users.first().id 
 
@@ -56,63 +52,30 @@ if(!message.guild.members.get(message.author.id).roles.find("id", doc.staffer))
 return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}, que situação complicada! Você não é um usuário Staff por tanto não tem acesso ao comando.`);
          
 if(!message.guild.members.get(user1.id).roles.find("id", doc.autorole)) 
-return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} Este usuário já foi registrado ou não tem a tag Novatos para ser registrado.`);
+return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} Este usuário já foi registrado`);
 
 if(!message.guild.members.get(user1.id).roles.some(r=>[doc.man , doc.girl].includes(r.id))) 
 return message.channel.send(`<:sysalerta:469789950938841088> ${message.author}, **Registro Incompleto** Verifique se o usuário a ser registrado possui a tag \`menino\` ou \`menina\` em seu registro.`);
 
-if (message.mentions.users.first().id == message.author.id)
-return message.channel.send(`<:xguardian:476061993368027148> | NEGADO ${message.author}! Você não pode se auto registrar.`);
-    
-
 if(message.guild.members.get(user1.id).roles.find("id", doc.man)) {     
 
-
-db.Registrador.findOne({ "_id": message.guild.id+message.mentions.users.first().id}, function (erro, doc3) {
-if(doc3) {  
-
-
-doc3.executor = message.author.id ;
-doc3.save();
-} else {
-    var pessoa = new db.Registrador({
-                        _id: pp1,
-                        mh: 0,
-                        hm: 0,
-                        executor: '',
-                     
-                    });
-                    pessoa.save();
-                    return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
-        
-}
-});
 db.Registrador.findOne({ "_id": message.guild.id+message.author.id }, function (erro, doc2) {
-if(doc2) {  
-    
+if(doc2) {   
 let server = message.guild;    
 
 message.guild.members.get(pp1).removeRole(message.member.guild.roles.find("id", doc.autorole));
 
                     doc2.hm += 1;
                     doc2.save();
-                    let user =  message.mentions.users.first() ? message.mentions.users.first() : message.author;
                     const embed = new Discord.RichEmbed()
-                    .setAuthor(user.username, user.avatarURl)
-                    .setThumbnail(user.avatarURL)
-                    .setDescription(`<:trust:447056422346424320> Registro bem sucedido!`)
-                    .addField(`:star2: Registrador:`,`<@${message.author.id}>`)
-                    .addField(`:blue_heart: Usuário Registrado:`, `<@${user1.id}>`)
-                    .setTimestamp()
-                    .setFooter(server.name)
+                    .setDescription(`<@${message.author.id}> registrou o usuário <@${user1.id}> com sucesso! :blue_heart:`)
+                    .setThumbnail(user1.avatarURL)
                     .setColor('#97ff4a');
-                    message.channel.send({embed}); 
-                   
-                    user1.send({embed});
-                    
+                    message.channel.send({embed});  
+                    user1.send(`<@${user1.id}> você foi registrado por <@${message.author.name}> no servidor **${server.name}** . Se você acha que isso é um engano contate um staff do servidor. :blue_heart:`);
 
                     
-
+                    
 } else {
                     var pessoa = new db.Registrador({
                         _id: p1,
@@ -125,32 +88,11 @@ message.guild.members.get(pp1).removeRole(message.member.guild.roles.find("id", 
             }
         
                });
-
            }    
   
    if(message.guild.members.get(user1.id).roles.find("id", doc.girl)) {        
    if(message.guild.members.get(user1.id).roles.find("id", doc.man)) return;
    
-   db.Registrador.findOne({ "_id": message.guild.id+message.mentions.users.first().id}, function (erro, doc3) {
-if(doc3) {  
-
-
-doc3.executor = message.author.id ;
-doc3.save();
-} else {
-    var pessoa = new db.Registrador({
-                        _id: pp1,
-                        mh: 0,
-                        hm: 0,
-                        executor: '',
-                     
-                    });
-                    pessoa.save();
-                    return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} O usuário mencionado não tinha um histórico. Use o comando novamente.`);
-        
-}
-});    
-       
    db.Registrador.findOne({ "_id": message.guild.id+message.author.id }, function (erro, documento) {
    if(documento) {   
    let server = message.guild;
@@ -159,18 +101,12 @@ doc3.save();
 
                     documento.mh += 1 ;
                     documento.save();
-                    let user =  message.mentions.users.first() ? message.mentions.users.first() : message.author;
                     const embed = new Discord.RichEmbed()
-                    .setAuthor(user.username, user.avatarURl)
-                    .setThumbnail(user.avatarURL)
-                    .setDescription(`<:trust:447056422346424320> Registro bem sucedido!`)
-                    .addField(`:star2: Registrador:`,`<@${message.author.id}>`)
-                    .addField(`:heart: Usuário Registrado:`, `<@${user1.id}>`)
-                    .setFooter(server.name)
-                    .setTimestamp()
+                    .setDescription(`<@${message.author.id}> registrou o usuário <@${user1.id}> com sucesso! :blue_heart:`)
+                    .setThumbnail(user1.avatarURL)
                     .setColor('#f30052');
                     message.channel.send({embed}); 
-                    user1.send({embed});
+                    user1.send(`<@${user1.id}> você foi registrada por <@${message.author.id}> no servidor **${server.name}** . Se você acha que isso é um engano contate um staff do servidor. :heart:`);
            
                 } else {
                     var pessoa = new db.Registrador({
@@ -186,7 +122,7 @@ doc3.save();
                    
                });
    }
-
+           
 } else {
             var pessoa = new db.Guilds({
                 _id: message.guild.id,
