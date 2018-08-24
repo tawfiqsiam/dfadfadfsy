@@ -26,13 +26,13 @@ switch (suffix.split(' ')[0]){
 	
 case 'on': {
 
-sysop.upa  = true ;
+sysop.upar  = true ;
 sysop.save();
 message.channel.send(`:white_check_mark: | Ok ${message.author} você ativou o sistema de levels.`) ;
 }
 case 'off': {
 
-sysop.upa  = false ;
+sysop.upar  = false ;
 sysop.save();
 message.channel.send(`:no_entry_sign: | Ok ${message.author} você desativou o sistema de levels.`) ;
 }}} else {
