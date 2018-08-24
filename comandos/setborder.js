@@ -25,7 +25,7 @@ database.Bloqueio.findOne({
         suffix = suffix.split(' ')
         if(documento.border_shoped === "no") return message.channel.send('Você não comprou o comando')
         if (suffix[0].length < 1) return message.reply('Defina uma nova cor para sua borda no avatar...');
-        if (!['bpcrys','bpcaramelo','bpairis','bblue', 'bgold', 'bpabora', 'bpcapeta', 'bpezz', 'bpink', 'bpurple', 'bpvinho', 'bruby', 'bwhite'].includes(suffix[0])) return message.channel.send('Defina uma nova borda para seu avatar...\nCores Disponíveis em nosso site: https://sysopcopy.wixsite.com/sysopcorp/loja`')
+        if (!['bpcrys','bpcaramelo','bpairis','bblue', 'bgold', 'bpabora', 'bpcapeta', 'bpezz', 'bpink', 'bpurple', 'bpvinho', 'bruby', 'bwhite'].includes(suffix[0])) return message.channel.send('Defina uma nova borda para seu avatar...\n**Cores Disponíveis em nosso site:** \`https://sysopcopy.wixsite.com/sysopcorp/loja\`')
           documento.borderp = `${suffix[0]}`;
           console.log(suffix[0])
           message.reply('Bordar do perfil alterada!');
