@@ -26,6 +26,10 @@ switch (suffix.split(' ')[0]){
 	
 case 'on': {
 
+if (!message.member.hasPermission('ADMINISTRATOR')) 
+return message.reply('<:xguardian:476061993368027148> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador.');
+   	
+	
 sysop.upar  = true ;
 sysop.save();
 message.channel.send(`:white_check_mark: | Ok ${message.author} você ativou o sistema de levels.`) ;
@@ -33,6 +37,10 @@ message.channel.send(`:white_check_mark: | Ok ${message.author} você ativou o s
 }
 case 'off': {
 
+if (!message.member.hasPermission('ADMINISTRATOR')) 
+return message.reply('<:xguardian:476061993368027148> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador.');
+    	
+	
 sysop.upar  = false ;
 sysop.save();
 message.channel.send(`:no_entry_sign: | Ok ${message.author} você desativou o sistema de levels.`) ;
