@@ -29,12 +29,14 @@ case 'on': {
 sysop.upar  = true ;
 sysop.save();
 message.channel.send(`:white_check_mark: | Ok ${message.author} você ativou o sistema de levels.`) ;
+	return;
 }
 case 'off': {
 
 sysop.upar  = false ;
 sysop.save();
 message.channel.send(`:no_entry_sign: | Ok ${message.author} você desativou o sistema de levels.`) ;
+	return;
 }}} else {
     var server = new db.Guilds({
             _id: message.guild.id,
