@@ -18,17 +18,12 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
     
     const embed = new Discord.RichEmbed()
     .setThumbnail(user.avatarURL)
-    embed.setDescription(`Saldo de **${user.username}** \n\n
-\`Moedas:\`
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-<:Sycoins:469789351358889984>  ${Number(sysop.coins).toLocaleString()} sycoins  |  <a:rubine:442715023878651905> ${Number(sysop.rubys).toLocaleString()} rubys\n
-\`Moedas Raras:\`
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-<a:esmeral:442718169585680387> ${Number(sysop.emerald).toLocaleString()} esmeraldas\n
-\`Utilitário:\`
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-<:Container_gold:470318996206649364> ${Number(sysop.goldbox).toLocaleString()} goldbox's
-<:Container_frontier_zero:470320615660847175> ${Number(sysop.containers).toLocaleString()} containers`);
+    embed.setDescription(`👤Saldo de **${user.username}**\n-------------------------------------`);
+   embed.addField(`<:Sycoins:469789351358889984> Sycoins`, `\`\`\`http\n${Number(sysop.coins).toLocaleString()}\`\`\` `,true)
+   embed.addField(`<:xcrystal:482650560974159883> SY CRYSTAL`, `\`\`\`http\n${Number(sysop.rubys).toLocaleString()}\`\`\``,true)
+   embed.addField(`<a:esmeral:442718169585680387> Esmeralda`, `\`\`\`http\n${Number(sysop.emerald).toLocaleString()}\`\`\``, false)
+   embed.addField(`<:Container_gold:470318996206649364> Goldbox's`, `\`\`\`http\n${Number(sysop.goldbox).toLocaleString()}\`\`\``,true)
+   embed.addField(`<:Container_frontier_zero:470320615660847175> Containers`, `\`\`\`http\n${Number(sysop.containers).toLocaleString()}\`\`\``,true)
     embed.setColor('#36393E');
     message.channel.send({embed});
     
