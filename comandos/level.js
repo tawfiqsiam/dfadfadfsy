@@ -16,9 +16,9 @@ db.Guilds.findOne({"_id": message.guild.id}, function(erro, sysop) {
 
 if (sysop) {
 	
-if  (!message.member.hasPermission(["MANAGE_MESSAGES"])) 
-return message.channel.send(`Opa ${message.author}! Você não possui permissão de **Gerenciamento de Mensagens** para usar esse comando.`);	
-
+if (!message.member.hasPermission('ADMINISTRATOR')) 
+return message.reply('<:xguardian:476061993368027148> Opa! Para utilizar este comando é necessário que você tenha permissões de Administrador.');
+      
 if (!suffix)
 return message.channel.send(`<:xguardian:476061993368027148> ${message.author}, level como usar?\n\n\`sy!level on\` - Para ativar o sistema de level na guilda.\n\`sy!level off\` - Para desativar o sistema de level na guilda.`)
 	
