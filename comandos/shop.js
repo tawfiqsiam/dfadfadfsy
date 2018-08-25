@@ -96,7 +96,7 @@ ES = ESMERALDAS\nSC = SY CRYSTAL\nSCS = SY COINS\nGX = GOLDBOX\nCT = CONTAINERS\
 [ Nv4 ] 10k SC → 40k SCS
 [ Nv5 ] 100k SCS → 500 ES
 [ Nv6 ] 5 CT → 35 GX
-[ Nv7 ] 20 CT → 100 GX
+[ Nv7 ] 100 GX → 20 CT
 \`\`\``)
 embed.setFooter(`Pagina 3 de 3`);
 value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
