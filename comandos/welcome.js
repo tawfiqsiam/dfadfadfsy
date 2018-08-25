@@ -51,7 +51,7 @@ database.Guilds.findOne({ "_id": message.guild.id}, function(erro, documento) {
             documento.welcome = mensagem;
             documento.welcomeChannel = message.channel.id;
             documento.save();
-            return message.channel.send(`GG ${message.author}! Você definiu a mensagem de saída. <:LikeSysop3:476062023629799424>`);
+            return message.channel.send(`GG ${message.author}! Você definiu a mensagem de boas-vindas. <:LikeSysop3:476062023629799424>`);
         } else {
             documento.welcomeChannel = '';
             documento.welcome = '',
