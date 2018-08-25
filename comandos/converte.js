@@ -3,6 +3,7 @@ module.exports = { task(client, message, suffix) {
 if (!suffix)
 return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} defina o texto que você gostaria de converter!`);
     
+let user = message.author;    
 let fonte =
 suffix.replace(/A/gi, 'ᴀ')
 .replace(/Ã/gi, 'ᴀ̃').replace(/Á/gi, 'ᴀ́').replace(/B/gi, 'ʙ').replace(/C/gi, 'ᴄ') 
@@ -15,5 +16,5 @@ suffix.replace(/A/gi, 'ᴀ')
    
    
     
-message.channel.send(fonte);
+message.channel.send(`Texto de \`${user.username}\`\n\n\`\`\`http\n${fonte}\`\`\``);
 }};
