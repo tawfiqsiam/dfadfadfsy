@@ -90,13 +90,13 @@ embed.setDescription(`\`\`\`https\nUso: sy!by <parâmetro>
 Legendas:
 
 ES = ESMERALDAS\nSC = SY CRYSTAL\nSCS = SY COINS\nGX = GOLDBOX\nCT = CONTAINERS\n\nParâmetros:\n
-100 ES → 80k SCS
-1k ES → 40k SCS
-1k SC → 5k SCS
-10k SC → 40k SCS
-100k SCS → 500 ES
-5 CT → 35 GX
-20 CT → 100 GX
+[ Nv1 ] 100 ES → 80k SCS
+[ Nv2 ] 1k ES → 40k SCS
+[ Nv3 ] 1k SC → 5k SCS
+[ Nv4 ] 10k SC → 40k SCS
+[ Nv5 ] 100k SCS → 500 ES
+[ Nv6 ] 5 CT → 35 GX
+[ Nv7 ] 20 CT → 100 GX
 \`\`\``)
 embed.setFooter(`Pagina 3 de 3`);
 value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
