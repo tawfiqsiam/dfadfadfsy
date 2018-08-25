@@ -63,46 +63,80 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send('Você precisa de 10.000 rubys...')
                     }
-                } else if(razaou === 'setrolecor') {
-                    if(Number(documento.coins) >= 30000) {
-                        documento.coins = Number(documento.cois) - 30000
-                        documento.rolecor_shoped = "yes"
+                } else if(razaou === 'Nv1') {
+                    if(Number(documento.emerald) >= 100) {
+                        documento.emerald = Number(documento.emerald) - 100
+                        documento.coins = Number(documento.coins) + 80000
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                         
                     } else {
-                        message.channel.send('Você precisa de 30.000 coins...')
+                        message.channel.send('Você precisa de 100 esmeraldas')
                     }
-                } else if(razaou === 'gumber') {
+                } else if(razaou === 'Nv2') {
+                    if(Number(documento.emerald) >= 1000) {
+                        documento.emerald = Number(documento.emerald) - 1000
+                        documento.coins = Number(documento.coins) + 40000
+                        message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send('Você precisa de 1.000 esmeraldas...')
+                    }
+                } else if(razaou === 'Nv3') {
                     if(Number(documento.rubys) >= 1000) {
                         documento.rubys = Number(documento.rubys) - 1000
-                        documento.gumber_shoped = "yes"
+                        documento.coins = Number(documento.coins) + 5000
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                         
                     } else {
-                        message.channel.send('Você precisa de 30.000 coins...')
+                        message.channel.send('Você precisa de 1.000 Sy Crystal...')
+                    }
+                } else if(razaou === 'Nv4') {
+                    if(Number(documento.rubys) >= 10000) {
+                        documento.rubys = Number(documento.rubys) - 10000
+                        documento.coins = Number(documento.coins) + 40000
+                        message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send('Você precisa de 10.000 Sy Crystal...')
+                    }
+                } else if(razaou === 'Nv5') {
+                    if(Number(documento.coins) >= 100000) {
+                        documento.rubys = Number(documento.coins) - 100000
+                        documento.emerald = Number(documento.emerald) + 500
+                        message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send('Você precisa de 100.000 Sycoins...')
+                    }
+                } else if(razaou === 'Nv6') {
+                    if(Number(documento.containers) >= 5) {
+                        documento.containers = Number(documento.containers) - 5
+                        documento.goldbox = Number(documento.goldbox) + 35
+                        message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send('Você precisa de 5 containers...')
+                    }
+                } else if(razaou === 'Nv7') {
+                    if(Number(documento.goldbox) >= 100) {
+                        documento.goldbox = Number(documento.goldbox) - 100
+                        documento.containers = Number(documento.containers) + 20
+                        message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send('Você precisa de 100 Goldbox...')
                     }
                
+               
                 } else {
-  message.channel.send(`<a:loading:434048962190770198> Preparando a loja...`).then(function(value) {
-  
-  
-                       setTimeout(function() {
-                       const embed = new Discord.RichEmbed()
-                       embed.setThumbnail('https://png.icons8.com/cotton/1600/online-shop.png')
-                       embed.setAuthor('SysopCorp Shopping Cliente:' + message.author.username, message.author.avatarURL)
-                       embed.addField(`Comando setbackground`, ` Com este comando é possível modificar seu background do perfil.\n**Preço:** \`\`35.650\`\` rubys <:rubys:430493599633899532>`, true)
-                       embed.addField(`Comando bio`, ` Com este comando é possível alterar sua descrição no perfil.\n**Preço:** \`\`200\`\` esmeraldas <:esmeralda:436313141446443029>`, true)
-                       embed.addField(`Comando goldbox`, ` Este comando permite você soltar caixas douradas aleatoriamente dentro do seu servidor vindo como premio para qualquer um que pegar até 1000 coins.\n**Preço** \`\`20.900\`\` rubys <:rubys:430493599633899532>`, true)
-                       embed.addField('Comando setborder', 'Este comando permitirá que você mude o quadro do seu perfil.\n**Preço:** ``10.000`` rubys <:rubys:430493599633899532>', true)
-                       embed.addField('Comando setrolecor', 'Mude a cor de um cargo através de comando\n**Preço:** ``30.000`` coins <:coins:430242868813103105>', true)
-                       embed.addField('Comando gumber', 'Gere um número aleatório a sua escolha.\n**Preço:** ``1.000`` rubys <:rubys:430493599633899532>', true)
-                       embed.setFooter(`Rubys: ${Number(documento.rubys).toLocaleString()} -- Coins: ${Number(documento.coins).toLocaleString()} --  Esmeraldas: ${Number(documento.emerald).toLocaleString()}`)
-                       .setColor(0xff2227);
-   
-    value.edit(embed)}, 3000)
-})
+  message.channel.send(`<:sysalerta:469789950938841088>${message.author} especifique algo para comprar! **Use** \`sy!shop\``)
                 }
                 
             } else {
