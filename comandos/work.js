@@ -19,7 +19,7 @@ database.Bloqueio.findOne({
         
 }
    
- if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
+// if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
         
        if(!dayCol.includes(message.author.id)) {
             
@@ -48,47 +48,47 @@ database.Bloqueio.findOne({
                     documento.save()
                 } else if (prc <= 80) {
                     premio = `sycoins <:Sycoins:469789351358889984>`;
-                    quantidade = 500 + 3000;
+                    quantidade = 2000;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.coins += dayRDM
                     documento.save()
             } else if (prc <= 40) {
                     premio = `goldboxs <:New_goldenbox_10:458877483182194698>`;
-                    quantidade = 5 + 15;
+                    quantidade = 10;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.goldbox += dayRDM
                     documento.save()
             } else if (prc <= 40) {
-                    premio = `XP's <:New_goldenbox_10:458877483182194698>`;
-                    quantidade = 5 + 2000;
+                    premio = `EXP's <:New_goldenbox_10:458877483182194698>`;
+                    quantidade = 300;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
-                    documento.xp += dayRDM
+                    documento.eexp += dayRDM
                     documento.save()
             } else if (prc <= 60) {
                     premio = `lootbox <:ContainerEmoji:436348542576230411>`;
-                    quantidade = 1 + 3;
+                    quantidade = 51 + 3;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.lootbox += dayRDM
                     documento.save()
                 } else if (prc <= 20) {
                     premio = `esmeraldas <a:esmeral:442718169585680387>`;
-                    quantidade = 10;
+                    quantidade = 30;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.emerald += dayRDM
                     documento.save()
                 }
                 
-                message.channel.send(`<a:Coin:435849790610472960> Calculando prêmio...`).then(function(value) {
+                message.channel.send(`<a:Coin:435849790610472960> Trabalhando...`).then(function(value) {
   
   
                        setTimeout(function() {
                        const embed = new Discord.RichEmbed()
-                       embed.setThumbnail('https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png')
+                       embed.setThumbnail(message.author.avatarURL)
                        embed.setAuthor(message.author.username, message.author.avatarURL)
-                       embed.addField(`**Bônus Diário!**`,` <a:festa:461509706763206657> Você ganhou: **${dayRDM} ${premio}** .`, false)
+                       embed.addField(`**Salário!**`,` <a:festa:461509706763206657> Você ganhou: **${dayRDM} ${premio}** .`, false)
                        .setColor('#36393E');
    
-    value.edit(embed)}, 3000)
+    value.edit(embed)}, 5000)
   
  
 })
