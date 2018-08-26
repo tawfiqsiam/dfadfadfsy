@@ -32,10 +32,10 @@ module.exports = {
             "_id": message.author.id,
         }, function (erro, documento) {
             if (documento) {
-                if (documento.lootboxr > 0) {
+                if (documento.rarebox > 0) {
                     if (!!args[0]) {
                         if (args[0] == 'drop') {
-                            let premio = "Coin (s) <:coins:430242868813103105>",
+                            let premio = "SyCoin (s) <:Sycoins:469789351358889984>",
                                 prc = Math.round(Math.random() * 40),
                                 wonCoins = 0;
                                 
@@ -45,7 +45,7 @@ module.exports = {
                                 wonCoins += quantidade(1000 + 20000);
                             }
                             
-                            documento.lootboxr -= 1;
+                            documento.rarebox -= 1;
                             documento.save();
                             
                             database.Users.findOne({ 
