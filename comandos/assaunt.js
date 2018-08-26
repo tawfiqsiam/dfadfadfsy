@@ -39,7 +39,7 @@ database.Bloqueio.findOne({
 
                     if (doc2) {
 
-                        if(doc2.coins > 3000) {
+                        if(doc2.coins > 1000) {
 
                         if (Math.round(Math.random() * 1) == 1) {
 
@@ -47,7 +47,7 @@ database.Bloqueio.findOne({
                             documento.save();
                             doc2.coins -= dayRDM
                             doc2.save();
-                            message.reply("**Sucesso! Você roubou " + Number(dayRDM).toLocaleString() + " coins de <@" + message.mentions.users.first().id + ">.**");
+                            message.reply("<a:festa:479062708491124757> **Sucesso! Você roubou " + Number(dayRDM).toLocaleString() + " coins de <@" + message.mentions.users.first().id + ">.**");
                             dayCol.add(message.author.id)
                             setTimeout(function() {
                                 dayCol.delete(message.author.id)
