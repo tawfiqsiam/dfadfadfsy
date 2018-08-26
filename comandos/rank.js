@@ -43,7 +43,7 @@ let level = documento.lvll + 1;
              Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function(letra3) {
                Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letr) {
                 Jimp.read(`${user.avatarURL}`).then(function(level) {  
-              Jimp.read("./EEXP SYSOP/exp ("+ parseInt(documento.eexp/(documento.lvll *700 )*100) +").png").then(function(pau) {
+              Jimp.read("./EEXP /exp ("+ parseInt(documento.eexp/(documento.lvll *700 )*100) +").png").then(function(pau) {
               Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/469817915357528074/InvisibleSysop_1.png", function(erre, img) {
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
