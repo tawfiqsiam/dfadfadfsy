@@ -37,11 +37,15 @@ database.Bloqueio.findOne({
       "stream": "./status/.d.png"
       
 };
+
+let level = documento.lvll + 1;
         try {
           Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function(letra) {
             Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function(letra2) {
              Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function(letra3) {
                Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letr) {
+                Jimp.read(`${user.avatarURL}`).then(function(level) {  
+              Jimp.read("./EEXP/exp ("+ parseInt(documento.eexp/(documento.lvll *450 )*100) +").png").then(function(pau) {
               Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/469817915357528074/InvisibleSysop_1.png", function(erre, img) {
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
@@ -60,11 +64,13 @@ database.Bloqueio.findOne({
                             img.composite(avatar, 43, 70);
                       
                             img.composite(status, 190, 215);
+                            img.composite(pau, 250, 160);
                        
 
                             img.print(letra, 280, 140, `${user.username}`);
                             img.print(letra, 815, 235, `${user.discriminator}`);
                             img.print(letra, 770, 15, `${Number(documento.coins).toLocaleString()}`);
+                            img.print(letra, 480, 180, documento.eexp + "/" +  Math.ceil(documento.lvll * 450 ) + " (" + parseInt(documento.eexp/(documento.lvll *450 )*100) + "%)")  
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
                               message.channel.send(``, new Discord.Attachment(buffer, 'CardSys.png'));
                      
@@ -81,6 +87,8 @@ database.Bloqueio.findOne({
   });
 });
   });
+            });
+          });
         } catch (e) {
           message.channel.send('**Você está usando um plano de fundo inválido**');
         }
