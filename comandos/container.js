@@ -38,28 +38,28 @@ database.Bloqueio.findOne({
                             
                                  if(prc <= 20) {
                                 premio = "Goldbox <:New_goldenbox_10:458877483182194698>";
-                                quantidade = 20;
+                                quantidade = 10;
                                 var prem = Math.round(Math.random() * parseInt(quantidade) + 1);
                                 documento.goldbox += prem
                                 documento.containers -= 1
                                 documento.save()
                               } else if(prc <= 20) {
-                                premio = "Lootbox <:ContainerEmoji:436348542576230411>";
-                                quantidade = 3 + 10;
+                                premio = "Esmeralda <a:esmeral:442718169585680387>";
+                                quantidade = 100;
                                 var prem = Math.round(Math.random() * parseInt(quantidade) + 1);
-                                documento.lootbox += prem
+                                documento.emerald += prem
                                 documento.containers -= 1
                                 documento.save()
                             } else if(prc <= 40) {
-                                premio = "coins <a:Coin:435849790610472960>";
-                                quantidade = 5000;
+                                premio = "Sycoins <:Sycoins:469789351358889984>";
+                                quantidade = 2000;
                                 var prem = Math.round(Math.random() * parseInt(quantidade) + 1);
                                 documento.coins += prem
                                 documento.containers -= 1
                                 documento.save()
                             } else if(prc <= 60) {
-                                premio = "rubys <:rubys:430493599633899532>";
-                                quantidade = 1000;
+                                premio = "Sy Crystal <:sysopcrystal:482651147111366656>";
+                                quantidade = 500;
                                 var prem = Math.round(Math.random() * parseInt(quantidade) + 1);
                                 documento.rubys += prem
                                 documento.containers -= 1
@@ -80,7 +80,7 @@ database.Bloqueio.findOne({
                        embed.setThumbnail(thumb)
                        embed.setAuthor(message.author.username, message.author.avatarURL)
                        embed.addField(`**Prêmio:**`,` Você ganhou ${prem} ${premio} abrindo um container`, false)
-                       .setColor(0x448c2f);
+                       .setColor('#7ff150');
    
     value.edit(embed)}, 3000)
   
