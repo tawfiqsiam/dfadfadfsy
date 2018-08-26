@@ -41,7 +41,7 @@ database.Bloqueio.findOne({
                     documento.containers += dayRDM
                     documento.save()
                 } else  if (prc <= 40) {
-                    premio = `rubys <:rubys:430493599633899532>`;
+                    premio = `Sy Crystal <:sysopcrystal:482651147111366656>`;
                     quantidade = 500 + 2000;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.rubys += dayRDM
@@ -77,13 +77,12 @@ database.Bloqueio.findOne({
                     documento.emerald += dayRDM
                     documento.save()
                 }
-                
+                let user = message.mentions.users.first() || message.author;
                 message.channel.send(`<a:Coin:435849790610472960> Trabalhando...`).then(function(value) {
-  
   
                        setTimeout(function() {
                        const embed = new Discord.RichEmbed()
-                       embed.setThumbnail(message.author.avatarURL)
+                       embed.setThumbnail(user.avatarURL)
                        embed.setAuthor(message.author.username, message.author.avatarURL)
                        embed.addField(`**Salário!**`,` <a:festa:461509706763206657> Você ganhou: **${dayRDM} ${premio}** .`, false)
                        .setColor('#36393E');
@@ -101,7 +100,7 @@ database.Bloqueio.findOne({
                             dayCol.splice(i, 1);
                         }
                     }
-                }, 5 * 1000 * 60 * 60);
+                }, 4 * 1000 * 60 * 60);
 
             } else {
 
@@ -123,7 +122,7 @@ database.Bloqueio.findOne({
         }).catch(e => console.log(e));
         
    } else {
-       message.channel.send(`<:sysalerta:471836304938631168> Woww ${message.author}, você já coletou seu bônus diário! Volte novamente em 5 horas. `);
+       message.channel.send(`<:sysalerta:471836304938631168> Opa ${message.author}, você já trabalhou hoje. Descanse e volte novamente em 4 horas. `);
     }
 })
         }
