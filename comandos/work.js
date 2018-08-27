@@ -19,7 +19,7 @@ database.Bloqueio.findOne({
         
 }
       
-      if (!['244489368717230090','481829760369033228', '345014174004543488', '431334258653528066'].includes(message.author.id))
+      if (['244489368717230090','481829760369033228', '345014174004543488', '431334258653528066'].includes(message.author.id))
       return message.channel.send(`<:sysalerta:469789950938841088> | Opa ${message.author} você não pode roubar este usuário.`)    
             
    if(message.author.bot) return;
