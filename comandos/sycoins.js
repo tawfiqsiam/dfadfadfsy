@@ -14,9 +14,9 @@ database.Bloqueio.findOne({
  if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
-        
-        
-  if (message.author.bot) return 'Bots não podem usar esse comando :) ';
+
+    if(message.author.bot) return;
+
         
     let user = message.mentions.users.first();
     args = args.split(' '); 
