@@ -16,8 +16,10 @@ database.Bloqueio.findOne({
         
 }
      
-    if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
+   // if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
  
+    if(message.author.bot) return;
+    
     let user = message.mentions.users.first();
     args = args.split(' '); 
     let razaod = args.slice(0);
