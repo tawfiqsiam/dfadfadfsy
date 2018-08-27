@@ -66,7 +66,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv1') {
                     if(Number(documento.emerald) >= 100) {
                         documento.emerald = Number(documento.emerald) - 100
-                        documento.coins = Number(documento.coins) + 40000
+                        documento.coins = Number(documento.coins) + 50000
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                         
@@ -76,7 +76,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv2') {
                     if(Number(documento.emerald) >= 1000) {
                         documento.emerald = Number(documento.emerald) - 1000
-                        documento.coins = Number(documento.coins) + 20000
+                        documento.coins = Number(documento.coins) + 15000
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                         
@@ -86,7 +86,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv3') {
                     if(Number(documento.rubys) >= 1000) {
                         documento.rubys = Number(documento.rubys) - 1000
-                        documento.coins = Number(documento.coins) + 3000
+                        documento.coins = Number(documento.coins) + 5000
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                         
@@ -96,7 +96,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv4') {
                     if(Number(documento.rubys) >= 10000) {
                         documento.rubys = Number(documento.rubys) - 10000
-                        documento.coins = Number(documento.coins) + 80000
+                        documento.coins = Number(documento.coins) + 40000
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                         
