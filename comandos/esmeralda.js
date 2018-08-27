@@ -16,6 +16,8 @@ database.Bloqueio.findOne({
         
 }
         
+    if(message.author.bot) return;
+    
     let user = message.mentions.users.first();
     args = args.split(' '); 
     let razaod = args.slice(0);
