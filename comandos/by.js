@@ -4,6 +4,7 @@ let database = require("../database.js");
 module.exports = {
     categoria: 'Economia',
     description: 'Loja Global do Bot, onde você compra alguns comandos premiums e divertidos!',
+    cooldown: 20,
     task(client, message, suffix) {
      
 database.Bloqueio.findOne({
