@@ -18,7 +18,8 @@ database.Bloqueio.findOne({
  if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
-   
+   if(message.author.bot) return;
+
 // if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
         
        if(!dayCol.includes(message.author.id)) {
@@ -42,13 +43,13 @@ database.Bloqueio.findOne({
                     documento.save()
                 } else  if (prc <= 40) {
                     premio = `Sy Crystal <:sysopcrystal:482651147111366656>`;
-                    quantidade = 500 + 2000;
+                    quantidade = 500;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.rubys += dayRDM
                     documento.save()
                 } else if (prc <= 80) {
                     premio = `sycoins <:Sycoins:469789351358889984>`;
-                    quantidade = 2000;
+                    quantidade = 1000;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.coins += dayRDM
                     documento.save()
@@ -63,12 +64,6 @@ database.Bloqueio.findOne({
                     quantidade = 300;
                     var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
                     documento.eexp += dayRDM
-                    documento.save()
-            } else if (prc <= 60) {
-                    premio = `lootbox <:ContainerEmoji:436348542576230411>`;
-                    quantidade = 51 + 3;
-                    var dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1)
-                    documento.lootbox += dayRDM
                     documento.save()
                 } else if (prc <= 20) {
                     premio = `esmeraldas <a:esmeral:442718169585680387>`;
