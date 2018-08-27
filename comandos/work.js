@@ -18,10 +18,7 @@ database.Bloqueio.findOne({
  if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
-      
-      if (['244489368717230090','481829760369033228', '345014174004543488', '431334258653528066'].includes(message.author.id))
-      return message.channel.send(`<:sysalerta:469789950938841088> | Opa ${message.author} você não pode roubar este usuário.`)    
-            
+   
    if(message.author.bot) return;
 
 // if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
