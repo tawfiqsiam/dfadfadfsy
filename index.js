@@ -221,7 +221,7 @@ client.guilds.get(member.guild.id).channels.get(sysop.animado).edit({ topic: `<a
 });
 
 client.on('guildMemberAdd', (member) => {
-    database.Users.findOne({ 
+    database.Guilds.findOne({ 
         "_id": member.guild.id
     }, function (erro, sysop) {
         if (!sysop || !sysop.filtrof || !client.guilds.get(member.guild.id).channels.get(sysop.filtrof)) 
