@@ -528,7 +528,7 @@ client.on('message', message => {
         .setFooter('SysopCorp ---- LOG COMANDOS ' + ' ---- ' + new Date())
         .setColor(0x0df7eb);
         
-        client.guilds.get('307956208042770433').channels.get('470328436540571662').send({ embed });
+        client.guilds.get('441766085809799198').channels.get('483908190438817813').send({ embed });
 	}
 });
 
