@@ -388,15 +388,20 @@ Aposte suas fichas.
     embed.setDescription(`\`\`\`Markdown\n# Prefixo sy!\n\n
  # divulgador
  Veja quantas pessoas você convidou em um servidor em especifico.
- # filtro invites |
- Filtro de convites para bloquear mensagens que obtenham link de outro servidor, assim como terá novos filtros que bloquearam/filtraram outros parâmetros.
- #banfinish - sy!banfinish @user <reason(Opcional)> | sy!banfinish ID  
+ 
+< filtro invites >
+ Filtro de convites para bloquear links de outros servidores. Evento filtrado: (message, messageUpdate)
+
+< banfinish - sy!banfinish @user (reason(Opcional)) | sy!banfinish ID  >
  Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
- #banoff - sy!banoff @user <reason(Opcional)> | sy!banoff ID  
+ 
+< banoff - sy!banoff @user (reason(Opcional)) | sy!banoff ID  >
  Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
- #anistia - sy!anistia ID  
+ 
+< anistia - sy!anistia ID > 
  Desbanir usuários por ID com motivo.
- #slow - sy!slow <amount> | sy!slow off (Para desativar) 
+ 
+< slow - sy!slow <amount> | sy!slow off (Para desativar)>
  Evite spamm e flood em seu servidor com o comando de modo lento. Defina o tempo em segundos e deixe a mágica acontecer.
 \`\`\``) 
     embed.setFooter(`Pagina 9 de 9`);
