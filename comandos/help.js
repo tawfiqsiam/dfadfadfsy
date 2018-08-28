@@ -98,14 +98,6 @@ Anuncie com o perfil do bot em qualquer canal.
 Apago mensagens do chat ou um usuário especifico.
 [ autorole - sy!autorole @role ]
 Define a role quando um usuário entrar no servidor.
-[ banfinish - sy!banfinish @user <reason(Opcional)> | sy!banfinish ID  ]
-Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
-[ banoff - sy!banoff @user <reason(Opcional)> | sy!banoff ID  ]
-Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
-[ anistia - sy!anistia ID  ]
-Desbanir usuários por ID com motivo.
-[ slow - sy!slow <amount> | sy!slow off (Para desativar) ]
-Evite spamm e flood em seu servidor com o comando de modo lento. Defina o tempo em segundos e deixe a mágica acontecer.
 [ cchanneltext ]
 Crie um canal de texto via comando, comando funciona apenas para membros que tenham função MANAGE_CHANNELS.
 [ cchannelvoice ] 
@@ -395,10 +387,17 @@ Aposte suas fichas.
     embed.setTitle("<:DiscordPartner:434417598801641481> | Comandos Especiais");
     embed.setDescription(`\`\`\`Markdown\n# Prefixo sy!\n\n
  # divulgador
- # Veja quantas pessoas você convidou em um servidor em especifico.
- # 
+ Veja quantas pessoas você convidou em um servidor em especifico.
  # filtro invites |
- #Filtro de convites para bloquear mensagens que obtenham link de outro servidor, assim como terá novos filtros que bloquearam/filtraram outros parâmetros.
+ Filtro de convites para bloquear mensagens que obtenham link de outro servidor, assim como terá novos filtros que bloquearam/filtraram outros parâmetros.
+ #banfinish - sy!banfinish @user <reason(Opcional)> | sy!banfinish ID  
+ Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
+ #banoff - sy!banoff @user <reason(Opcional)> | sy!banoff ID  
+ Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
+ #anistia - sy!anistia ID  
+ Desbanir usuários por ID com motivo.
+ #slow - sy!slow <amount> | sy!slow off (Para desativar) 
+ Evite spamm e flood em seu servidor com o comando de modo lento. Defina o tempo em segundos e deixe a mágica acontecer.
 \`\`\``) 
     embed.setFooter(`Pagina 9 de 9`);
     value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
