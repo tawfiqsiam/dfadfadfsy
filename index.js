@@ -220,6 +220,22 @@ client.guilds.get(member.guild.id).channels.get(sysop.animado).edit({ topic: `<a
 }})
 });
 
+client.on('guildMemberAdd', (member) => {
+    database.Users.findOne({ 
+        "_id": member.guild.id
+    }, function (erro, sysop) {
+        if (!sysop || !sysop.filtrof || !client.guilds.get(member.guild.id).channels.get(sysop.filtrof)) 
+            return;
+        else {
+            let daysJoined = moment().diff(member.user.createdAt, 'days');
+            console.log('Chegou aqui oh!')
+            if (daysJoined <= 6)
+                client.guilds.get('441766085809799198').channels.get('483775115599806477').send(`:warning: | Suposta conta fake encontrada. Atende pelo nome de ${member} em um tempo ativo de ${daysJoined} dias no Discord.`);
+        }
+        
+    });
+});
+
 client.on('guildMemberRemove', member => {
 
   database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
