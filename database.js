@@ -410,6 +410,10 @@ var Guilds = new Schema({
         type: Boolean,
         default: true,
     },
+    filtrof: {
+        type: String,
+        default: '',
+    },
 });
 
 
