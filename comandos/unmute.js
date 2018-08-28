@@ -1,5 +1,5 @@
 module.exports = { task(client, message, suffix) {
-
+let db = require('../database.js');
 db.Bloqueio.findOne({
                 "_id": message.author.id
             }, function (erro, documento) {
