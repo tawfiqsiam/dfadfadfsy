@@ -99,7 +99,13 @@ Apago mensagens do chat ou um usuário especifico.
 [ autorole - sy!autorole @role ]
 Define a role quando um usuário entrar no servidor.
 [ banfinish - sy!banfinish @user <reason(Opcional)> | sy!banfinish ID  ]
-Bano usuários do servidor com motivo por menção ou ID.
+Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
+[ banoff - sy!banoff @user <reason(Opcional)> | sy!banoff ID  ]
+Bano usuários do servidor com motivo por menção ou ID e anuncio no privado.
+[ anistia - sy!anistia ID  ]
+Desbanir usuários por ID com motivo.
+[ slow - sy!slow <amount> | sy!slow off (Para desativar) ]
+Evite spamm e flood em seu servidor com o comando de modo lento. Defina o tempo em segundos e deixe a mágica acontecer.
 [ cchanneltext ]
 Crie um canal de texto via comando, comando funciona apenas para membros que tenham função MANAGE_CHANNELS.
 [ cchannelvoice ] 
@@ -120,8 +126,10 @@ Alterar apelido de usuários
 Alterar apelido do Bot
 [ striker - sy!striker <reason> (1/3) ]
 Um comando de avisos no qual o usuário acumula strikers, após fazer dois strikers, no terceiro striker o usuário é banido do servidor automaticamente.
-[ tempmute - sy!tempmute @user <time> (1h | 1m | 1s) ]
+[ mute - sy!tempmute @user <time> (1h | 1m | 1s) ]
 Silencie um usuário no servidor por tempo.
+[ unmute - sy!unmute @user motivo ]
+Desmuta usuário do servidor com motivo.
 [ warn - sy!warn @user <reason> ]
 Avisar a algum usuário.
 [ selfrole | sy!selfrole help ]
@@ -263,6 +271,7 @@ Repito qualquer palavra ou frase sua dentro de uma embed.
  
 [ ship ]
 Calcule seu amor ou de outros usuários.
+
 [ igdb - sy!igdb <Game Name> | sy!igdb League Of Legends ]  
 Pesquise por jogos no site IGDB pelo bot Sysop.
  
@@ -287,10 +296,10 @@ Para visualizar seu saldo!
 [ container <open> ]
 Abra containers ganhos do bônus diário e se surpreeda com novidades!
  
-[ daily ]
-Receba seu bônus diário!
+[ work ]
+Trabalhe e receba!
  
-[ gcontainers - sy!gcontainers @user <amount> ]
+[ containers - sy!containers @user <amount> ]
 Doe containers ou de de presente para algum amigo :)
 
 [ ggoldbox - sy!ggoldbox @user <amoun> ]
@@ -298,12 +307,19 @@ Doe Caixas Douradas para os amigos ou de de presente!
 
 [ goldbox - sy!goldbox drop ]
 Solte uma caixa dourada e alguém aleatóriamente do seu servidor irá pegar, contendo prêmios!
- 
-[ grubys - sy!grubys @user <amount> ]
-Doe rubys para os necessitados :) Faça a festa em nossa loja!
+
+[ Sycoins - sy!sycoins @user <amount> ]
+Para doar SY moedas.
+
+[ Esmeralda - sy!esmeralda @user <amount> ]
+Para doar Esmeraldas.
+
+[ Sy Crystal - sy!sycrystal @user <amount> ]
+Doe Sy Crystal para os necessitados :) Faça a festa em nossa loja!
  
 [ shop - sy!shop | sy!shop item ]
-Loja Global do Bot, onde você compra alguns comandos premiums e divertidos!\`\`\``) 
+Loja Global do Bot, onde você compra alguns comandos premiums e divertidos!
+Para comprar use: sy!by <item>\`\`\``) 
   embed.setFooter(`Pagina 5 de 9`);
   value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
   
@@ -376,18 +392,14 @@ Aposte suas fichas.
    h8.on('collect', r => {
     if(page === 9) return;
     page++;
-    embed.setTitle("<:DiscordPartner:434417598801641481> | Parceiros");
+    embed.setTitle("<:DiscordPartner:434417598801641481> | Comandos Especiais");
     embed.setDescription(`\`\`\`Markdown\n# Prefixo sy!\n\n
- # recrut
- Veja quantas pessoas você convidou em um servidor em especifico.
-  
- # filtro convites | words
- Filtro de convites para bloquear mensagens que obtenham link de outro servidor, assim como terá novos filtros que bloquearam/filtraram outros parâmetros.
-  
- # disable
-Use disable para desativar alguns comandos, os parâmetros serão visíveis uma vez que você executar o comando.
- 
- # INFOS | sy!partners #\`\`\``) 
+ # divulgador
+ # Veja quantas pessoas você convidou em um servidor em especifico.
+ # 
+ # filtro invites |
+ #Filtro de convites para bloquear mensagens que obtenham link de outro servidor, assim como terá novos filtros que bloquearam/filtraram outros parâmetros.
+\`\`\``) 
     embed.setFooter(`Pagina 9 de 9`);
     value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
     
