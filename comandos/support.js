@@ -45,7 +45,7 @@ database.Bloqueio.findOne({
         .addField('Ticket:', `**Report's Author:** ${message.author.tag}\n**Servidor:** ${guild.name}\n**Full report:** ${args}`)
         .setThumbnail(message.author.displayAvatarURL)
         .setColor(0x4959e9);
-    client.guilds.get('412169234492293130').channels.get('462652881846403082').send({ embed })
+    client.guilds.get('441766085809799198').channels.get('483909776879648770').send({ embed })
         .catch(e => console.log(e));
     })
 }};
