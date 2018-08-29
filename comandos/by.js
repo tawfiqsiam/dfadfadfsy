@@ -67,7 +67,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv1') {
                     if(Number(documento.emerald) >= 100) {
                         documento.emerald = Number(documento.emerald) - 100
-                        documento.coins = Number(documento.coins) + 50000
+                        documento.coins = Number(documento.coins) + 5000
                         message.channel.send('<a:anirainbowblob:434952813177470986> Compra realizada com sucesso!')
                         documento.save()
                         
