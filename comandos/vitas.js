@@ -26,7 +26,8 @@ var asdasd = { "URL": "https://youtube.com/watch?v=j4jS5ZYp4kc" }
 var ytdl = require('ytdl-core')
 voiceChannel.join().then(connection => {
 
-const url = ytdl('https://www.youtube.com/watch?v=j4jS5ZYp4kc', { filter: 'audioonly' });
+let vitas = 'https://www.youtube.com/watch?v=j4jS5ZYp4kc';  
+const url = ytdl(vitas, { filter: 'audioonly' });
 const dispatcher = connection.playStream(url);
 
     
