@@ -26,7 +26,8 @@ var asdasd = { "URL": "https://youtube.com/watch?v=j4jS5ZYp4kc" }
 var ytdl = require('ytdl-core')
 message.member.voiceChannel.join().then(connection => {
 
-const dispatcher = connection.playStream(ytdl('https://www.youtube.com/watch?v=j4jS5ZYp4kc', { audioonly: true }))
+const url = ytdl('https://www.youtube.com/watch?v=j4jS5ZYp4kc', { filter: 'audioonly' });
+const dispatcher = connection.playStream(url);
 
     
 })    
