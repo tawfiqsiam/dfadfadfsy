@@ -11,7 +11,7 @@ if (!message.member.voiceChannel)
 return message.channel.send(`<:xguardian:476061993368027148> ${message.author} conecte-se a um canal de voz primeiro!`)
 
 if (message.guild.members.get(client.user.id).voiceChannel) 
-return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! já estou conectado em ${message.guild.members.get(client.user.id).voiceChannel.name}`)
+return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! já estou conectado no canal **${message.guild.members.get(client.user.id).voiceChannel.name}**`)
 
 const voiceChannel = message.member.voiceChannel;
 const permissions = voiceChannel.permissionsFor(client.user);
@@ -22,7 +22,7 @@ const permissions = voiceChannel.permissionsFor(client.user);
       return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! Eu não posso falar neste canal de voz, verifique se eu tenho as permissões adequadas!`);
     }
 
-var asdasd = { "URL": "https://youtu.be/j4jS5ZYp4kc" }
+var asdasd = { "URL": "https://youtube.com/watch?v=j4jS5ZYp4kc" }
 var ytdl = require('ytdl-core')
 message.member.voiceChannel.join().then(connection => {
 
