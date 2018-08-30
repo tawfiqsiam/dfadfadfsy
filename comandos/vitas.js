@@ -6,7 +6,7 @@ db.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento) {
                 
  if ([documento.block].includes(message.author.id)) return message.channel.send(`<:xguardian:476061993368027148> ${message.author}, você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate!`);
         
-
+                }
 if (!message.member.voiceChannel) 
 return message.channel.send(`<:xguardian:476061993368027148> ${message.author} conecte-se a um canal de voz primeiro!`)
 
@@ -30,5 +30,5 @@ const dispatcher = connection.playStream(ytdl(asdasd.URL, { audioonly: true }))
 
     
 })    
-}});
+});
 }};
