@@ -20,7 +20,7 @@ database.Bloqueio.findOne({
         
 }
   
-   if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
+   //if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
 
 
     let user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
