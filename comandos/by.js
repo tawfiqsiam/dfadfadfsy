@@ -33,7 +33,7 @@ database.Bloqueio.findOne({
                         message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author}, Compra realizada com sucesso!`)
                         documento.save()
                     } else {
-                        message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.atuhor}! Você precisa de 650.000 Sy Crystal <:sysopcrystal:482651147111366656>`)
+                        message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}! Você precisa de 650.000 Sy Crystal <:sysopcrystal:482651147111366656>`)
                     }
                 } else if(razaou === 'bio') {
                     if(Number(documento.emerald) >= 10000) {
