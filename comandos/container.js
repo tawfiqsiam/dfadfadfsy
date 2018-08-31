@@ -4,7 +4,7 @@ let database = require("../database.js");
 module.exports = {
     categoria: 'Economia',
     description: 'Abra containers ganhos do bônus diário e se surpreeda com novidades!',
-   cooldown: 15,	
+   cooldown: 10,	
     task(client, message, suffix) {
 
 database.Bloqueio.findOne({
@@ -43,13 +43,20 @@ database.Bloqueio.findOne({
                                 documento.goldbox += prem
                                 documento.containers -= 1
                                 documento.save()
-                              } else if(prc <= 40) {
+                              } else if(prc <= 30) {
                                 premio = "Esmeralda <a:esmeral:442718169585680387>";
                                 quantidade = 100;
                                 var prem = Math.round(Math.random() * parseInt(quantidade) + 1);
                                 documento.emerald += prem
                                 documento.containers -= 1
                                 documento.save()
+				} else if(prc <= 30) {
+                                premio = "EEXP :comet:";
+                                quantidade = 500;
+                                var prem = Math.round(Math.random() * parseInt(quantidade) + 1);
+                                documento.eexp += prem
+                                documento.containers -= 1
+                                documento.save()      
                             } else if(prc <= 40) {
                                 premio = "Sycoins <:Sycoins:469789351358889984>";
                                 quantidade = 2000;
