@@ -20,6 +20,8 @@ database.Bloqueio.findOne({
         
 }
   
+   if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
+
 
     let user = message.mentions.users.first() ? message.mentions.users.first() : message.author;
     database.Users.findOne({
@@ -36,64 +38,9 @@ database.Bloqueio.findOne({
       
 };
 
-let level = documento.lvll + 1;
-        try {
-          Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function(letra) {
-            Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function(letra2) {
-             Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(function(letra3) {
-               Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letr) {
-                Jimp.read(`${user.avatarURL}`).then(function(level) {  
-              Jimp.read("./EEXP /exp ("+ parseInt(documento.eexp/(documento.lvll *700 )*100) +").png").then(function(pau) {
-              Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/469817915357528074/InvisibleSysop_1.png", function(erre, img) {
-                Jimp.read(`${documento.profile_background}`).then(function(background) {
-                    Jimp.read(`${user.avatarURL}`).then(function(avatar) {
-                      Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/469798232004886538/CardSys.png").then(function(perfil) {
-                     
-                              Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
-                               Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png").then(function(mascara) {
-
-                            avatar.resize(200, 200);
-                            mascara.resize(200, 200);
-                            avatar.mask(mascara, 0, 0);
-                            background.resize(934, 282);
-                            status.resize(70, 70);
-                            img.composite(background, 1, 0);
-                            img.composite(perfil, 0, 0);
-                            img.composite(avatar, 43, 70);
-                      
-                            img.composite(status, 190, 215);
-                            img.composite(pau, 250, 160);
+message.channel.send(`Rank de **__${user.username}__**\n-------------------------------\nLevel: **${documento.lvll}**\nEXP: **${documento.eexp}**\nProesa em: **${parseInt(documento.eexp/(documento.lvll *450 )*100)}%**`)
                        
-
-                            img.print(letra, 280, 140, `${user.username}`);
-                            img.print(letra, 815, 235, `${user.discriminator}`);
-                            img.print(letra, 770, 15, `${Number(documento.coins).toLocaleString()}`);
-                            img.print(letra, 480, 180, documento.eexp + "/" +  Math.ceil(documento.lvll * 700 ) + " (" + parseInt(documento.eexp/(documento.lvll *700 )*100) + "%)")  
-                            img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
-                              message.channel.send(``, new Discord.Attachment(buffer, 'CardSys.png'));
-                     
-                    
-                    });
-                  });
-                });
-              });
-            });
-          });
-      //  });
+}});
       });
-    });
-  });
-});
-  });
-            });
-          });
-        } catch (e) {
-          message.channel.send('**Você está usando um plano de fundo inválido**');
-        }
-      } else {
-        message.reply("**Você não tem um perfil.** :confused: Use: `sy!register`");
-      }
-    });
-    });
   }
 };
