@@ -43,7 +43,7 @@ database.Bloqueio.findOne({
                                 documento.goldbox += prem
                                 documento.containers -= 1
                                 documento.save()
-                              } else if(prc <= 20) {
+                              } else if(prc <= 40) {
                                 premio = "Esmeralda <a:esmeral:442718169585680387>";
                                 quantidade = 100;
                                 var prem = Math.round(Math.random() * parseInt(quantidade) + 1);
