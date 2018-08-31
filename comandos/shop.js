@@ -63,16 +63,16 @@ embed.setDescription(`\`\`\`https\nUso: sy!by <parâmetro
 Parâmetros:
  
  Comando setbackground - Com este comando é possível modificar seu background do perfil.
- Preço: 35.650 Sycoins
+ Preço: 650.000 Sycoins
  
  Comando bio - Com este comando é possível alterar sua descrição no perfil.
- Preço: 200 Esmeraldas
+ Preço: 10.00 Esmeraldas
 
  Comando goldbox - Este comando permite você soltar caixas douradas aleatoriamente dentro do seu servidor vindo como premio para qualquer um que pegar até 1000 coins.
- Preço 20.900 SY CRYSTAL
+ Preço 40.900 SY CRYSTAL
  
  Comando setborder - Este comando permitirá que você mude o quadro do seu perfil.
- Preço: 10.000 SY CRYSTAL\`\`\``);
+ Preço: 100.000 SY CRYSTAL\`\`\``);
 
 embed.setFooter(`Pagina 2 de 3`);
 value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
