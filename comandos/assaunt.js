@@ -52,7 +52,7 @@ database.Bloqueio.findOne({
                             documento.save();
                             doc2.coins -= dayRDM
                             doc2.save();
-                            message.reply("<a:festa:479062708491124757> **Sucesso! Você roubou " + Number(dayRDM).toLocaleString() + " coins de <@" + message.mentions.users.first().id + ">.**");
+                            message.channel.send(`<a:clapping:484955550338252810> Sucesso ${message.author}! Você roubou **${Number(dayRDM).toLocaleString()}** Sycoins de <@${message.mentions.users.first().id}>`);
                             dayCol.add(message.author.id)
                             setTimeout(function() {
                                 dayCol.delete(message.author.id)
@@ -61,7 +61,7 @@ database.Bloqueio.findOne({
                         } else {
                             documento.coins -= dayRDM
                             documento.save();
-                            message.channel.send(`<a:pm:436911890770165760> Ih ${message.author} sujo! Você foi pego ao tentar roubar <@${message.mentions.users.first().id}> e perdeu ${Number(dayRDM).toLocaleString()} Sycoins!`);
+                            message.channel.send(`<a:pm:436911890770165760> Ih ${message.author} sujo! Você foi pego ao tentar roubar <@${message.mentions.users.first().id}> e perdeu ${Number(dayRDM).toLocaleString()} Sycoins! **SE FODEU!**`);
                             dayCol.add(message.author.id)
                             setTimeout(function() {
                                 dayCol.delete(message.author.id)
@@ -69,7 +69,7 @@ database.Bloqueio.findOne({
                         }
 
                     } else {
-                        message.reply("**Este usuário é muito pobre para ser roubado. :confused:**");
+                        message.channel.send(`<:PandaUh:447055990760931329> Desculpe ${message.author}, mas não posso roubar um usuário pobre.`);
                     }
 
                     } else {
