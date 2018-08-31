@@ -133,6 +133,10 @@ var User = new Schema({
         type: String,
         default: "no"
     },
+    casar_shoped: {
+        type: String,
+        default: "no"
+    },
     cla_nome_shoped: {
         type: String,
         default: "no"
