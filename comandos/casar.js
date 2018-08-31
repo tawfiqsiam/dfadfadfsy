@@ -12,12 +12,14 @@ database.Bloqueio.findOne({
         
 }
 
-
-let mention = message.mentions.users.first();
-if (!mention) return message.reply(`mencione alguém para casar.`);
-
 database.Users.findOne({"_id": message.author.id}, function(erra, documento) {
       if (documento) {
+
+if(documento.casar_shoped === "no") return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}! Parece que você não tem licença para casar. Compre o comando no shop!`)
+ 
+  
+let mention = message.mentions.users.first();
+if (!mention) return message.reply(`mencione alguém para casar.`);
 
 documento.casou = mention.username+'#'+mention.discriminator ;
 documento.save();
