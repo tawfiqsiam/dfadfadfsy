@@ -72,7 +72,10 @@ Parâmetros:
  Preço 40.900 SY CRYSTAL
  
  Comando setborder - Este comando permitirá que você mude o quadro do seu perfil.
- Preço: 100.000 SY CRYSTAL\`\`\``);
+ Preço: 100.000 SY CRYSTAL
+
+Comando casar - Case com alguém pelo bot e o nome da pessoa que você mencionou irá aparecer em seu perfil no bot.
+Preço: 1.600.000 SY CRYSTAL\`\`\``);
 
 embed.setFooter(`Pagina 2 de 3`);
 value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
