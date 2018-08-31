@@ -72,7 +72,7 @@ let level = documento.lvll + 1;
                             perfil.print(letra2, 280, 118, `${Number(documento.rubys).toLocaleString()}`);
                             perfil.print(letra2, 55, 205, `${Number(documento.goldbox).toLocaleString()}`);
                             perfil.print(letra2, 280, 205, `${Number(documento.containers).toLocaleString()}`);
-                            perfil.print(letra2, 60, 285, `${Number(documento.goldbox).toLocaleString()}`);
+                            perfil.print(letra2, 60, 285, `${Number(documento.emerald).toLocaleString()}`);
                             perfil.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
                               message.channel.send(``, new Discord.Attachment(buffer, 'Balance.png'));
                      
