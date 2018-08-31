@@ -63,7 +63,7 @@ embed.setDescription(`\`\`\`https\nUso: sy!by <parâmetro
 Parâmetros:
  
  Comando setbackground - Com este comando é possível modificar seu background do perfil.
- Preço: 650.000 Sycoins
+ Preço: 650.000 SY CRYSTAL
  
  Comando bio - Com este comando é possível alterar sua descrição no perfil.
  Preço: 10.00 Esmeraldas
