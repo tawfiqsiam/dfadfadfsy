@@ -64,6 +64,16 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 100.000 Sy Crystal.`)
                     }
+                    } else if(razaou === 'casar') {
+                    if(Number(documento.rubys) >= 1600000) {
+                        documento.rubys = Number(documento.rubys) - 1600000
+                        documento.casar_shoped = "yes"
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 1.600.000 Sy Crystal.`)
+                    }
                 } else if(razaou === 'Nv1') {
                     if(Number(documento.emerald) >= 100) {
                         documento.emerald = Number(documento.emerald) - 100
