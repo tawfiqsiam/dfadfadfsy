@@ -75,77 +75,7 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 1.600.000 Sy Crystal.`)
                     }
-                } else if(razaou === 'Nv1') {
-                    if(Number(documento.emerald) >= 100) {
-                        documento.emerald = Number(documento.emerald) - 100
-                        documento.coins = Number(documento.coins) + 3000
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
-                        documento.save()
-                        
-                    } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author} Você precisa de 100 esmeraldas.`)
-                    }
-                } else if(razaou === 'Nv2') {
-                    if(Number(documento.emerald) >= 1000) {
-                        documento.emerald = Number(documento.emerald) - 1000
-                        documento.coins = Number(documento.coins) + 5000
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
-                        documento.save()
-                        
-                    } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 1.000 esmeraldas.`)
-                    }
-                } else if(razaou === 'Nv3') {
-                    if(Number(documento.rubys) >= 1000) {
-                        documento.rubys = Number(documento.rubys) - 1000
-                        documento.coins = Number(documento.coins) + 8000
-                       message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
-                        documento.save()
-                        
-                    } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author} Você precisa de 1.000 Sy Crystal..`)
-                    }
-                } else if(razaou === 'Nv4') {
-                    if(Number(documento.rubys) >= 10000) {
-                        documento.rubys = Number(documento.rubys) - 10000
-                        documento.coins = Number(documento.coins) + 15000
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
-                        documento.save()
-                        
-                    } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 10.000 Sy Crystal.`)
-                    }
-                } else if(razaou === 'Nv5') {
-                    if(Number(documento.coins) >= 100000) {
-                        documento.rubys = Number(documento.coins) - 100000
-                        documento.emerald = Number(documento.emerald) + 500
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
-                        documento.save()
-                        
-                    } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 100.000 Sycoins.`)
-                    }
-                } else if(razaou === 'Nv6') {
-                    if(Number(documento.containers) >= 5) {
-                        documento.containers = Number(documento.containers) - 10
-                        documento.goldbox = Number(documento.goldbox) + 50
-                       message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
-                        documento.save()
-                        
-                    } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 10 containers.`)
-                    }
-                } else if(razaou === 'Nv7') {
-                    if(Number(documento.goldbox) >= 100) {
-                        documento.goldbox = Number(documento.goldbox) - 200
-                        documento.containers = Number(documento.containers) + 20
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
-                        documento.save()
-                        
-                    } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 200 Goldbox.`)
-                    }
-               
+                } 
                
                 } else {
   message.channel.send(`<:sysalerta:469789950938841088> ${message.author} especifique algo para comprar! **Use** \`sy!shop\``)
