@@ -3,7 +3,7 @@ const database = require("../database.js");
 
 exports.run = (client, message, args) => {
   
-  if (!['282504900552949760','244489368717230090', '481829760369033228'].includes(message.author.id)) 
+  if (!['282504900552949760','244489368717230090'].includes(message.author.id)) 
   return message.channel.send({
 			embed: {
 				color: 0xff2424,
