@@ -93,12 +93,12 @@ embed.setDescription(`\`\`\`https\nUso: sy!by <parâmetro>
 Legendas:
 
 ES = ESMERALDAS\nSC = SY CRYSTAL\nSCS = SY COINS\nGX = GOLDBOX\nCT = CONTAINERS\n\nParâmetros:\n
-[ Nv1 ] 100 ES → 5k SCS
-[ Nv2 ] 1k ES → 15k SCS
-[ Nv3 ] 1k SC → 2k SCS
-[ Nv4 ] 10k SC → 30k SCS
+[ Nv1 ] 100 ES → 3k SCS
+[ Nv2 ] 1k ES → 5k SCS
+[ Nv3 ] 1k SC → 8k SCS
+[ Nv4 ] 10k SC → 15k SCS
 [ Nv5 ] 100k SCS → 500 ES
-[ Nv6 ] 5 CT → 35 GX
+[ Nv6 ] 15 CT → 50 GX
 [ Nv7 ] 100 GX → 20 CT
 \`\`\``)
 embed.setFooter(`Pagina 3 de 3`);
