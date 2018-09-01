@@ -75,7 +75,7 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 1.600.000 Sy Crystal.`)
                     }
-                } 
+                
                
                 } else {
   message.channel.send(`<:sysalerta:469789950938841088> ${message.author} especifique algo para comprar! **Use** \`sy!shop\``)
