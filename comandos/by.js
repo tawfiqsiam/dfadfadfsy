@@ -78,7 +78,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv1') {
                     if(Number(documento.emerald) >= 100) {
                         documento.emerald = Number(documento.emerald) - 100
-                        documento.coins = Number(documento.coins) + 5000
+                        documento.coins = Number(documento.coins) + 3000
                         message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
                         documento.save()
                         
@@ -88,7 +88,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv2') {
                     if(Number(documento.emerald) >= 1000) {
                         documento.emerald = Number(documento.emerald) - 1000
-                        documento.coins = Number(documento.coins) + 15000
+                        documento.coins = Number(documento.coins) + 5000
                         message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
                         documento.save()
                         
@@ -98,7 +98,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv3') {
                     if(Number(documento.rubys) >= 1000) {
                         documento.rubys = Number(documento.rubys) - 1000
-                        documento.coins = Number(documento.coins) + 5000
+                        documento.coins = Number(documento.coins) + 8000
                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
                         documento.save()
                         
@@ -108,7 +108,7 @@ database.Bloqueio.findOne({
                 } else if(razaou === 'Nv4') {
                     if(Number(documento.rubys) >= 10000) {
                         documento.rubys = Number(documento.rubys) - 10000
-                        documento.coins = Number(documento.coins) + 40000
+                        documento.coins = Number(documento.coins) + 15000
                         message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
                         documento.save()
                         
@@ -127,23 +127,23 @@ database.Bloqueio.findOne({
                     }
                 } else if(razaou === 'Nv6') {
                     if(Number(documento.containers) >= 5) {
-                        documento.containers = Number(documento.containers) - 5
-                        documento.goldbox = Number(documento.goldbox) + 35
+                        documento.containers = Number(documento.containers) - 10
+                        documento.goldbox = Number(documento.goldbox) + 50
                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
                         documento.save()
                         
                     } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 5 containers.`)
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 10 containers.`)
                     }
                 } else if(razaou === 'Nv7') {
                     if(Number(documento.goldbox) >= 100) {
-                        documento.goldbox = Number(documento.goldbox) - 100
+                        documento.goldbox = Number(documento.goldbox) - 200
                         documento.containers = Number(documento.containers) + 20
                         message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Compra realizada com sucesso!`)
                         documento.save()
                         
                     } else {
-                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 100 Goldbox.`)
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 200 Goldbox.`)
                     }
                
                
