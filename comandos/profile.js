@@ -17,9 +17,6 @@ database.Bloqueio.findOne({
         
 }
     
-   //if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, comando em manutenção!`);
-
-  
       if (message.author.bot) return 'Bots não podem usar esse comando :) ';
 
     let server = message.guild;
@@ -47,54 +44,58 @@ database.Bloqueio.findOne({
                  Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
                    // Jimp.read(user.username).then(function(user) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
-                      Jimp.read("https://cdn.discordapp.com/attachments/393818943246172164/480292451009953792/PerfilSysop.png").then(function(perfil) {
+                      Jimp.read("https://cdn.discordapp.com/attachments/393818943246172164/485486057761144843/Sysop.png").then(function(perfil) {
                         Jimp.read(`./border/${documento.borderp}.png`).then(function(marco) {
                          
                               Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
                                Jimp.read("https://i.imgur.com/f55gYrh.png").then(function(mascara) {
-                    Jimp.read(`${server.iconURL}`).then(function(serverIcon) {
+                   // Jimp.read(`${server.iconURL}`).then(function(serverIcon) {
                     Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png").then(function(mess) {
 
-                            serverIcon.resize(40, 40);
+                          //  serverIcon.resize(40, 40);
                             mess.resize(40, 40);
-                            serverIcon.mask(mess, 0, 0);
-                            avatar.resize(276, 265);
-                            mascara.resize(276, 265);
+                        //    serverIcon.mask(mess, 0, 0);
+                            avatar.resize(135, 135);
+                            mascara.resize(135, 135);
+                            marco.resize(135, 135);
                             avatar.mask(mascara, 0, 0);
-                            background.resize(770, 480);
-                            emblema.resize(40, 44);
+                          //  mascara.mask(mascara, 0, 0);
+                            background.resize(770, 370);
+                        //    emblema.resize(40, 44);
                         
-                            status.resize(55, 55);
+                            status.resize(35, 35);
                         //  pau.resize(9,490)
 
-                            img.composite(background, 16, 12);
+                            img.composite(background, 0, 120);
                             img.composite(perfil, 0, 0);
-                            img.composite(avatar, 1, 250);
-                            img.composite(marco, 1, 250);
-                            img.composite(emblema, 120, 58);
-                            img.composite(serverIcon, 29, 18);
-                            img.composite(status, 225, 410);
+                            img.composite(avatar, 13, 3);
+                            img.composite(marco, 13, 3);
+                           // img.composite(mascara, 15, 14);
+                        //    img.composite(emblema, 120, 58);
+                          //  img.composite(serverIcon, 29, 18);
+                            img.composite(status, 115, 85);
                          // img.print(user, 415, 303);
 
-                            img.print(letra, 285, 392, `${user.username}`);
-                            img.print(letra2, 78, 29, `${server.name}`);
-                            img.print(letra, 690, 392, `${user.discriminator}`);
-                            img.print(letra2, 690, 227, `${documento.rpup}`);
-                            img.print(letra3, 630, 295, `${documento.casou}`);
-                            img.print(letra2, 660, 360, `Total de: ${documento.adv}`);
-                            img.print(letra, 690, 445, `${documento.lvll}`);
-                            img.print(letra2, 675, 485, `${Number(documento.eexp).toLocaleString()}`);
-                        img.print(letra2, 470, 480, `${Number(documento.emerald).toLocaleString()}`);
+                            img.print(letra, 150, 55, `${user.username}#${user.discriminator}`);
+                          //  img.print(letra2, 78, 29, `${server.name}`);
+                         //   img.print(letra, 690, 392, `${user.discriminator}`);
+                         //   img.print(letra2, 690, 227, `${documento.rpup}`);
+                            img.print(letra2, 580, 494, `${documento.casou}`);
+                          //  img.print(letra2, 660, 360, `Total de: ${documento.adv}`);
+                            img.print(letra, 650, 7, `${documento.lvll}`);
+                            img.print(letra2, 620, 55, `${Number(documento.eexp).toLocaleString()}`);
+                            img.print(letra, 660, 85, `${parseInt(documento.eexp/(documento.lvll *450 )*100)}%`);
+                       // img.print(letra2, 625, 28, `${Number(documento.emerald).toLocaleString()}`);
                          // img.print(letra, 160, 415, `${Number(documento.containers).toLocaleString()}`);
-                            img.print(letra, 406, 21, `${Number(documento.coins).toLocaleString()}`);
-                           img.print(letra2, 470, 446, `${Number(documento.rubys).toLocaleString()}`);
-                            img.print(letra, 680, 20, `${Number(documento.rep).toLocaleString()}`);
-                            img.print(letra2, 22, 545, `\`\`${documento.bio}\`\``, 725);
+                           // img.print(letra2, 230, 28, `${Number(documento.coins).toLocaleString()}`);
+                           //img.print(letra2, 410, 28, `${Number(documento.rubys).toLocaleString()}`);
+                            img.print(letra2, 310, 493, `${Number(documento.rep).toLocaleString()} REPS`);
+                            img.print(letra2, 8, 525, `\`\`${documento.bio}\`\``, 725);
                             //img.print(letr, 200, 23, documento.xp + "/" +  Math.ceil(pudim * 400) + " (" + parseInt(documento.xp/(pudim *400 )*100) + "%)")  
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
-                              message.channel.send(``, new Discord.Attachment(buffer, 'PerfilSysop.png'));
+                              message.channel.send(``, new Discord.Attachment(buffer, 'Sysop.png'));
                             });
-                          });
+                         
                         });
                       });
                     });
