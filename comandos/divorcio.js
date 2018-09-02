@@ -21,7 +21,7 @@ database.Users.findOne({"_id": message.author.id}, function(erra, documento) {
 
 documento.casou = 'Ninguém';
 documento.save();
-message.channel.send(`${message.author} se divociou com ${mention}`);
+message.channel.send(`${message.author} se divorciou com ${mention}`);
 
 } else {
       var pessoa = new database.Users({
