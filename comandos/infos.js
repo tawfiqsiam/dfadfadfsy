@@ -84,7 +84,7 @@ database.Bloqueio.findOne({
 			.setAuthor(server.name, server.iconURL)
 			.setThumbnail('https://cdn.discordapp.com/attachments/442346665052209153/469406950413565962/SysopLogo.png')
 			.setTitle("**SYSOPCORP INFOS**")
-			.setDescription(`**[ i ]** SysopCorp é um bot brasileiro escrito em discord.js. Um bot mas com inúmeras funcionalidades. Sysop é dividido em categorias de Moderação, Social, Entretenimento, Economia, Aposta e Música. Sysop foi criado e está sendo desenvolvido cada vez mais por <@244489368717230090> . Quaisquer problemas que você enfrente com o Sysop você pode usar o comando \`sy!support\` e nos enviar mensagem. Sysop está sendo trabalho para cada vez mais dar muitos passos!`)
+			.setDescription(`**[ i ]** Sysop é um bot brasileiro escrito em discord.js. Um bot mas com inúmeras funcionalidades. Sysop é dividido em categorias de Moderação, Social, Entretenimento, Economia, Aposta e Música. Sysop foi criado e está sendo desenvolvido cada vez mais por <@244489368717230090> . Quaisquer problemas que você enfrente com o Sysop você pode usar o comando \`sy!support\` e nos enviar mensagem. Sysop está sendo trabalho para cada vez mais dar muitos passos!`)
             .addField('Configurações',`\`💻\` Servidores conectados: ${client.guilds.size.toLocaleString()}
 \`👥\` Conheço um total de ${client.users.size.toLocaleString()} usuários
 \`#\`  Total de canais ${client.channels.size.toLocaleString()}
