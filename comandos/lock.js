@@ -14,11 +14,11 @@ db.Bloqueio.findOne({
         
 }
 
- if (!message.member.hasPermission("MANAGE_GUILD")) 
- return message.channel.send("<:xguardian:476061993368027148> Opa! Parece que você não tem permissão de utilizar este comando. Tente adicionar a permissão de Gerencisamento de Servidor a você.");
+ if (!message.member.hasPermission("BAN_MEMBERS")) 
+ return message.channel.send("<:xguardian:476061993368027148> Opa! Parece que você não tem permissão de utilizar este comando. Tente adicionar a permissão de Banir a você.");
  
  if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES')) 
- return message.reply('<:xguardian:476061993368027148> Desculpe, não posso fazer isso. É necessario que eu tenha permissão de Gerencisamento de Cargos.');
+ return message.reply('<:xguardian:476061993368027148> Desculpe, não posso fazer isso. É necessario que eu tenha permissão de Gerenciamento de Cargos.');
      
     
 
