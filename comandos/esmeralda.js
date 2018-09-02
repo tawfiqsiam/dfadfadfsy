@@ -47,7 +47,7 @@ database.Bloqueio.findOne({
                             documento.save();
                             message.channel.send('<a:loading:442459946601152512> Transferindo...').then(function(value) {
                              setTimeout(function() {
-                            value.edit("<a:pblob:442467218282774548> Sua transfência foi concluída!")}, 3000)
+                            value.edit(`<a:pblob:442467218282774548> | ${message.author} transferência concluída. Você pagou **${parseInt(args[1])}**  esmeraldas <a:esmeral:442718169585680387> para <@${message.mentions.users.first().id}>`)}, 3000)
 
 })
                         } else {
