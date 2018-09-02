@@ -90,10 +90,12 @@ database.Bloqueio.findOne({
 \`#\`  Total de canais ${client.channels.size.toLocaleString()}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n
 <:dbl:466726889193734156> DBL SITE [Acessar](https://discordbots.org/bot/412593783696261121)\n
-<:sysuptime:469404182705602573>  Uptime ${dateString}\n
-<:sysinvite:469404184018681866>  Convite [Convite Direto](https://discordapp.com/oauth2/authorize?client_id=412593783696261121&scope=bot&permissions=2146958583)\n
-<:syssuporte:469404183913693184> Servidor Suporte [Sysop](https://discord.gg/GMSjtTQ)\n
-<:sysdonos:469404182453944320>   Dono: <@244489368717230090>`, false)
+•  Vespertine's Bot List SITE [Acessar](https://bots.perfectdreams.net/bot/412593783696261121)\n
+•  Uptime ${dateString}\n
+•  Convite [Convite Direto](https://discordapp.com/oauth2/authorize?client_id=412593783696261121&scope=bot&permissions=2146958583)\n
+•  Servidor Suporte [Sysop](https://discord.gg/GMSjtTQ)\n
+•  Dono: <@244489368717230090>
+•  Staff: <@481829760369033228> | <@345014174004543488> | <@431334258653528066>`, false)
 .setColor(0x0df7eb);
 
 		message.channel.send({embed});
