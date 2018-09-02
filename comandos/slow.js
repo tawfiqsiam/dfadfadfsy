@@ -16,7 +16,7 @@ database.Bloqueio.findOne({"_id": message.author.id}, function (erro, documento)
  return message.channel.send(`<:xguardian:476061993368027148> ${message.author} | Opa! Parece que você não tem permissão de utilizar este comando. Tente adicionar a permissão de Gerenciamento de Servidor a você.`);
  
  if (!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) 
- return message.reply('Desculpe, não posso fazer isso. É necessario que eu tenha permissão de Gerencisamento de mensagens.')
+ return message.channel.send(`<:xguardian:476061993368027148> Opa ${message.author}! Desculpe, não posso fazer isso. É necessario que eu tenha permissão de Gerenciamento de mensagens.`)
 
 let args = suffix.split(' '); 
 let sy = message.content.split(' ');
