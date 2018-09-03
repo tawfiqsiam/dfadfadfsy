@@ -79,7 +79,7 @@ database.Bloqueio.findOne({
                     if(Number(documento.coins) >= 10000) {
                         documento.coins = Number(documento.coins) - 10000
                         documento.rubys = Number(documento.rubys) + 5000
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+5.0000** Sy Crystal.`)
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+5.000** Sy Crystal.`)
                         documento.save()
                         
                     } else {
