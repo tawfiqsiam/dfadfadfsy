@@ -200,7 +200,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!client.guilds.get(member.guild.id).channels.get(sysop.numero)) return;	
 if (sysop) {	
 let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
-let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+let discord = membros..split('').map(i => ['<:00:486163080037007361> ', '<:11:486163136307658752>', '<:22:486163135993217035>', '<:33:486163136127303683>', '<:44:486163136874020864>', '<:55:486163135909068812>', '<:66:486163136873758740>', '<:77:486163136815169540>', '<:88:486163135938560013>', '<:99:486163157790883851>'][i]).join('');
 client.guilds.get(member.guild.id).channels.get(sysop.numero).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
 	}})	
 });
@@ -296,7 +296,7 @@ database.Guilds.findOne({"_id": member.guild.id}, function(erra, sysop) {
     if(!client.guilds.get(member.guild.id).channels.get(sysop.numero)) return;	
 if (sysop && sysop.numero) {	
 let membros =  `${client.guilds.get(member.guild.id).memberCount.toString()}`
-let discord = membros.replace(/0/gi, ':zero:').replace(/1/gi, ':one:').replace(/2/gi, ':two:').replace(/3/gi, ':three:').replace(/4/gi, ':four:').replace(/5/gi, ':five:').replace(/6/gi, ':six:').replace(/7/gi, ':seven:').replace(/8/gi, ':eight:').replace(/9/gi, ':nine:');
+let discord = membros..split('').map(i => ['<:00:486163080037007361> ', '<:11:486163136307658752>', '<:22:486163135993217035>', '<:33:486163136127303683>', '<:44:486163136874020864>', '<:55:486163135909068812>', '<:66:486163136873758740>', '<:77:486163136815169540>', '<:88:486163135938560013>', '<:99:486163157790883851>'][i]).join('');
 client.guilds.get(member.guild.id).channels.get(sysop.numero).edit({ topic: `<a:SysopEmojiLOGOGIF:456242315669798914> | ${discord} ${sysop.texto}` })
 	}})	
 
