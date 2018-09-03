@@ -75,7 +75,56 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 1.600.000 Sy Crystal.`)
                     }
-                
+                          } else if(razaou === 'Nv1') {
+                    if(Number(documento.coins) >= 10000) {
+                        documento.coins = Number(documento.coins) - 10000
+                        documento.rubys = Number(documento.rubys) + 5000
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+5.0000** Sy Crystal.`)
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 10.000 Sycoins`)
+                    }
+                                   } else if(razaou === 'Nv2') {
+                    if(Number(documento.coins) >= 10000) {
+                        documento.rubys = Number(documento.rubys) - 10000
+                        documento.coins = Number(documento.coins) + 20000
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+20.0000** Sycoins.`)
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 10.000 Sy Crystal`)
+                    }
+                                            } else if(razaou === 'Nv3') {
+                    if(Number(documento.coins) >= 100000) {
+                        documento.coins = Number(documento.coins) - 100000
+                        documento.rubys = Number(documento.rubys) + 50000
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+50.0000** Sy Crystal.`)
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 100.000 Sy Coins`)
+                    }
+                      } else if(razaou === 'Nv4') {
+                    if(Number(documento.coins) >= 2000000) {
+                        documento.coins = Number(documento.coins) - 2000000
+                        documento.emerald = Number(documento.emerald) + 600000
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+600.0000** Esmeraldas.`)
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 2.000.000 Sycoins`)
+                    }
+                     } else if(razaou === 'Nv5') {
+                    if(Number(documento.goldbox) >= 500) {
+                        documento.goldbox = Number(documento.goldbox) - 500
+                        documento.containers = Number(documento.containers) + 250
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+250** Sy Containers.`)
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 500 Goldbox's`)
+                    }
                
                 } else {
   message.channel.send(`<:sysalerta:469789950938841088> ${message.author} especifique algo para comprar! **Use** \`sy!shop\``)
