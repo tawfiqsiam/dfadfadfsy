@@ -119,7 +119,7 @@ database.Bloqueio.findOne({
                     if(Number(documento.goldbox) >= 500) {
                         documento.goldbox = Number(documento.goldbox) - 500
                         documento.containers = Number(documento.containers) + 250
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+250** Sy Containers.`)
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+250** Containers.`)
                         documento.save()
                         
                     } else {
