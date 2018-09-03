@@ -87,12 +87,28 @@ h2.on('collect', r => {
   if(page === 3) return;
   page++;
   embed.setTitle("<:sale:482758173070196737> | Comandos Moeda");
-embed.setDescription(`\`\`\`https\nUso: sy!by <parâmetro>
+embed.setDescription(`\`\`\`diff\nUso: sy!by <parâmetro>
 
+Como comprar? Use sy!by <parâmetro>
 
-Legendas:
+Parâmetros:
 
-ES = ESMERALDAS\nSC = SY CRYSTAL\nSCS = SY COINS\nGX = GOLDBOX\nCT = CONTAINERS\n\nParâmetros:\n
+-----------------------------------
+- Nv1 -----------------
++ 10.000 Sycoins para 5.000 Sy Crystal
+-----------------------------------
+- Nv2 -----------------
++ 10.000 Sy Crystal para 20.000 Sycoins
+-----------------------------------
+- Nv3 -----------------
++ 100.000 Sycoins para 50.000 Sy Crystal
+-----------------------------------
+- Nv4  -----------------
++ 2.000.000 Sycoins para 600.000 Esmeraldas
+-----------------------------------
+- Nv5  -----------------
++ 500 Goldboxs para 250 Containers
+-----------------------------------
 \`\`\``)
 embed.setFooter(`Pagina 3 de 3`);
 value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
