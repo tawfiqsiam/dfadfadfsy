@@ -89,7 +89,7 @@ database.Bloqueio.findOne({
                     if(Number(documento.coins) >= 10000) {
                         documento.rubys = Number(documento.rubys) - 10000
                         documento.coins = Number(documento.coins) + 20000
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+20.0000** Sycoins.`)
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+20.000** Sycoins.`)
                         documento.save()
                         
                     } else {
@@ -99,7 +99,7 @@ database.Bloqueio.findOne({
                     if(Number(documento.coins) >= 100000) {
                         documento.coins = Number(documento.coins) - 100000
                         documento.rubys = Number(documento.rubys) + 50000
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+50.0000** Sy Crystal.`)
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+50.000** Sy Crystal.`)
                         documento.save()
                         
                     } else {
@@ -109,7 +109,7 @@ database.Bloqueio.findOne({
                     if(Number(documento.coins) >= 2000000) {
                         documento.coins = Number(documento.coins) - 2000000
                         documento.emerald = Number(documento.emerald) + 600000
-                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+600.0000** Esmeraldas.`)
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+600.000** Esmeraldas.`)
                         documento.save()
                         
                     } else {
