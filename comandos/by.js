@@ -125,7 +125,7 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 500 Goldbox's`)
                     }
-                         } else if(razaou === 'Nv0') {
+                         } else if(razaou === 'Nv6') {
                     if(Number(documento.star) >= 1500) {
                         documento.star = Number(documento.star) - 1500
                         documento.ruby = Number(documento.ruby) + 50000
