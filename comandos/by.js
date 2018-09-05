@@ -125,6 +125,16 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 500 Goldbox's`)
                     }
+                         } else if(razaou === 'Nv0') {
+                    if(Number(documento.star) >= 1500) {
+                        documento.star = Number(documento.star) - 1500
+                        documento.ruby = Number(documento.ruby) + 50000
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author} Troca realizada com sucesso! Você ganhou **+250** Containers.`)
+                        documento.save()
+                        
+                    } else {
+                        message.channel.send(`<:sysopcrystal:482651147111366656> Opa ${message.author}! Você precisa de 1500 Estrelas`)
+                    }
                
                 } else {
   message.channel.send(`<:sysalerta:469789950938841088> ${message.author} especifique algo para comprar! **Use** \`sy!shop\``)
