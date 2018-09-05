@@ -18,7 +18,7 @@ var qnire = message.author;
 
 
 if (dayCol.has(message.author.id)) 
-return message.channel.send(`<:sysalerta:469789950938841088> **|** ${message.author} batalhe novamente dentro de 1 hora.`)
+return message.channel.send(`<:sysalerta:469789950938841088> **|** ${message.author} batalhe novamente dentro de 4 horas.`)
 
 
 if (!nire) 
@@ -70,9 +70,9 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
                                 wonCoins = 0;
                                 
                             if (prc <= 10) {
-                                wonCoins += quantia(5 + 500);
+                                wonCoins += quantia(1000 + 5000);
                             } else if (prc > 10) {
-                                wonCoins += quantia(500 + 1000);
+                                wonCoins += quantia(10000 + 20000);
                             }
                 
                                 db.Users.findOne({ 
@@ -96,7 +96,7 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
 dayCol.add(message.author.id)
                         setTimeout(function() {
                             dayCol.delete(message.author.id)
-                        }, 1 * 1000 * 60 * 60)
+                        }, 4 * 1000 * 60 * 60)
             }
             }});
     }
