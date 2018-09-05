@@ -34,6 +34,12 @@ database.Bloqueio.findOne({
       "stream": "./status/.d.png"
       
 };
+
+let badge;
+
+if (!documento.badgep3) badge = `./badges/invisiblebadge`;
+else badge = `${documento.badgep3}`;
+
         try {
           Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function(letra) {
             Jimp.loadFont(Jimp.FONT_SANS_16_WHITE).then(function(letra2) {
@@ -41,10 +47,10 @@ database.Bloqueio.findOne({
                Jimp.loadFont(Jimp.FONT_SANS_16_BLACK).then(function(letr) {
               Jimp.read("https://cdn.discordapp.com/attachments/413155538755649538/433097929234841602/InvisibleSysop.png", function(erre, img) {
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
-                 Jimp.read("./Emblemas/Level" + documento.level + ".png").then(function(emblema) {
+                 Jimp.read(`./badges/${badge}.png`).then(function(emblema) {
                    // Jimp.read(user.username).then(function(user) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
-                      Jimp.read("https://cdn.discordapp.com/attachments/393818943246172164/485486057761144843/Sysop.png").then(function(perfil) {
+                      Jimp.read("https://cdn.discordapp.com/attachments/393818943246172164/486711452368109579/PerfilSys.png").then(function(perfil) {
                         Jimp.read(`./border/${documento.borderp}.png`).then(function(marco) {
                          
                               Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
@@ -60,31 +66,31 @@ database.Bloqueio.findOne({
                             marco.resize(135, 135);
                             avatar.mask(mascara, 0, 0);
                           //  mascara.mask(mascara, 0, 0);
-                            background.resize(770, 370);
-                        //    emblema.resize(40, 44);
+                            background.resize(770, 490);
+                           emblema.resize(44, 37);
                         
                             status.resize(35, 35);
                         //  pau.resize(9,490)
 
-                            img.composite(background, 0, 120);
+                            img.composite(background, 0, 0);
                             img.composite(perfil, 0, 0);
                             img.composite(avatar, 13, 3);
                             img.composite(marco, 13, 3);
                            // img.composite(mascara, 15, 14);
-                        //    img.composite(emblema, 120, 58);
+                         img.composite(emblema, 155, 64);
                           //  img.composite(serverIcon, 29, 18);
                             img.composite(status, 115, 85);
                          // img.print(user, 415, 303);
 
-                            img.print(letra, 150, 55, `${user.username}#${user.discriminator}`);
+                            img.print(letra, 150, 30, `${user.username}#${user.discriminator}`);
                           //  img.print(letra2, 78, 29, `${server.name}`);
                          //   img.print(letra, 690, 392, `${user.discriminator}`);
                          //   img.print(letra2, 690, 227, `${documento.rpup}`);
                             img.print(letra2, 580, 494, `${documento.casou}`);
                           //  img.print(letra2, 660, 360, `Total de: ${documento.adv}`);
                             img.print(letra, 650, 7, `${documento.lvll}`);
-                            img.print(letra2, 620, 55, `${Number(documento.eexp).toLocaleString()}`);
-                            img.print(letra, 660, 85, `${parseInt(documento.eexp/(documento.lvll *700 )*100)}%`);
+                            img.print(letra, 620, 45, `${Number(documento.eexp).toLocaleString()}`);
+                            img.print(letra, 660, 85, `${parseInt(documento.eexp/(documento.lvll *450 )*100)}%`);
                        // img.print(letra2, 625, 28, `${Number(documento.emerald).toLocaleString()}`);
                          // img.print(letra, 160, 415, `${Number(documento.containers).toLocaleString()}`);
                            // img.print(letra2, 230, 28, `${Number(documento.coins).toLocaleString()}`);
@@ -93,7 +99,7 @@ database.Bloqueio.findOne({
                             img.print(letra2, 8, 525, `\`\`${documento.bio}\`\``, 725);
                             //img.print(letr, 200, 23, documento.xp + "/" +  Math.ceil(pudim * 400) + " (" + parseInt(documento.xp/(pudim *400 )*100) + "%)")  
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
-                              message.channel.send(``, new Discord.Attachment(buffer, 'Sysop.png'));
+                              message.channel.send(``, new Discord.Attachment(buffer, 'PerfilSys.png'));
                             });
                          
                         });
