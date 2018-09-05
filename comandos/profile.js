@@ -36,9 +36,13 @@ database.Bloqueio.findOne({
 };
 
 let badge;
+let badge2;
 
 if (!documento.badgep3) badge = `./badges/invisiblebadge`;
 else badge = `${documento.badgep3}`;
+
+if (!documento.badgep2) badge2 = `./badges/invisiblebadge`;
+else badge2 = `${documento.badgep2}`;
 
         try {
           Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(function(letra) {
@@ -48,6 +52,7 @@ else badge = `${documento.badgep3}`;
               Jimp.read("https://cdn.discordapp.com/attachments/413155538755649538/433097929234841602/InvisibleSysop.png", function(erre, img) {
                 Jimp.read(`${documento.profile_background}`).then(function(background) {
                  Jimp.read(`./badges/${badge}.png`).then(function(emblema) {
+                 Jimp.read(`./badges/${badge2}.png`).then(function(emblema2) {
                    // Jimp.read(user.username).then(function(user) {
                     Jimp.read(`${user.avatarURL}`).then(function(avatar) {
                       Jimp.read("https://cdn.discordapp.com/attachments/393818943246172164/486711452368109579/PerfilSys.png").then(function(perfil) {
@@ -68,6 +73,7 @@ else badge = `${documento.badgep3}`;
                           //  mascara.mask(mascara, 0, 0);
                             background.resize(770, 490);
                            emblema.resize(44, 37);
+                           emblema2.resize(44, 37);
                         
                             status.resize(35, 35);
                         //  pau.resize(9,490)
@@ -77,7 +83,9 @@ else badge = `${documento.badgep3}`;
                             img.composite(avatar, 13, 3);
                             img.composite(marco, 13, 3);
                            // img.composite(mascara, 15, 14);
-                         img.composite(emblema, 155, 64);
+                         img.composite(emblema, 155, 67);
+                          img.composite(emblema2, 205, 67);
+
                           //  img.composite(serverIcon, 29, 18);
                             img.composite(status, 115, 85);
                          // img.print(user, 415, 303);
@@ -90,7 +98,7 @@ else badge = `${documento.badgep3}`;
                           //  img.print(letra2, 660, 360, `Total de: ${documento.adv}`);
                             img.print(letra, 650, 7, `${documento.lvll}`);
                             img.print(letra, 620, 45, `${Number(documento.eexp).toLocaleString()}`);
-                            img.print(letra, 660, 85, `${parseInt(documento.eexp/(documento.lvll *700 )*100)}%`);
+                            img.print(letra, 660, 85, `${parseInt(documento.eexp/(documento.lvll *450 )*100)}%`);
                        // img.print(letra2, 625, 28, `${Number(documento.emerald).toLocaleString()}`);
                          // img.print(letra, 160, 415, `${Number(documento.containers).toLocaleString()}`);
                            // img.print(letra2, 230, 28, `${Number(documento.coins).toLocaleString()}`);
@@ -115,6 +123,7 @@ else badge = `${documento.badgep3}`;
       });
     });
   });
+             });
 });
   });
           } catch (e) {
