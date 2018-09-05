@@ -104,6 +104,11 @@ var User = new Schema({
         default: "Invisiblebadge"
         
     },
+    star: {
+        type: Number,
+        default: 0,
+        
+    },
     borderp: {
         type: String,
         default: "bwhite"
