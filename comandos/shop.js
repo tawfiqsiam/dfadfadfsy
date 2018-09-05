@@ -109,6 +109,9 @@ Parâmetros:
 - Nv5  -----------------
 + 500 Goldboxs para 250 Containers
 -----------------------------------
+- Nv6 -----------------
++ 1500 Estrelas para +50.000 Sycrystal
+-----------------------------------
 \`\`\``)
 embed.setFooter(`Pagina 3 de 3`);
 value.edit(embed).then(m => { setTimeout(() => { m.delete() }, 5 * 60 * 1000) });
