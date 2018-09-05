@@ -30,7 +30,7 @@ return message.channel.send(`<:xguardian:476061993368027148> | Opa ${message.aut
 if (message.mentions.users.first().bot) 
 return message.channel.send(`<:xguardian:476061993368027148> | ${message.author} estranho... Você não pode batalhar com um bot.`);
 
-message.channel.send(`<a:PulandoFeliz:486648350888689666> **|** ${qnire} te desafiou para uma batalha <@${nire.id}>. Você aceita o desafio?`).then(() => {
+message.channel.send(`<a:PulandoFeliz:486648350888689666> **|** ${qnire} te desafiou para uma batalha <@${nire.id}>. Você aceita o desafio? Responda: \`" sim " ou " não "\``).then(() => {
 message.channel.awaitMessages(res => 
 (res.content == "sim" && res.author.id == nire.id) || (res.content == 'não' && res.author.id == nire.id), { 
 
