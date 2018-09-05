@@ -96,6 +96,7 @@ else badge = `${documento.badgep3}`;
                            // img.print(letra2, 230, 28, `${Number(documento.coins).toLocaleString()}`);
                            //img.print(letra2, 410, 28, `${Number(documento.rubys).toLocaleString()}`);
                             img.print(letra2, 310, 493, `${Number(documento.rep).toLocaleString()} REPS`);
+                            img.print(letra2, 165, 493, `${Number(documento.star).toLocaleString()}`);
                             img.print(letra2, 8, 525, `\`\`${documento.bio}\`\``, 725);
                             //img.print(letr, 200, 23, documento.xp + "/" +  Math.ceil(pudim * 400) + " (" + parseInt(documento.xp/(pudim *400 )*100) + "%)")  
                             img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
@@ -133,6 +134,7 @@ else badge = `${documento.badgep3}`;
                         containers: 0,
                         emerald: 0,
                         goldbox: 0,
+                        star: 0,
                         profile_background: 'https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png',
                       
                     })
