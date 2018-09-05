@@ -1,26 +1,25 @@
 const Discord = require("discord.js");
+const db = require("../database.js");
+var dayCol = new Set()
 
-module.exports = {
-    description: 'Bano usuários do servidor com motivo.',
-    categoria: 'Moderação',
-    task(client, message, suffix) {
-     message.delete();
- 
-let database = require("../database.js");  
-database.Bloqueio.findOne({
+module.exports = { task(client, message, suffix) {
+
+db.Bloqueio.findOne({
                 "_id": message.author.id
             }, function (erro, documento) {
                 if(documento) {
          if (!['244489368717230090','282504900552949760'].includes(message.author.id))
                 
- if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
+ if ([documento.block].includes(message.author.id)) return message.reply("<:xguardian:476061993368027148> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
         
 }
-      
+
+
+  
             let args = suffix.split(' '); 
             let sysop =  args.slice(1).join(' ') 
             ? args.slice(1).join(' ')
-            :  "Foi banido! Motivo não especificado.";
+            :  `Foi banido por ${message.author.username}#${message.author.discriminator}. Motivo não especificado.`;
 
 
 
@@ -40,6 +39,16 @@ if (!banPerms)  return message.reply("Eu não tenho permissão para banir usuár
 let user = client.users.has(id) ? client.users.get(id) : null;
 
 if (!user) return message.reply("<:xguardian:476061993368027148> Não encontrei nenhum usuário.")
+
+
+
+message.channel.send(`<:sysalerta:469789950938841088> **|** Opa ${message.author} Essa função requer confirmação. Responda essa mensagem com: **"banir"** para banir o usuário e **"cancelar"** para cancelar o banimento.`).then(() => {
+message.channel.awaitMessages(res => 
+(res.content == "banir" && res.author.id == message.author.id) || (res.content == 'cancelar' && res.author.id == message.author.id), { 
+
+max: 1, time: 60000, errors: ['time'] }).then(col => {
+    
+if (col.first().content == 'banir') {
 
 message.guild.fetchBans().then(bans => {
 let users = bans.filter(r => r === user);
@@ -91,8 +100,13 @@ if (user) {
 }
 })
 
-            });
-}
-};
-
-
+    }
+    if (col.first().content == 'cancelar') {
+ 
+    message.channel.send(`OK ${message.author}! Você cancelou o banimento de: ${user}`);
+    }
+}).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** Tempo de **1** minuto passado. Solicitação de banimento expirada.`));
+      
+});
+});
+}};
