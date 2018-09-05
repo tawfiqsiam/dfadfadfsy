@@ -47,7 +47,7 @@ database.Bloqueio.findOne({
 
                         doc2.star += 1
                         doc2.save();
-                        message.channel.send(`:star2: **│** ${message.author}deu uma estrela para  ${message.mentions.users.first()}.`);
+                        message.channel.send(`:star2: **│** ${message.author} deu uma estrela para  ${message.mentions.users.first()}.`);
                         dayCol.add(message.author.id)
                         setTimeout(function() {
                             dayCol.delete(message.author.id)
