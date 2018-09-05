@@ -103,7 +103,7 @@ dayCol.add(message.author.id)
     if (col.first().content == 'não') {
         message.channel.send(`:crossed_swords: **|** ${nire} recusou o desafio.`);
     }
-}).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** Passou-se **1** minuto sem resposta. Batalha finalizada a força.`));
+}).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** ${qnire} Passou-se **1** minuto sem resposta. Sua batalha foi finalizada a força.`));
       
 });
 });
