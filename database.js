@@ -104,6 +104,21 @@ var User = new Schema({
         default: "Invisiblebadge"
         
     },
+    badgep4: {
+        type: String,
+        default: "Invisiblebadge"
+        
+    },
+    badgep5: {
+        type: String,
+        default: "Invisiblebadge"
+        
+    },
+    badgep6: {
+        type: String,
+        default: "Invisiblebadge"
+        
+    },
     star: {
         type: Number,
         default: 0,
