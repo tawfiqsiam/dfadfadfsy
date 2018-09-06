@@ -18,7 +18,7 @@ var qnire = message.author;
 
 
 if (dayCol.has(message.author.id)) 
-return message.channel.send(`<:sysalerta:469789950938841088> **|** ${message.author} batalhe novamente dentro de 4 horas.`)
+return message.channel.send(`<:sysalerta:469789950938841088> **|** ${message.author} batalhe novamente dentro de 5 horas.`)
 
 
 if (!nire) 
@@ -96,7 +96,7 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
 dayCol.add(message.author.id)
                         setTimeout(function() {
                             dayCol.delete(message.author.id)
-                        }, 4 * 1000 * 60 * 60)
+                        }, 5 * 1000 * 60 * 60)
             }
             }});
     }
