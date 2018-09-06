@@ -1,28 +1,15 @@
-const Discord = require('discord.js');
-let database = require("../database.js");
+const database = require("../database.js");
+const Discord = require("discord.js")
 
-module.exports = {
-    categoria: 'Economia',
-    description: 'Solte uma caixa dourada e alguém aleatóriamente do seu servidor irá pegar, contendo prêmios!',   
-    cooldown: 30,	
-    task(client, message, suffix) {
-        message.delete();
-  
-database.Bloqueio.findOne({
-                "_id": message.author.id
-            }, function (erro, documento) {
-                if(documento) {
-         if (!['244489368717230090','282504900552949760'].includes(message.author.id))
-                
- if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
-        
-}
-	    
+module.exports = { task(client, message, suffix) {
 
-        let args = suffix.split(' '),
+
+let args = suffix.split(' '),
             members = message.guild.members.array().filter(u => !u.bot),
-            aleatorio = members[Math.floor(Math.random() * members.length)],
-            quantidade = n => Math.round(Math.random() * n),
+            aleatorio = members[Math.floor(Math.random() * members.length)];
+
+
+       let quantidade = n => Math.round(Math.random() * n),
             createAccount = id => {
                 let pessoa = new database.Users({
                     _id: id,
@@ -44,7 +31,17 @@ database.Bloqueio.findOne({
                 if (documento.goldbox > 0) {
                     if (!!args[0]) {
                         if (args[0] == 'drop') {
-                            let premio = "coins <:NewCoins:458870031581970432>",
+                            
+                            documento.goldbox -= 1;
+                            documento.save();
+                            
+        
+            
+message.channel.send(`${message.author} dropou uma caixa de ouro! **Use** \`sy!pick para pegá-la\``).then(() => {
+message.channel.awaitMessages(res => res.content == 'sy!pick', {max: 1, time: 60000, errors: ['time']})
+.then(messages => {
+
+let premio = "Sycoins <:Sycoins:469789351358889984>",
                                 prc = Math.round(Math.random() * 20),
                                 wonCoins = 0;
                                 
@@ -53,46 +50,34 @@ database.Bloqueio.findOne({
                             } else if (prc > 10) {
                                 wonCoins += quantidade(500 + 1000);
                             }
-                            
-                            documento.goldbox -= 1;
-                            documento.save();
-                            
-                            database.Users.findOne({ 
-                                "_id": aleatorio.user.id,
-                            }, function (erro, doc) {
-                                if (!doc) {
-                                    doc = createAccount(aleatorio.user.id);
-                                }
-                                doc.coins += wonCoins;
-                                doc.save();
-                            });
-                            
-                            var gerador = ['./imagens/alertaGold.png', './imagens/passarogold.png'];
-                            var alerta = gerador[Math.floor(Math.random() * gerador.length)];
-                            
-                            message.channel.send(``,new Discord.Attachment(alerta)).then
-                                setTimeout(function() {
-                                    let embed = new Discord.RichEmbed()
-                                        //.setThumbnail('https://i.imgur.com/z39bazM.png')
-                                        .addField(`**Goldbox**`,` **${aleatorio.user.username}** pegou a caixa dourada contendo: **${wonCoins}** ${premio}`, false)
-                                        .setColor(0xfccf1f);
-       
-                                    message.channel.send(embed);
-                                }, 12000);
-                            
-                        } else {
+
+let user = messages.first().author;
+
+database.Users.findOne({ "_id": user.id,}, function (erro, doc) {
+if (!doc) {
+                doc = createAccount(user.id);
+            }
+                doc.coins += wonCoins;
+                doc.save();
+        });
+                             
+     message.channel.send(`${user} pegou a caixa de ouro contendo: ${wonCoins} ${premio}`);
+  
+});
+}).catch(m => m.size == 0 && message.channel.send('1 minuto se passou e ninguém pegou a caixa de ouro.'));
+  } else {
                             message.reply("**Use** `sy!goldbox drop` **para soltar uma caixa dourada**.");
                         }
                     } else {
-                        message.channel.send(`**Você possui ** \`\`${Number(documento.goldbox).toLocaleString()}\`\` **goldbox**`);
+                        message.channel.send(`**Você possui ** \`\`${Number(documento.goldbox).toLocaleString()}\`\` **goldbox**. Use: \`sy!goldbox drop\` para dropar uma.`);
                     }
                 } else {
-		            message.reply('Você não possui caixas douradas!');
+                    message.reply('Você não possui caixas douradas!');
                 } 
+                    
+                        
             } else {
                 createAccount(message.author.id);
             }
-        });
-	})
-    }
-};
+});
+}};
