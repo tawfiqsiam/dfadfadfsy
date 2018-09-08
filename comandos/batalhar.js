@@ -65,15 +65,7 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
                 
                    if (documento.coins > 0) {
                   
-                let premio = "Sycoins <:Sycoins:469789351358889984>",
-                                prc = Math.round(Math.random() * 20),
-                                wonCoins = 0;
-                                
-                            if (prc <= 10) {
-                                wonCoins += quantia(1000 + 5000);
-                            } else if (prc > 10) {
-                                wonCoins += quantia(10000 + 20000);
-                            }
+                let wonCoins = 10000 
                 
                                 db.Users.findOne({ 
                                 "_id": ganhador,
@@ -84,27 +76,20 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
                                 doc.coins += wonCoins;
                                 doc.save();
                             });
-            message.channel.send(`:bomb: Batalhando...`).then(function(value) {
-
-                         value.edit(`<@${ganhador}> venceu a batalha e recebeu um prêmio de: ${Number(wonCoins).toLocaleString()} ${premio}`
-                   
-                , 10000)
-  
- 
-})
-
-dayCol.add(message.author.id)
-                        setTimeout(function() {
-                            dayCol.delete(message.author.id)
-                        }, 5 * 1000 * 60 * 60)
-            }
-            }});
-    }
+message.channel.send(`:bomb: Batalhando...`).then(function(value) {
+value.edit(`<@${ganhador}> venceu a batalha e recebeu um prêmio de: **${Number(wonCoins).toLocaleString()}** Sycoins <:Sycoins:469789351358889984>`)}, 30000)
+                  
+        }
+            }})
     if (col.first().content == 'não') {
         message.channel.send(`:crossed_swords: **|** ${nire} recusou o desafio.`);
     }
+    }
 }).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** ${qnire} Passou-se **1** minuto sem resposta. Sua batalha foi finalizada a força.`));
-      
+      dayCol.add(message.author.id)
+                        setTimeout(function() {
+                            dayCol.delete(message.author.id)
+                        }, 5 * 1000 * 60 * 60)
 });
 });
 }};
