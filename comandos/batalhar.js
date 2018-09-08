@@ -88,7 +88,7 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
 
                          value.edit(`<@${ganhador}> venceu a batalha e recebeu um prêmio de: ${Number(wonCoins).toLocaleString()} ${premio}`
                    
-                , 5000)
+                , 10000)
   
  
 })
