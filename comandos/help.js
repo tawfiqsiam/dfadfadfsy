@@ -10,7 +10,7 @@ database.Bloqueio.findOne({
                 if(documento) {
          if (!['244489368717230090'].includes(message.author.id))
                 
- if ([documento.block].includes(message.author.id)) return message.reply("<:FalseSysop3:462306755150479372> Você foi bloqueado de usar comandos do **SysopCorp**, se você acha que isso é um engano nos contate! `! Till#8514 | Natsu#7777`");
+ if ([documento.block].includes(message.author.id)) return message.channel.send(`<:xguardian:476061993368027148> | ${message.author}! Você foi bloqueado de usar comandos do **Sysop**, se você acha que isso é um engano nos contate! `);
         
 }
 		
@@ -98,14 +98,10 @@ Anuncie com o perfil do bot em qualquer canal.
 Apago mensagens do chat ou um usuário especifico.
 [ autorole - sy!autorole @role ]
 Define a role quando um usuário entrar no servidor.
-[ cchanneltext ]
-Crie um canal de texto via comando, comando funciona apenas para membros que tenham função MANAGE_CHANNELS.
-[ cchannelvoice ] 
-Crie um canal de voz via comando, comando funciona apenas para membros que tenham função MANAGE_CHANNELS.
-[ createinvite ]
-Gere um link de convites do servidor.
-[ createrole - sy!createrole <name role> ]
-Crie um cargo através de um comando.
+[ deletrolall ]
+Comando para remover todas as tags do servidor a baixo do bot. ATENÇÃO! Comando perigoso.
+[ addrolall ]
+Adicionar um cargo/role especifico em todos do servidor. ATENÇÃO! Comando perigoso.
 [ kick - sy!kick @user <reason> ]
 Expulse usuário do servidor.
 [ removerole ]
