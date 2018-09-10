@@ -95,7 +95,7 @@ client.on("message", message => {
         "_id": message.guild.id
     }, function(erro, sysop) {
 
-    if (message.author.bot) return;
+    //if (message.author.bot) return;
 	    
         if (!sysop) return 
         if (!sysop.slow) return 
