@@ -95,14 +95,13 @@ client.on("message", message => {
         "_id": message.guild.id
     }, function(erro, sysop) {
 
+    if (message.author.bot) return;
+	    
         if (!sysop) return 
         if (!sysop.slow) return 
 
         if (sysop) {
             if (sysop.slow === 1) return 
-          
-	   if (message.author.bot) return;
-
 
             if (!slowCol.has(message.author.id)) {
                 slowCol.add(message.author.id);
