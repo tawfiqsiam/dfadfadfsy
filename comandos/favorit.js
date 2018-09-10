@@ -22,6 +22,7 @@ database.Bloqueio.findOne({
  
     
    let user = message.mentions.users.first();
+   if (!user) return message.reply(`mencione alguém para dar rep.`)
 
     
         if (message.mentions.users.first().id == message.author.id) return message.channel.send(`<:xguardian:476061993368027148> | Epa ${message.author}, Você não pode dar rep para você mesmo!`);
