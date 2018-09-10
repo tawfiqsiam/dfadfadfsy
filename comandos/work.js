@@ -22,21 +22,19 @@ module.exports = {
                 if (documento) {
                     if(message.author.bot) return;
                
+                    const HOUR =  60 * 60 * 1E3;
+                    let current = documento.daily;
+                    if (current == 0)
+                    current = Date.now() - 5 * HOUR; // primeiro trabalho
+                    console.log(current);
+
+                    if (new Date() >= current) {
+                    documento.daily = Date.now() + 5 * HOUR;
+                    documento.save();
+                    
                     var prc = Math.round(Math.random() * 80);
-                    let current = moment(documento.daily);
-                    let now = moment();
-                    if (documento.daily == 0)
-                    current = moment().subtract(1, 'day');
-                    documento.daily = moment().valueOf();
-
-
-                                   console.log(documento.daily);
-                                   console.log(current)
-
-                    if (now.diff(current, 'days') >= 1) {
-                        var premio, quantidade, dayRDM;
+                    var premio, quantidade, dayRDM;
                        
-                    console.log(documento.daily);
                         if (prc <= 20) {
                             premio = `containers <:container:430855297200947230>`;
                             quantidade = 5;
@@ -84,14 +82,21 @@ module.exports = {
                                     .addField(`**Salário!**`,` <a:festa:461509706763206657> Você ganhou: **${dayRDM} ${premio}** .`, false)
                                     .setColor('#36393E');
                                 value.edit(embed);
-                            }, 5000);
+                            }, 3000);
                         });
                     } else {
-                        let restante = moment().subtract(1, 'day').subtract(current);
-                        console.log(restante);
-                        // ainda faltam {restante}
-                        message.channel.send(`Opa ${message.author}! Você já trablhou hoje. Você pode trabalhar novamente  **${moment().from(restante)}**`);
-                    }
+                             let restante = current - Date.now();
+                let humanize = require('humanize-duration');
+                let humanize_config = {
+                 language: 'pt',
+                 conjunction: ' e ',
+                 serialComma: false,
+                 round: true,
+                 units: ['h', 'm', 's']
+    };
+    
+    message.channel.send(`<a:swbouce:488754110175379456> **│** ${message.author}! Você precisa esperar **${humanize(restante, humanize_config)}** para trabalhar de novo.`);
+}
                 } else {
                     let pessoa = new database.Users({
                         _id: message.author.id,
