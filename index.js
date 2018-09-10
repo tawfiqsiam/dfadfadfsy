@@ -90,7 +90,6 @@ client.on ('ready', () => {
 
 var slowCol = new Set();
 client.on("message", message => {
-    if (message.author.bot) return 
 
     database.Guilds.findOne({
         "_id": message.guild.id
@@ -101,6 +100,8 @@ client.on("message", message => {
 
         if (sysop) {
             if (sysop.slow === 1) return 
+          
+	   if (message.author.bot) return;
 
 
             if (!slowCol.has(message.author.id)) {
