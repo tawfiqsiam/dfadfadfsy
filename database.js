@@ -489,6 +489,10 @@ var Cla = new Schema({
         type: Number,
         default: 0
     },
+    daily: {
+        type: Number,
+        defalt: 0,
+    },
     userssize: {
         type: Number,
         default: 0
