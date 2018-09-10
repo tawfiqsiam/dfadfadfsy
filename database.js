@@ -20,6 +20,10 @@ var User = new Schema({
         type: Number,
         default: 0
     },
+    daily: {
+        type: Number,
+        default: 0
+    },
     adv: {
         type: Number,
         default: 0
