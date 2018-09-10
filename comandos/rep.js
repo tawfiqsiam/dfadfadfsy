@@ -22,9 +22,9 @@ database.Bloqueio.findOne({
  
     
    let user = message.mentions.users.first();
-
-    
-        if (message.mentions.users.first().id == message.author.id) return message.channel.send(`<:xguardian:476061993368027148> | Epa ${message.author}, Você não pode dar rep para você mesmo!`);
+   if (!user) return message.reply(`mencione alguém para dar rep.`)
+      
+    if (message.mentions.users.first().id == message.author.id) return message.channel.send(`<:xguardian:476061993368027148> | Epa ${message.author}, Você não pode dar rep para você mesmo!`);
         if (message.mentions.users.first().bot) return message.channel.send(`<:xguardian:476061993368027148> | ${message.author} Bem, isto é confuso. Você não pode dar rep para um bot!**`);
 
         database.Users.findOne({
