@@ -124,6 +124,22 @@ var User = new Schema({
         default: 0,
         
     },
+    starTime: {
+        type: Number,
+        default: 0,
+    },
+    repTime: {
+        type: Number,
+        default: 0,
+    },
+    assauntTime: {
+        type: Number,
+        default: 0,
+    },
+    batalhar: {
+        type: Number,
+        default: 0,
+    },
     borderp: {
         type: String,
         default: "bwhite"
