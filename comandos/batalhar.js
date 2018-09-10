@@ -85,11 +85,12 @@ value.edit(`<@${ganhador}> venceu a batalha e recebeu um prêmio de: **${Number(
         message.channel.send(`:crossed_swords: **|** ${nire} recusou o desafio.`);
     }
     }
-}).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** ${qnire} Passou-se **1** minuto sem resposta. Sua batalha foi finalizada a força.`));
-      dayCol.add(message.author.id)
+   dayCol.add(message.author.id)
                         setTimeout(function() {
                             dayCol.delete(message.author.id)
                         }, 5 * 1000 * 60 * 60)
+}).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** ${qnire} Passou-se **1** minuto sem resposta. Sua batalha foi finalizada a força.`));
+    
 });
 });
 }};
