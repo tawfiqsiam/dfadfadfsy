@@ -98,7 +98,7 @@ else badge2 = `${documento.badgep2}`;
                           //  img.print(letra2, 660, 360, `Total de: ${documento.adv}`);
                             img.print(letra, 650, 7, `${documento.lvll}`);
                             img.print(letra, 620, 45, `${Number(documento.eexp).toLocaleString()}`);
-                            img.print(letra, 660, 85, `${parseInt(documento.eexp/(documento.lvll *700 )*100)}%`);
+                            img.print(letra, 660, 85, `${parseInt(documento.eexp/(documento.lvll * 700 ) *100)}%`);
                        // img.print(letra2, 625, 28, `${Number(documento.emerald).toLocaleString()}`);
                          // img.print(letra, 160, 415, `${Number(documento.containers).toLocaleString()}`);
                            // img.print(letra2, 230, 28, `${Number(documento.coins).toLocaleString()}`);
