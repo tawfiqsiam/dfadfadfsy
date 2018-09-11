@@ -84,7 +84,7 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
                             });
             message.channel.send(`:bomb: Batalhando...`).then(function(value) {
 
-                         value.edit(`<@${ganhador}> venceu a batalha e recebeu um prêmio de: **15.000** Sycoins Sycoins <:Sycoins:469789351358889984>`
+                         value.edit(`<@${ganhador}> venceu a batalha e recebeu um prêmio de: **15.000** Sycoins <:Sycoins:469789351358889984>`
                    
                 , 5000)
   
