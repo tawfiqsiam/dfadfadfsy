@@ -21,6 +21,9 @@ database.Bloqueio.findOne({
       //if (!['244489368717230090'].includes(message.author.id)) return message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}, erro ao executar esse comando. Caso o erro persista contate: **! Aquaman 🐙#1408**`);
  
     
+    if (['481829760369033228'].includes(message.mentions.users.first().id))
+      return message.channel.send(`<:sysalerta:469789950938841088> | Opa ${message.author} este perfil está impossibilitado de receber reputações no momento.`)  
+    
    let user = message.mentions.users.first();
    if (!user) return message.reply(`mencione alguém para dar rep.`)
       
