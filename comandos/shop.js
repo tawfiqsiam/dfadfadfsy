@@ -65,6 +65,9 @@ Parâmetros:
  Comando setbackground - Com este comando é possível modificar seu background do perfil.
  Preço: 650.000 SY CRYSTAL
  
+Comando backbalance - Com este comando é possível modificar seu background no perfil do balance.
+ Preço: 350.00 Esmeraldas
+
  Comando bio - Com este comando é possível alterar sua descrição no perfil.
  Preço: 10.00 Esmeraldas
 
