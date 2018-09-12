@@ -50,7 +50,9 @@ let level = documento.lvll + 1;
               //Jimp.read("https://cdn.discordapp.com/attachments/442346561289060352/469817915357528074/InvisibleSysop_1.png", function(erre, img) {
                // Jimp.read(`${documento.profile_background}`).then(function(background) {
                     //Jimp.read(`${user.avatarURL}`).then(function(avatar) {
-                      Jimp.read("https://cdn.discordapp.com/attachments/393818943246172164/484663449423708182/Balance.png").then(function(perfil) {
+                      Jimp.read("https://cdn.discordapp.com/attachments/437817094319636492/489252719178022913/Sysop_Invi.png", function(erre, img) {
+                      Jimp.read(`${documento.balance_background}`).then(function(background) {
+                      Jimp.read("https://cdn.discordapp.com/attachments/393818943246172164/489127359899762708/Balance_Card.png").then(function(perfil) {
                      
                             //  Jimp.read(`${imgcolor[user.presence.status]}`).then(function(status) {
                             //   Jimp.read("https://cloud.githubusercontent.com/assets/414918/11165709/051d10b0-8b0f-11e5-864a-20ef0bada8d6.png").then(function(mascara) {
@@ -67,22 +69,30 @@ let level = documento.lvll + 1;
                             img.composite(status, 190, 215);
                             img.composite(pau, 250, 160);*/
                        
+                             background.resize(450, 324);
+                             img.composite(background, 0, 0);
+                             img.composite(perfil, 0, 0);
 
-                            perfil.print(letra2, 125, 40, `${user.username}#${user.discriminator}`);
-                            perfil.print(letra2, 55, 118, `${Number(documento.coins).toLocaleString()}`);
-                            perfil.print(letra2, 280, 118, `${Number(documento.rubys).toLocaleString()}`);
-                            perfil.print(letra2, 55, 205, `${Number(documento.goldbox).toLocaleString()}`);
-                            perfil.print(letra2, 280, 205, `${Number(documento.containers).toLocaleString()}`);
-                            perfil.print(letra2, 60, 285, `${Number(documento.emerald).toLocaleString()}`);
-                            perfil.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
-                              message.channel.send(``, new Discord.Attachment(buffer, 'Balance.png'));
+
+                       
+
+                            img.print(letra2, 110, 27, `${user.username}#${user.discriminator}`);
+                            img.print(letra2, 55, 118, `${Number(documento.coins).toLocaleString()}`);
+                            img.print(letra2, 280, 118, `${Number(documento.rubys).toLocaleString()}`);
+                            img.print(letra2, 55, 205, `${Number(documento.goldbox).toLocaleString()}`);
+                            img.print(letra2, 280, 205, `${Number(documento.containers).toLocaleString()}`);
+                            img.print(letra2, 60, 285, `${Number(documento.emerald).toLocaleString()}`);
+                            img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
+                              message.channel.send(``, new Discord.Attachment(buffer, 'Balance_Card.png'));
                      
                     
                     });
                   });
                 });
               });
+               });
             });
+             });
             });
           });
         } catch (e) {
