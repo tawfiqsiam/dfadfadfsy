@@ -12,6 +12,8 @@ db.Bloqueio.findOne({
         
 }
 
+
+  
 var nire = message.mentions.users.first();
 var qnire = message.author;
 
@@ -31,8 +33,16 @@ db.Users.findOne({
                     documento.batalhar = Date.now() + 2 * HOUR;
                     documento.save();
 
+
+
 if (!nire) 
 return message.channel.send(`<:sysalerta:469789950938841088> ${message.author} mencione alguém para batalhar.`);
+
+if (message.mentions.users.first().id == message.author.id) 
+return message.channel.send(`<:xguardian:476061993368027148> | Opa ${message.author}! Você não pode batalhar com você mesmo.`);
+
+if (message.mentions.users.first().bot) 
+return message.channel.send(`<:xguardian:476061993368027148> | ${message.author} estranho... Você não pode batalhar com um bot.`);
 
 
 message.channel.send(`<a:PulandoFeliz:486648350888689666> **|** ${qnire} te desafiou para uma batalha <@${nire.id}>. Você aceita o desafio?\nResponda: \`sim ou não\``).then(() => {
@@ -96,7 +106,7 @@ max: 1, time: 60000, errors: ['time'] }).then(col => {
     if (col.first().content == 'não') {
         message.channel.send(`:crossed_swords: **|** ${nire} recusou o desafio.`);
     }
-}).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** Passou-se **1** minuto sem resposta. Batalha finalizada a força.`));
+}).catch(() => message.channel.send(`:shrug::skin-tone-2: **|** ${message.author} Passou-se **1** minuto sem resposta. Sua batalha foi finalizada a força.`));
 
     
     
