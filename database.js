@@ -20,6 +20,14 @@ var User = new Schema({
         type: Number,
         default: 0
     },
+    balance_background: {
+        type: String,
+        default: "https://cdn.discordapp.com/attachments/442346665052209153/469407730797641738/SysopLogoLight.png",
+    },
+    shopped_background: {
+        type: String,
+        default: "no",
+    },
     daily: {
         type: Number,
         default: 0
