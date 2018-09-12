@@ -37,37 +37,37 @@ module.exports = {
                        
                         if (prc <= 20) {
                             premio = `containers <:container:430855297200947230>`;
-                            quantidade = 5;
+                            quantidade = 100;
                             dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1);
                             documento.containers += dayRDM;
                             documento.save();
                         } else  if (prc <= 40) {
                             premio = `Sy Crystal <:sysopcrystal:482651147111366656>`;
-                            quantidade = 500;
+                            quantidade = 15000;
                             dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1);
                             documento.rubys += dayRDM;
                             documento.save();
                         } else if (prc <= 80) {
                             premio = `sycoins <:Sycoins:469789351358889984>`;
-                            quantidade = 1000;
+                            quantidade = 20000;
                             dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1);
                             documento.coins += dayRDM;
                             documento.save();
                         } else if (prc <= 40) {
                             premio = `goldboxs <:New_goldenbox_10:458877483182194698>`;
-                            quantidade = 10;
+                            quantidade = 200;
                             dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1);
                             documento.goldbox += dayRDM;
                             documento.save();
                         } else if (prc <= 40) {
                             premio = `EXP's <:New_goldenbox_10:458877483182194698>`;
-                            quantidade = 300;
+                            quantidade = 1000;
                             dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1);
                             documento.eexp += dayRDM;
                             documento.save();
                         } else if (prc <= 20) {
                             premio = `esmeraldas <a:esmeral:442718169585680387>`;
-                            quantidade = 30;
+                            quantidade = 2000;
                             dayRDM = Math.round(Math.random() * parseInt(quantidade) + 1);
                             documento.emerald += dayRDM;
                             documento.save();
