@@ -36,6 +36,15 @@ database.Bloqueio.findOne({
                     } else {
                         message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}! Você precisa de 650.000 Sy Crystal <:sysopcrystal:482651147111366656>`)
                     }
+                     } else if(razaou === 'backbalance') {
+                    if(Number(documento.emerald) >= 350000) {
+                        documento.emerald = Number(documento.emerald) - 350000
+                        documento.shopped_background = "yes"
+                        message.channel.send(`<a:anirainbowblob:434952813177470986> ${message.author}, Compra realizada com sucesso!`)
+                        documento.save()
+                    } else {
+                        message.channel.send(`<:sysalerta:469789950938841088> Opa ${message.author}! Você precisa de 350.000 esmeraldas <a:esmeral:442718169585680387>`)
+                    }
                 } else if(razaou === 'bio') {
                     if(Number(documento.emerald) >= 10000) {
                         documento.emerald = Number(documento.emerald) - 10000
