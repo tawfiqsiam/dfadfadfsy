@@ -90,12 +90,13 @@ client.on ('ready', () => {
 
 var slowCol = new Set();
 client.on("message", message => {
-   
-if (message.author.bot) return;
-	
+   	
     database.Guilds.findOne({
         "_id": message.guild.id
     }, function(erro, sysop) {
+	    
+	    if (message.author.bot) return;
+
 	    
         if (!sysop) return 
         if (!sysop.slow) return 
