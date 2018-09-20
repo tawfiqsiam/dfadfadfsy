@@ -98,6 +98,7 @@ if (message.author.bot) return;
         "_id": message.guild.id
     }, function(erro, sysop) {
 
+	    if (message.author.bot) return;
 	    
         if (!sysop) return 
         if (!sysop.slow) return 
