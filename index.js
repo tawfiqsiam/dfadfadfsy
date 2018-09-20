@@ -88,7 +88,7 @@ client.on ('ready', () => {
   }, 18000);
 });
 
-var slowCol = new Set();
+/*var slowCol = new Set();
 client.on("message", message => {
    	
     database.Guilds.findOne({
@@ -117,7 +117,7 @@ client.on("message", message => {
             console.log("erro");
         }
     });
-});
+});*/
 
 
 client.on('guildMemberAdd', (member) => {	
