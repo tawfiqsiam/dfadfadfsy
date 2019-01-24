@@ -53,15 +53,6 @@ fs.readdir("./comandos/", (err, files) => {
 
   
 
-client.on('ready', () => {
- var a = '244489368717230090';
-var embed = new Discord.RichEmbed()
-    .setThumbnail('https://cdn.discordapp.com/attachments/429458467988832257/469723736300453901/SysopLogo.png')
-    .setDescription(`<:SysopLogoEMOI:439565791357042700> Sysop foi reiniciado pelo heroku.\n\nSysopGuide reiniciado pelo clound9.\n\nMemória: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MS`)
-    .setColor(0x0df7eb);  							 
-    client.users.get(a).send({embed});    
-    
-});
 
 client.on("ready", () => {
    logger.logWithHeader('Estamos online!', 'bgRed', 'black',  `Online! S:${client.guilds.size} | U:${client.users.size}`);
