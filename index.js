@@ -23,7 +23,7 @@ client.on("ready", () => {
 client.user.setPresence({
         status: 'Online',
         game: {
-            name: `sy!help`,
+            name: `+help`,
             url: 'https://www.twitch.tv/expextreadriano'
         }
 });
@@ -536,7 +536,7 @@ client.on('message', message => {
         .setFooter('SysopCorp ---- LOG COMANDOS ' + ' ---- ' + new Date())
         .setColor(0x0df7eb);
         
-        client.guilds.get('441766085809799198').channels.get('483908190438817813').send({ embed });
+        client.guilds.get('477104148991442966').channels.get('477104149549547531').send({ embed });
 	}
 });
 
